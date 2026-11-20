@@ -43,5 +43,6 @@ function apiMiddlewarePlugin() {
 }
 
 export default defineConfig({
+  base: "./",
   plugins: [react(), apiMiddlewarePlugin()],
 });
