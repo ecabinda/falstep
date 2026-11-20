@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FALSTEP | SHOPPING BAG</title>
+<!-- Google Fonts: Anton & Hanken Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#52443f",
+            "on-tertiary": "#ffffff",
+            "primary-fixed": "#f4ded7",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#92807a",
+            "on-background": "#1a1c1c",
+            "surface-dim": "#dadada",
+            "tertiary-fixed-dim": "#c9c6c0",
+            "on-secondary": "#ffffff",
+            "background": "#f9f9f9",
+            "inverse-primary": "#d7c2bb",
+            "inverse-on-surface": "#f0f1f1",
+            "surface-container-highest": "#e2e2e2",
+            "surface-container": "#eeeeee",
+            "on-error": "#ffffff",
+            "secondary": "#75584a",
+            "inverse-surface": "#2f3131",
+            "outline": "#807571",
+            "secondary-fixed-dim": "#e4bfae",
+            "error": "#ba1a1a",
+            "surface-variant": "#e2e2e2",
+            "on-secondary-fixed-variant": "#5b4134",
+            "tertiary-fixed": "#e6e2db",
+            "primary-container": "#241915",
+            "secondary-container": "#fed8c6",
+            "on-surface": "#1a1c1c",
+            "tertiary": "#000000",
+            "on-tertiary-container": "#86847e",
+            "surface-tint": "#6b5b55",
+            "surface-container-high": "#e8e8e8",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#4e4541",
+            "primary": "#000000",
+            "on-primary-fixed": "#241915",
+            "surface-container-low": "#f3f3f3",
+            "primary-fixed-dim": "#d7c2bb",
+            "surface-container-lowest": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#1c1c18",
+            "on-secondary-container": "#795c4e",
+            "outline-variant": "#d2c3bf",
+            "on-secondary-fixed": "#2a170c",
+            "surface-bright": "#f9f9f9",
+            "tertiary-container": "#1c1c18",
+            "secondary-fixed": "#ffdbcb",
+            "on-tertiary-fixed-variant": "#484742",
+            "surface": "#f9f9f9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "margin": "3rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "gutter-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "display-hero-mobile": ["Anton"],
+            "title-lg": ["Hanken Grotesk"],
+            "headline-lg": ["Anton"],
+            "label-caps": ["Hanken Grotesk"],
+            "label-mono-stat": ["Hanken Grotesk"],
+            "title-md": ["Hanken Grotesk"],
+            "headline-md": ["Anton"],
+            "headline-lg-mobile": ["Anton"],
+            "headline-sm": ["Anton"],
+            "body-md": ["Hanken Grotesk"],
+            "display-hero": ["Anton"],
+            "body-lg": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "display-hero-mobile": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "title-lg": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg": ["56px", { "lineHeight": "58px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-caps": ["12px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "700" }],
+            "label-mono-stat": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-md": ["32px", { "lineHeight": "36px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["36px", { "lineHeight": "38px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "display-hero": ["96px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased relative overflow-x-hidden min-h-screen">
+<!-- ==================== BACKGROUND STORE INTERFACE ==================== -->
+<div class="min-h-screen flex flex-col justify-between filter blur-[1px] select-none pointer-events-none">
+<!-- TopNavBar (Shared Component) -->
+<header class="sticky top-0 w-full z-50 bg-surface border-b border-outline-variant">
+<div class="relative flex items-center justify-between px-margin-mobile md:px-margin max-w-[1600px] mx-auto h-16">
+<div class="flex items-center gap-space-lg">
+<span class="font-headline-md text-headline-md tracking-tighter uppercase text-primary">FALSTEP</span>
+<nav class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2">
+<a class="text-on-surface-variant font-label-caps text-label-caps uppercase tracking-widest hover:text-secondary transition-colors duration-150 py-1" href="../01-atelier-archive-hoodies-sweatshirts-catalog/screen.html">COLLECTIONS</a>
+</nav>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant hidden md:inline">EUR €</span>
+<span class="material-symbols-outlined text-primary text-xl" data-icon="search">search</span>
+<span class="material-symbols-outlined text-primary text-xl" data-icon="favorite">favorite</span>
+<span class="font-label-caps text-label-caps uppercase text-primary font-bold">BAG (2)</span>
+</div>
+</div>
+</header>
+<!-- Main Store Canvas (Editorial Lookbook Preview) -->
+<main class="max-w-[1600px] mx-auto px-margin-mobile md:px-margin py-space-xl w-full">
+<div class="flex justify-between items-end border-b border-outline-variant pb-space-sm mb-space-lg">
+<p class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant">DROP 04 // MEDITERRANEAN BRUTALISM</p>
+<p class="font-label-mono-stat text-label-mono-stat text-secondary">STOCK LEVEL: STRICTLY ALLOCATED</p>
+</div>
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-8 bg-surface-container-low border border-outline-variant p-space-lg relative">
+<div class="w-full aspect-[16/9] bg-surface-variant overflow-hidden mb-space-md">
+<img class="w-full h-full object-cover" data-alt="High fashion editorial model wearing an oversized dark espresso luxury hoodie standing in a stark concrete Mediterranean pavilion. Crisp morning sunlight casting sharp architectural shadows on raw limestone walls. Modern minimalist streetwear lookbook aesthetic with warm earthy tones, deep blacks, and bone whites." src="../assets/products/hero_david_feroz_black.jpg"/>
+</div>
+<h1 class="font-display-hero text-display-hero uppercase tracking-tighter text-primary">FALL 24 CAPSULE</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mt-space-sm">Architectural heavyweights meticulously spun from 500 GSM Portuguese brushed fleece.</p>
+</div>
+<div class="col-span-12 md:col-span-4 flex flex-col gap-gutter">
+<div class="bg-surface-container-low border border-outline-variant p-space-md">
+<div class="aspect-[4/5] bg-surface-variant mb-space-sm overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up garment lookbook photograph of a boxy structured bone cream heavyweight organic cotton tee displayed on a textured stone pedestal under bright gallery spotlights. Brutalist editorial composition highlighting luxury fabric drape, subtle espresso stitch accents, and raw industrial minimalism." src="../assets/products/hero_david_feroz_black.jpg"/>
+</div>
+<div class="flex justify-between items-baseline pt-space-xs border-t border-outline-variant">
+<span class="font-title-md text-title-md uppercase text-primary">HEAVYWEIGHT BOXY TEE</span>
+<span class="font-title-md text-title-md text-primary">€50.00</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full bg-surface-container-low border-t border-outline-variant">
+<div class="w-full px-margin-mobile md:px-margin py-space-xl max-w-[1600px] mx-auto flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-space-md">
+<span class="font-headline-sm text-headline-sm uppercase tracking-tight text-primary">FALSTEP</span>
+<div class="flex flex-wrap gap-space-md">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary underline underline-offset-4">CLIENT SERVICE</span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary underline underline-offset-4">SHIPPING &amp; DROPS</span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary underline underline-offset-4">TERMS OF RELEASE</span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary underline underline-offset-4">LOOKBOOK ARCHIVE</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2025 FALSTEP LTD. ALL RIGHTS RESERVED. CRAFTED FOR THE CULTURALLY ASTUTE.</p>
+</div>
+</footer>
+</div>
+<!-- ==================== OVERLAY & SLIDE-OUT DRAWER ==================== -->
+<!-- Subtle Dim Overlay Screen -->
+<div class="fixed inset-0 bg-primary/60 z-50 transition-opacity duration-300" id="drawerOverlay"></div>
+<!-- Right Slide-out Drawer Panel (w-[480px]) -->
+<aside class="fixed top-0 right-0 h-full w-full sm:w-[480px] max-w-full bg-surface-container-lowest z-50 flex flex-col justify-between shadow-none border-l border-outline-variant" id="cartFlyout">
+<!-- DRAWER TOP BAR / HEADER -->
+<div class="flex-none p-space-md border-b border-outline-variant bg-surface-container-lowest">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-sm text-headline-sm uppercase tracking-tight text-primary">YOUR BAG</h2>
+<span class="bg-surface-container-low text-primary border border-outline-variant font-label-caps text-label-caps px-space-sm py-0.5 rounded-full">2 ITEMS</span>
+</div>
+<button aria-label="Close Shopping Bag" class="p-1 text-primary hover:text-secondary transition-colors duration-150" id="closeDrawer">
+<span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
+</button>
+</div>
+<!-- FREE SHIPPING PROGRESS BAR -->
+<div class="mt-space-md bg-surface-container-low border border-outline-variant p-space-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-mono-stat text-label-mono-stat uppercase text-primary font-bold">SHIPPING STATUS</span>
+<span class="font-label-mono-stat text-label-mono-stat text-on-surface-variant font-medium">85% UNLOCKED</span>
+</div>
+<div class="w-full bg-surface-variant h-1.5 overflow-hidden">
+<div class="bg-primary-container h-full w-[85%] transition-all duration-300"></div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5 text-xs">
+          Add <span class="font-bold text-primary">€15.00</span> more to unlock <span class="text-primary font-semibold uppercase">FREE WORLDWIDE SHIPPING</span>
+</p>
+</div>
+</div>
+<!-- SCROLLABLE CONTENT: ITEMS & UPSELLS -->
+<div class="flex-1 overflow-y-auto divide-y divide-outline-variant">
+<!-- CART ITEMS LIST -->
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- Cart Item 1 -->
+<div class="flex gap-space-md group">
+<div class="w-24 aspect-[4/5] bg-surface-container-low border border-outline-variant flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="High detail studio product shot of a luxury heavyweight hoodie in rich dark espresso brown laid flat against a minimal stone background. Architectural streetwear garment details including clean boxy drop shoulders, deep kangaroo pocket, and reinforced ribbed hems bathed in clean editorial studio lighting." src="../assets/products/hero_david_feroz_black.jpg"/>
+</div>
+<div class="flex flex-col justify-between flex-1 py-0.5">
+<div>
+<div class="flex justify-between items-start gap-space-xs">
+<h3 class="font-title-md text-title-md uppercase tracking-tight text-primary leading-tight">OVERSIZED ESPRESSO HOODIE</h3>
+<button aria-label="Remove item" class="text-outline hover:text-primary transition-colors duration-150">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+<p class="font-label-mono-stat text-label-mono-stat text-on-surface-variant uppercase mt-1">SIZE: L / COLOR: ESPRESSO BROWN</p>
+</div>
+<div class="flex justify-between items-center mt-space-sm pt-space-xs border-t border-outline-variant">
+<!-- Quantity Selector Box -->
+<div class="inline-flex items-center border border-outline-variant bg-surface-container-lowest">
+<button class="px-2.5 py-1 text-primary hover:bg-surface-container-low transition-colors duration-150 font-label-mono-stat text-xs leading-none">-</button>
+<span class="px-3 py-1 font-label-mono-stat text-label-mono-stat text-primary font-bold border-x border-outline-variant">1</span>
+<button class="px-2.5 py-1 text-primary hover:bg-surface-container-low transition-colors duration-150 font-label-mono-stat text-xs leading-none">+</button>
+</div>
+<span class="font-title-md text-title-md text-primary font-bold">€95.00</span>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="flex gap-space-md group pt-space-md border-t border-outline-variant">
+<div class="w-24 aspect-[4/5] bg-surface-container-low border border-outline-variant flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Detailed studio fashion still of a heavy boxy luxury t-shirt in bone cream white draped carefully on a concrete block. Natural directional light emphasizing the crisp collar, 300 GSM cotton weave, and warm mocha tonal palette with minimal modern streetwear aesthetic." src="../assets/products/hero_david_feroz_black.jpg"/>
+</div>
+<div class="flex flex-col justify-between flex-1 py-0.5">
+<div>
+<div class="flex justify-between items-start gap-space-xs">
+<h3 class="font-title-md text-title-md uppercase tracking-tight text-primary leading-tight">HEAVYWEIGHT BOXY TEE</h3>
+<button aria-label="Remove item" class="text-outline hover:text-primary transition-colors duration-150">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+<p class="font-label-mono-stat text-label-mono-stat text-on-surface-variant uppercase mt-1">SIZE: M / COLOR: BONE CREAM</p>
+</div>
+<div class="flex justify-between items-center mt-space-sm pt-space-xs border-t border-outline-variant">
+<!-- Quantity Selector Box -->
+<div class="inline-flex items-center border border-outline-variant bg-surface-container-lowest">
+<button class="px-2.5 py-1 text-primary hover:bg-surface-container-low transition-colors duration-150 font-label-mono-stat text-xs leading-none">-</button>
+<span class="px-3 py-1 font-label-mono-stat text-label-mono-stat text-primary font-bold border-x border-outline-variant">1</span>
+<button class="px-2.5 py-1 text-primary hover:bg-surface-container-low transition-colors duration-150 font-label-mono-stat text-xs leading-none">+</button>
+</div>
+<span class="font-title-md text-title-md text-primary font-bold">€50.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- UPSELL SECTION: COMPLETE THE LOOK -->
+<div class="p-space-md bg-surface-container-low">
+<div class="flex justify-between items-center mb-space-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-primary">COMPLETE THE LOOK // PAIRINGS</span>
+<span class="font-label-mono-stat text-label-mono-stat text-on-surface-variant">2 PICKS</span>
+</div>
+<!-- Horizontal Scroll Row -->
+<div class="flex gap-space-md overflow-x-auto pb-space-xs scrollbar-none">
+<!-- Upsell Item 1 -->
+<div class="w-48 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-space-sm flex flex-col justify-between">
+<div class="aspect-square bg-surface-container-low border border-outline-variant overflow-hidden mb-space-xs">
+<img class="w-full h-full object-cover" data-alt="Chunky ribbed knit fisherman beanie in deep espresso brown wool folded on a warm light sandstone tabletop. High-contrast directional sunlight casting strong geometric brutalist shadows. Editorial streetwear drop accessory lookbook photograph." src="../assets/products/hero_david_feroz_black.jpg"/>
+</div>
+<div>
+<p class="font-title-md text-xs uppercase text-primary font-bold truncate">ESPRESSO KNIT BEANIE</p>
+<p class="font-label-mono-stat text-label-mono-stat text-on-surface-variant mb-space-xs">€35.00</p>
+</div>
+<button class="w-full py-1.5 px-2 bg-surface-container-low hover:bg-surface-variant border border-outline-variant text-primary font-label-caps text-label-caps uppercase text-center transition-colors duration-150">
+              + QUICK ADD
+            </button>
+</div>
+<!-- Upsell Item 2 -->
+<div class="w-48 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-space-sm flex flex-col justify-between">
+<div class="aspect-square bg-surface-container-low border border-outline-variant overflow-hidden mb-space-xs">
+<img class="w-full h-full object-cover" data-alt="Pair of thick architectural ribbed crew socks in bone white with subtle espresso brown knit typography on the outer ankle. Laid flat on an architectural raw concrete slab with crisp bright daylight in an underground fashion campaign style." src="../assets/products/hero_david_feroz_black.jpg"/>
+</div>
+<div>
+<p class="font-title-md text-xs uppercase text-primary font-bold truncate">ARCHIVE RIBBED SOCKS</p>
+<p class="font-label-mono-stat text-label-mono-stat text-on-surface-variant mb-space-xs">€15.00</p>
+</div>
+<button class="w-full py-1.5 px-2 bg-surface-container-low hover:bg-surface-variant border border-outline-variant text-primary font-label-caps text-label-caps uppercase text-center transition-colors duration-150">
+              + QUICK ADD
+            </button>
+</div>
+</div>
+</div>
+<!-- PROMO / ORDER NOTE EXPANDER TOGGLE -->
+<div class="px-space-md py-space-sm bg-surface-container-lowest">
+<details class="group cursor-pointer">
+<summary class="list-none flex items-center justify-between font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors">
+<span>+ ADD PROMO CODE OR GIFT CARD</span>
+<span class="material-symbols-outlined text-sm transition-transform duration-200 group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-space-sm pt-space-xs">
+<div class="flex">
+<input class="w-full bg-surface-container-lowest border border-outline-variant px-space-sm py-1.5 font-label-mono-stat text-xs uppercase text-primary focus:outline-none focus:border-primary rounded-none" placeholder="ENTER CODE" type="text"/>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-space-md py-1.5 uppercase transition-colors hover:bg-secondary">APPLY</button>
+</div>
+</div>
+</details>
+</div>
+</div>
+<!-- DRAWER FOOTER SUMMARY & CHECKOUT -->
+<div class="flex-none p-space-md border-t border-outline-variant bg-surface-container-lowest">
+<!-- Subtotal row -->
+<div class="flex justify-between items-baseline mb-space-xs">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">SUBTOTAL</span>
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight">€145.00</span>
+</div>
+<p class="font-body-md text-xs text-on-surface-variant mb-space-md">
+        Shipping &amp; taxes calculated at checkout. Express delivery options available.
+      </p>
+<!-- CHECKOUT BUTTON -->
+<button class="w-full py-space-md bg-primary-container text-on-primary font-headline-sm text-headline-sm tracking-wide uppercase hover:bg-secondary transition-colors duration-150 flex items-center justify-center gap-space-sm">
+<span>PROCEED TO CHECKOUT • €145.00</span>
+</button>
+<!-- Monochrome Payment Methods & Trust Badges -->
+<div class="mt-space-md pt-space-sm border-t border-outline-variant flex flex-col items-center gap-space-xs">
+<div class="flex items-center justify-center gap-space-sm opacity-80 flex-wrap">
+<span class="font-label-mono-stat text-[10px] tracking-wider border border-outline-variant px-2 py-0.5 bg-surface-container-low text-primary uppercase font-bold">APPLE PAY</span>
+<span class="font-label-mono-stat text-[10px] tracking-wider border border-outline-variant px-2 py-0.5 bg-surface-container-low text-primary uppercase font-bold">VISA</span>
+<span class="font-label-mono-stat text-[10px] tracking-wider border border-outline-variant px-2 py-0.5 bg-surface-container-low text-primary uppercase font-bold">MASTERCARD</span>
+<span class="font-label-mono-stat text-[10px] tracking-wider border border-outline-variant px-2 py-0.5 bg-surface-container-low text-primary uppercase font-bold">KLARNA</span>
+<span class="font-label-mono-stat text-[10px] tracking-wider border border-outline-variant px-2 py-0.5 bg-surface-container-low text-primary uppercase font-bold">PAYPAL</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant mt-1">
+<span class="material-symbols-outlined text-xs" data-icon="lock">lock</span>
+<span class="font-label-mono-stat text-[10px] uppercase">ENCRYPTED 256-BIT ARCHIVE CHECKOUT</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Interactive script for demo closing toggle -->
+<script>
+    const closeBtn = document.getElementById('closeDrawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const drawer = document.getElementById('cartFlyout');
+
+    function toggleDrawer() {
+      if (drawer.classList.contains('translate-x-full')) {
+        drawer.classList.remove('translate-x-full');
+        overlay.classList.remove('hidden');
+      } else {
+        drawer.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+      }
+    }
+
+    if (closeBtn && overlay) {
+      closeBtn.addEventListener('click', toggleDrawer);
+      overlay.addEventListener('click', toggleDrawer);
+    }
+  </script>
+<script src="../store.js"></script>
+</body></html>

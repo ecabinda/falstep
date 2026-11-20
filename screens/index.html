@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FALSTEP &bull; Luxury Streetwear — Painel Geral de Telas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+  <style>
+    body { font-family: "Hanken Grotesk", sans-serif; }
+    .font-anton { font-family: "Anton", sans-serif; letter-spacing: 0.04em; }
+    .screen-card { transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
+    .screen-card:hover { transform: translateY(-3px); border-color: #75584a; }
+  </style>
+</head>
+<body class="bg-[#0e0e0e] text-[#fbfbfb] min-h-screen selection:bg-[#4a3226] selection:text-white">
+
+  <!-- TOP BAR -->
+  <header class="border-b border-[#252525] bg-[#141414]/95 backdrop-blur sticky top-0 z-40 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 text-xs font-mono tracking-widest text-[#a8a39d] uppercase">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>FALSTEP &bull; HIGH-END STREETWEAR ARCHIVE &bull; PORTUGAL / LONDON</span>
+        </div>
+        <h1 class="font-anton text-2xl md:text-3xl uppercase tracking-wider text-white mt-1">
+          FALSTEP &bull; Catálogo Geral de Telas Interativas
+        </h1>
+      </div>
+      <div class="flex flex-wrap items-center gap-2.5">
+        <a href="02-atelier-archive-editorial-homepage/screen.html" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wider bg-white text-[#201511] rounded hover:bg-[#f3efe8] transition shadow font-anton">
+          <span class="material-symbols-outlined text-[16px]">storefront</span>
+          Abrir Loja Falstep
+        </a>
+        <a href="11-falstep-sales-checkout-page/screen.html" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-wider bg-[#201511] text-[#f3efe8] border border-[#4a3226] rounded hover:bg-[#4a3226] transition font-anton">
+          <span class="material-symbols-outlined text-[16px]">shopping_cart_checkout</span>
+          Página de Venda
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- QUICK NAVIGATION DOCK -->
+  <section class="border-b border-[#202020] bg-[#151515] px-6 py-4">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2 text-xs font-mono text-[#a09c95]">
+        <span class="text-white font-bold uppercase">Atalhos Diretos:</span>
+        <span>Acesse qualquer fluxo com 1 clique</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="02-atelier-archive-editorial-homepage/screen.html" target="_blank" class="px-3.5 py-1.5 text-xs font-mono uppercase bg-[#1f1f1f] text-neutral-200 border border-[#333] rounded hover:bg-white hover:text-black transition">
+          1. Editorial Home (02)
+        </a>
+        <a href="09-archive-drops-streetwear-store-flow/screen.html" target="_blank" class="px-3.5 py-1.5 text-xs font-mono uppercase bg-[#201511] text-amber-200 border border-[#5b4134] rounded hover:bg-[#4a3226] transition font-bold">
+          2. Drops &amp; Lançamentos (09)
+        </a>
+        <a href="01-atelier-archive-hoodies-sweatshirts-catalog/screen.html" target="_blank" class="px-3.5 py-1.5 text-xs font-mono uppercase bg-[#1f1f1f] text-neutral-200 border border-[#333] rounded hover:bg-white hover:text-black transition">
+          3. Catálogo Coleções (01)
+        </a>
+        <a href="04-atelier-archive-heavyweight-hoodie-pdp/screen.html" target="_blank" class="px-3.5 py-1.5 text-xs font-mono uppercase bg-[#1f1f1f] text-neutral-200 border border-[#333] rounded hover:bg-white hover:text-black transition">
+          4. Detalhes PDP (04)
+        </a>
+        <a href="11-falstep-sales-checkout-page/screen.html" target="_blank" class="px-3.5 py-1.5 text-xs font-mono uppercase bg-emerald-950 text-emerald-300 border border-emerald-700 rounded hover:bg-emerald-900 transition font-bold">
+          5. Venda &amp; Checkout (11)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREEN GRID -->
+  <main class="max-w-7xl mx-auto px-6 py-10">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8 pb-4 border-b border-[#222] gap-2">
+      <div>
+        <h2 class="font-anton text-2xl uppercase tracking-wider text-white">Todas as 11 Telas Interativas</h2>
+        <p class="text-xs text-neutral-400 mt-0.5">Clique em "ABRIR TELA" para interagir com a navegação unificada, sacola de compras e checkout.</p>
+      </div>
+      <div class="text-xs font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800 px-3 py-1 rounded inline-flex items-center gap-1.5 w-fit">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>100% dos links e botões ativos</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- CARD 02: EDITORIAL HOMEPAGE (PRINCIPAL) -->
+      <article class="screen-card group bg-[#161616] border border-[#2e2e2e] rounded-lg overflow-hidden flex flex-col">
+        <div class="aspect-[16/10] bg-[#0c0c0c] overflow-hidden relative cursor-pointer" onclick="openPreview('02-atelier-archive-editorial-homepage/screen.html', 'FALSTEP &bull; Editorial Homepage (02)')">
+          <img src="02-atelier-archive-editorial-homepage/screenshot.png" alt="Editorial Homepage" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-200">
+            <span class="px-3.5 py-1.5 bg-white text-black text-xs font-bold uppercase tracking-wider rounded shadow font-anton">Ver Preview Interativo</span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 bg-white text-black text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded font-mono">HOMEPAGE PRINCIPAL</span>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+              <span>02 / EDITORIAL HOME</span>
+              <span>DROP 07: TERRAIN &amp; SHADOW</span>
+            </div>
+            <h3 class="font-anton text-lg uppercase text-white leading-tight">Editorial Homepage</h3>
+            <p class="text-xs text-neutral-400 mt-1">Hero full-bleed com modelagem brutalista, manifesto têxtil e grade de hoodies em destaque.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#262626] flex gap-2">
+            <a href="02-atelier-archive-editorial-homepage/screen.html" target="_blank" class="flex-1 text-center text-xs uppercase font-bold py-2.5 bg-white text-black rounded hover:bg-[#f3efe8] transition font-anton tracking-wider">
+              Abrir Tela
+            </a>
+            <button onclick="openPreview('02-atelier-archive-editorial-homepage/screen.html', 'FALSTEP &bull; Editorial Homepage (02)')" class="px-3 text-xs uppercase font-bold py-2.5 bg-[#242424] text-white rounded hover:bg-[#333] transition font-mono">
+              Modal
+            </button>
+            <a href="02-atelier-archive-editorial-homepage/screenshot.png" target="_blank" class="text-center text-xs uppercase font-bold py-2.5 px-3 bg-[#1e1e1e] text-neutral-400 rounded hover:bg-[#282828] transition font-mono">PNG</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 09: ARCHIVE DROPS (DESTAQUE) -->
+      <article class="screen-card group bg-[#161616] border-2 border-[#5b4134] rounded-lg overflow-hidden flex flex-col relative shadow-xl">
+        <div class="aspect-[16/10] bg-[#0c0c0c] overflow-hidden relative cursor-pointer" onclick="openPreview('09-archive-drops-streetwear-store-flow/screen.html', 'FALSTEP &bull; Drops Flow (09)')">
+          <img src="09-archive-drops-streetwear-store-flow/screenshot.png" alt="Drops Store Flow" onerror="this.src='02-atelier-archive-editorial-homepage/screenshot.png'" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-200">
+            <span class="px-3.5 py-1.5 bg-white text-black text-xs font-bold uppercase tracking-wider rounded shadow font-anton">Ver Preview Interativo</span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 bg-amber-400 text-black text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded font-mono">LANÇAMENTOS / DROPS</span>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono text-amber-400 mb-1">
+              <span>09 / DROPS FLOW</span>
+              <span>COUNTDOWN TICKER ATIVO</span>
+            </div>
+            <h3 class="font-anton text-lg uppercase text-white leading-tight">Archive Drops &amp; Lançamentos</h3>
+            <p class="text-xs text-neutral-400 mt-1">Página oficial de lançamentos com cronômetro regressivo em tempo real e matriz de cápsulas limitadas.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#262626] flex gap-2">
+            <a href="09-archive-drops-streetwear-store-flow/screen.html" target="_blank" class="flex-1 text-center text-xs uppercase font-bold py-2.5 bg-amber-400 text-black rounded hover:bg-amber-300 transition font-anton tracking-wider font-bold">
+              Abrir Tela
+            </a>
+            <button onclick="openPreview('09-archive-drops-streetwear-store-flow/screen.html', 'FALSTEP &bull; Drops Flow (09)')" class="px-3 text-xs uppercase font-bold py-2.5 bg-[#242424] text-white rounded hover:bg-[#333] transition font-mono">
+              Modal
+            </button>
+            <a href="09-archive-drops-streetwear-store-flow/screenshot.png" target="_blank" class="text-center text-xs uppercase font-bold py-2.5 px-3 bg-[#1e1e1e] text-neutral-400 rounded hover:bg-[#282828] transition font-mono">PNG</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 11: PÁGINA DE VENDA & CHECKOUT (NOVA) -->
+      <article class="screen-card group bg-[#161616] border-2 border-emerald-600 rounded-lg overflow-hidden flex flex-col relative shadow-xl">
+        <div class="aspect-[16/10] bg-[#0c0c0c] overflow-hidden relative cursor-pointer" onclick="openPreview('11-falstep-sales-checkout-page/screen.html', 'FALSTEP &bull; Página de Venda &amp; Checkout (11)')">
+          <div class="w-full h-full bg-gradient-to-br from-[#201511] to-[#120b08] p-4 flex flex-col justify-center items-center text-center">
+            <span class="material-symbols-outlined text-4xl text-emerald-400 mb-2">shopping_cart_checkout</span>
+            <span class="font-anton text-lg uppercase text-white tracking-wider">CHECKOUT TRANSPARENTE</span>
+            <span class="text-[11px] font-mono text-emerald-300 mt-1">CARTÃO &bull; PIX COM QR &bull; APPLE PAY</span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 bg-emerald-500 text-black text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded font-mono">PÁGINA DE VENDA</span>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono text-emerald-400 mb-1">
+              <span>11 / SALES &amp; CHECKOUT</span>
+              <span>ALTA CONVERSÃO</span>
+            </div>
+            <h3 class="font-anton text-lg uppercase text-white leading-tight">Página de Venda dos Produtos</h3>
+            <p class="text-xs text-neutral-400 mt-1">Seletor de peças (550 GSM), cupom de desconto, métodos de pagamento interativos e confirmação imediata.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#262626] flex gap-2">
+            <a href="11-falstep-sales-checkout-page/screen.html" target="_blank" class="flex-1 text-center text-xs uppercase font-bold py-2.5 bg-emerald-500 text-black rounded hover:bg-emerald-400 transition font-anton tracking-wider font-bold">
+              Abrir Checkout
+            </a>
+            <button onclick="openPreview('11-falstep-sales-checkout-page/screen.html', 'FALSTEP &bull; Página de Venda (11)')" class="px-3 text-xs uppercase font-bold py-2.5 bg-[#242424] text-white rounded hover:bg-[#333] transition font-mono">
+              Modal
+            </button>
+            <a href="11-falstep-sales-checkout-page/screen.html" target="_blank" class="text-center text-xs uppercase font-bold py-2.5 px-3 bg-[#1e1e1e] text-neutral-400 rounded hover:bg-[#282828] transition font-mono">HTML</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 01: CATALOG HOODIES -->
+      <article class="screen-card group bg-[#161616] border border-[#2e2e2e] rounded-lg overflow-hidden flex flex-col">
+        <div class="aspect-[16/10] bg-[#0c0c0c] overflow-hidden relative cursor-pointer" onclick="openPreview('01-atelier-archive-hoodies-sweatshirts-catalog/screen.html', 'FALSTEP &bull; Catálogo Hoodies (01)')">
+          <img src="01-atelier-archive-hoodies-sweatshirts-catalog/screenshot.png" alt="Hoodies Catalog" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-200">
+            <span class="px-3.5 py-1.5 bg-white text-black text-xs font-bold uppercase tracking-wider rounded shadow font-anton">Ver Preview Interativo</span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 bg-white text-black text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded font-mono">COLEÇÕES</span>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+              <span>01 / CATALOG</span>
+              <span>32 PEÇAS // FILTROS</span>
+            </div>
+            <h3 class="font-anton text-lg uppercase text-white leading-tight">Hoodies &amp; Sweatshirts Catalog</h3>
+            <p class="text-xs text-neutral-400 mt-1">Catálogo completo com filtros interativos de tamanho, tom de cor e quick-add direto para a sacola.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#262626] flex gap-2">
+            <a href="01-atelier-archive-hoodies-sweatshirts-catalog/screen.html" target="_blank" class="flex-1 text-center text-xs uppercase font-bold py-2.5 bg-white text-black rounded hover:bg-[#f3efe8] transition font-anton tracking-wider">
+              Abrir Tela
+            </a>
+            <button onclick="openPreview('01-atelier-archive-hoodies-sweatshirts-catalog/screen.html', 'FALSTEP &bull; Catálogo Hoodies (01)')" class="px-3 text-xs uppercase font-bold py-2.5 bg-[#242424] text-white rounded hover:bg-[#333] transition font-mono">
+              Modal
+            </button>
+            <a href="01-atelier-archive-hoodies-sweatshirts-catalog/screenshot.png" target="_blank" class="text-center text-xs uppercase font-bold py-2.5 px-3 bg-[#1e1e1e] text-neutral-400 rounded hover:bg-[#282828] transition font-mono">PNG</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 04: PDP HEAVYWEIGHT HOODIE -->
+      <article class="screen-card group bg-[#161616] border border-[#2e2e2e] rounded-lg overflow-hidden flex flex-col">
+        <div class="aspect-[16/10] bg-[#0c0c0c] overflow-hidden relative cursor-pointer" onclick="openPreview('04-atelier-archive-heavyweight-hoodie-pdp/screen.html', 'FALSTEP &bull; Detalhes do Produto (04)')">
+          <img src="04-atelier-archive-heavyweight-hoodie-pdp/screenshot.png" alt="Heavyweight Hoodie PDP" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-200">
+            <span class="px-3.5 py-1.5 bg-white text-black text-xs font-bold uppercase tracking-wider rounded shadow font-anton">Ver Preview Interativo</span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 bg-white text-black text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded font-mono">PÁGINA DE PRODUTO</span>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+              <span>04 / PDP DETAIL</span>
+              <span>550 GSM COTTON</span>
+            </div>
+            <h3 class="font-anton text-lg uppercase text-white leading-tight">Heavyweight Hoodie PDP</h3>
+            <p class="text-xs text-neutral-400 mt-1">Seletor de tamanho, compra com Apple Pay, guia de medidas e accordions com especificações têxteis.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#262626] flex gap-2">
+            <a href="04-atelier-archive-heavyweight-hoodie-pdp/screen.html" target="_blank" class="flex-1 text-center text-xs uppercase font-bold py-2.5 bg-white text-black rounded hover:bg-[#f3efe8] transition font-anton tracking-wider">
+              Abrir Tela
+            </a>
+            <button onclick="openPreview('04-atelier-archive-heavyweight-hoodie-pdp/screen.html', 'FALSTEP &bull; PDP Hoodie (04)')" class="px-3 text-xs uppercase font-bold py-2.5 bg-[#242424] text-white rounded hover:bg-[#333] transition font-mono">
+              Modal
+            </button>
+            <a href="04-atelier-archive-heavyweight-hoodie-pdp/screenshot.png" target="_blank" class="text-center text-xs uppercase font-bold py-2.5 px-3 bg-[#1e1e1e] text-neutral-400 rounded hover:bg-[#282828] transition font-mono">PNG</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 03: SLIDE-OUT CART DRAWER -->
+      <article class="screen-card group bg-[#161616] border border-[#2e2e2e] rounded-lg overflow-hidden flex flex-col">
+        <div class="aspect-[16/10] bg-[#0c0c0c] overflow-hidden relative cursor-pointer" onclick="openPreview('03-atelier-archive-slide-out-cart-drawer/screen.html', 'FALSTEP &bull; Cart Drawer (03)')">
+          <img src="03-atelier-archive-slide-out-cart-drawer/screenshot.png" alt="Cart Drawer" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-200">
+            <span class="px-3.5 py-1.5 bg-white text-black text-xs font-bold uppercase tracking-wider rounded shadow font-anton">Ver Preview Interativo</span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 bg-white text-black text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded font-mono">SACOLA INTERATIVA</span>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+              <span>03 / CART DRAWER</span>
+              <span>BARRA DE FRETE GRÁTIS</span>
+            </div>
+            <h3 class="font-anton text-lg uppercase text-white leading-tight">Slide-Out Cart Drawer</h3>
+            <p class="text-xs text-neutral-400 mt-1">Gaveta lateral de sacola com controle de quantidade em tempo real, cálculo de frete grátis e upsell.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#262626] flex gap-2">
+            <a href="03-atelier-archive-slide-out-cart-drawer/screen.html" target="_blank" class="flex-1 text-center text-xs uppercase font-bold py-2.5 bg-white text-black rounded hover:bg-[#f3efe8] transition font-anton tracking-wider">
+              Abrir Tela
+            </a>
+            <button onclick="openPreview('03-atelier-archive-slide-out-cart-drawer/screen.html', 'FALSTEP &bull; Cart Drawer (03)')" class="px-3 text-xs uppercase font-bold py-2.5 bg-[#242424] text-white rounded hover:bg-[#333] transition font-mono">
+              Modal
+            </button>
+            <a href="03-atelier-archive-slide-out-cart-drawer/screenshot.png" target="_blank" class="text-center text-xs uppercase font-bold py-2.5 px-3 bg-[#1e1e1e] text-neutral-400 rounded hover:bg-[#282828] transition font-mono">PNG</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 05: PDP STREETWEAR VARIANT -->
+      <article class="screen-card group bg-[#161616] border border-[#2e2e2e] rounded-lg overflow-hidden flex flex-col">
+        <div class="aspect-[16/10] bg-[#0c0c0c] overflow-hidden relative cursor-pointer" onclick="openPreview('05-streetwear-product-detail-page/screen.html', 'FALSTEP &bull; Streetwear PDP (05)')">
+          <img src="05-streetwear-product-detail-page/screenshot.png" alt="Streetwear PDP" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-200">
+            <span class="px-3.5 py-1.5 bg-white text-black text-xs font-bold uppercase tracking-wider rounded shadow font-anton">Ver Preview Interativo</span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 bg-white text-black text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded font-mono">PDP STREETWEAR</span>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+              <span>05 / PDP DETAIL</span>
+              <span>MINIMAL BRUTALISM</span>
+            </div>
+            <h3 class="font-anton text-lg uppercase text-white leading-tight">Streetwear Product Detail</h3>
+            <p class="text-xs text-neutral-400 mt-1">Variante minimalista com tipografia estendida e especificações de costura dupla portuguesa.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#262626] flex gap-2">
+            <a href="05-streetwear-product-detail-page/screen.html" target="_blank" class="flex-1 text-center text-xs uppercase font-bold py-2.5 bg-white text-black rounded hover:bg-[#f3efe8] transition font-anton tracking-wider">
+              Abrir Tela
+            </a>
+            <button onclick="openPreview('05-streetwear-product-detail-page/screen.html', 'FALSTEP &bull; Streetwear PDP (05)')" class="px-3 text-xs uppercase font-bold py-2.5 bg-[#242424] text-white rounded hover:bg-[#333] transition font-mono">
+              Modal
+            </button>
+            <a href="05-streetwear-product-detail-page/screenshot.png" target="_blank" class="text-center text-xs uppercase font-bold py-2.5 px-3 bg-[#1e1e1e] text-neutral-400 rounded hover:bg-[#282828] transition font-mono">PNG</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 06: STREETWEAR HOMEPAGE VARIANT -->
+      <article class="screen-card group bg-[#161616] border border-[#2e2e2e] rounded-lg overflow-hidden flex flex-col">
+        <div class="aspect-[16/10] bg-[#0c0c0c] overflow-hidden relative cursor-pointer" onclick="openPreview('06-streetwear-ecommerce-homepage/screen.html', 'FALSTEP &bull; Streetwear Homepage (06)')">
+          <img src="06-streetwear-ecommerce-homepage/screenshot.png" alt="Streetwear Homepage" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-200">
+            <span class="px-3.5 py-1.5 bg-white text-black text-xs font-bold uppercase tracking-wider rounded shadow font-anton">Ver Preview Interativo</span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 bg-white text-black text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded font-mono">HOMEPAGE VARIANTE</span>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+              <span>06 / HOMEPAGE</span>
+              <span>STREET COMMERCE</span>
+            </div>
+            <h3 class="font-anton text-lg uppercase text-white leading-tight">Streetwear E-commerce Home</h3>
+            <p class="text-xs text-neutral-400 mt-1">Layout alternativo focado em grid de produtos com badges de escassez e manifesto urbano.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#262626] flex gap-2">
+            <a href="06-streetwear-ecommerce-homepage/screen.html" target="_blank" class="flex-1 text-center text-xs uppercase font-bold py-2.5 bg-white text-black rounded hover:bg-[#f3efe8] transition font-anton tracking-wider">
+              Abrir Tela
+            </a>
+            <button onclick="openPreview('06-streetwear-ecommerce-homepage/screen.html', 'FALSTEP &bull; Streetwear Homepage (06)')" class="px-3 text-xs uppercase font-bold py-2.5 bg-[#242424] text-white rounded hover:bg-[#333] transition font-mono">
+              Modal
+            </button>
+            <a href="06-streetwear-ecommerce-homepage/screenshot.png" target="_blank" class="text-center text-xs uppercase font-bold py-2.5 px-3 bg-[#1e1e1e] text-neutral-400 rounded hover:bg-[#282828] transition font-mono">PNG</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 07: CATALOG COLLECTION -->
+      <article class="screen-card group bg-[#161616] border border-[#2e2e2e] rounded-lg overflow-hidden flex flex-col">
+        <div class="aspect-[16/10] bg-[#0c0c0c] overflow-hidden relative cursor-pointer" onclick="openPreview('07-streetwear-catalog-collection/screen.html', 'FALSTEP &bull; Catalog Collection (07)')">
+          <img src="07-streetwear-catalog-collection/screenshot.png" alt="Catalog Collection" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-200">
+            <span class="px-3.5 py-1.5 bg-white text-black text-xs font-bold uppercase tracking-wider rounded shadow font-anton">Ver Preview Interativo</span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 bg-white text-black text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded font-mono">COLEÇÃO COMPLETA</span>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+              <span>07 / COLLECTION</span>
+              <span>SERIES 07 ARTIFACTS</span>
+            </div>
+            <h3 class="font-anton text-lg uppercase text-white leading-tight">Streetwear Catalog Collection</h3>
+            <p class="text-xs text-neutral-400 mt-1">Coleção completa com seletor de ordenação e paginação para alta densidade de peças.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#262626] flex gap-2">
+            <a href="07-streetwear-catalog-collection/screen.html" target="_blank" class="flex-1 text-center text-xs uppercase font-bold py-2.5 bg-white text-black rounded hover:bg-[#f3efe8] transition font-anton tracking-wider">
+              Abrir Tela
+            </a>
+            <button onclick="openPreview('07-streetwear-catalog-collection/screen.html', 'FALSTEP &bull; Catalog Collection (07)')" class="px-3 text-xs uppercase font-bold py-2.5 bg-[#242424] text-white rounded hover:bg-[#333] transition font-mono">
+              Modal
+            </button>
+            <a href="07-streetwear-catalog-collection/screenshot.png" target="_blank" class="text-center text-xs uppercase font-bold py-2.5 px-3 bg-[#1e1e1e] text-neutral-400 rounded hover:bg-[#282828] transition font-mono">PNG</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 08: CART DRAWER VARIANT -->
+      <article class="screen-card group bg-[#161616] border border-[#2e2e2e] rounded-lg overflow-hidden flex flex-col">
+        <div class="aspect-[16/10] bg-[#0c0c0c] overflow-hidden relative cursor-pointer" onclick="openPreview('08-streetwear-slide-out-cart-drawer/screen.html', 'FALSTEP &bull; Cart Drawer 08')">
+          <img src="08-streetwear-slide-out-cart-drawer/screenshot.png" alt="Cart Drawer Variant" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-200">
+            <span class="px-3.5 py-1.5 bg-white text-black text-xs font-bold uppercase tracking-wider rounded shadow font-anton">Ver Preview Interativo</span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 bg-white text-black text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded font-mono">VARIANTE DRAWER</span>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+              <span>08 / CART DRAWER</span>
+              <span>DARK MINIMAL</span>
+            </div>
+            <h3 class="font-anton text-lg uppercase text-white leading-tight">Streetwear Slide-Out Drawer</h3>
+            <p class="text-xs text-neutral-400 mt-1">Variante escura da sacola com interface refinada e resumo de taxa de câmbio.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#262626] flex gap-2">
+            <a href="08-streetwear-slide-out-cart-drawer/screen.html" target="_blank" class="flex-1 text-center text-xs uppercase font-bold py-2.5 bg-white text-black rounded hover:bg-[#f3efe8] transition font-anton tracking-wider">
+              Abrir Tela
+            </a>
+            <button onclick="openPreview('08-streetwear-slide-out-cart-drawer/screen.html', 'FALSTEP &bull; Cart Drawer (08)')" class="px-3 text-xs uppercase font-bold py-2.5 bg-[#242424] text-white rounded hover:bg-[#333] transition font-mono">
+              Modal
+            </button>
+            <a href="08-streetwear-slide-out-cart-drawer/screenshot.png" target="_blank" class="text-center text-xs uppercase font-bold py-2.5 px-3 bg-[#1e1e1e] text-neutral-400 rounded hover:bg-[#282828] transition font-mono">PNG</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 10: HOMEPAGE VARIANT -->
+      <article class="screen-card group bg-[#161616] border border-[#2e2e2e] rounded-lg overflow-hidden flex flex-col">
+        <div class="aspect-[16/10] bg-[#0c0c0c] overflow-hidden relative cursor-pointer" onclick="openPreview('10-streetwear-ecommerce-homepage-variant/screen.html', 'FALSTEP &bull; Homepage Variante (10)')">
+          <div class="w-full h-full bg-[#181818] p-4 flex flex-col justify-center items-center text-center">
+            <span class="material-symbols-outlined text-4xl text-neutral-400 mb-2">view_quilt</span>
+            <span class="font-anton text-lg uppercase text-white tracking-wider">VARIANTE LOOKBOOK 10</span>
+            <span class="text-[11px] font-mono text-neutral-500 mt-1">COMPOSIÇÃO EDITORIAL ALTERNATIVA</span>
+          </div>
+          <span class="absolute top-2.5 left-2.5 bg-white text-black text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded font-mono">VARIANTE EDITORIAL</span>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 mb-1">
+              <span>10 / HOMEPAGE VARIANT</span>
+              <span>GRID EXPERIMENTAL</span>
+            </div>
+            <h3 class="font-anton text-lg uppercase text-white leading-tight">Streetwear Homepage (Variant)</h3>
+            <p class="text-xs text-neutral-400 mt-1">Variação do fluxo de homepage com destaque para as coleções de inverno e cápsula Earth Noir.</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[#262626] flex gap-2">
+            <a href="10-streetwear-ecommerce-homepage-variant/screen.html" target="_blank" class="flex-1 text-center text-xs uppercase font-bold py-2.5 bg-white text-black rounded hover:bg-[#f3efe8] transition font-anton tracking-wider">
+              Abrir Tela
+            </a>
+            <button onclick="openPreview('10-streetwear-ecommerce-homepage-variant/screen.html', 'FALSTEP &bull; Homepage Variant (10)')" class="px-3 text-xs uppercase font-bold py-2.5 bg-[#242424] text-white rounded hover:bg-[#333] transition font-mono">
+              Modal
+            </button>
+            <a href="10-streetwear-ecommerce-homepage-variant/screen.html" target="_blank" class="text-center text-xs uppercase font-bold py-2.5 px-3 bg-[#1e1e1e] text-neutral-400 rounded hover:bg-[#282828] transition font-mono">HTML</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- LIVE PREVIEW MODAL -->
+  <div id="previewModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex-col">
+    <div class="flex items-center justify-between px-6 py-3.5 bg-[#141414] border-b border-[#2d2d2d]">
+      <div class="flex items-center gap-3">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <h3 id="modalTitle" class="font-anton text-lg uppercase text-white tracking-wider">Live Screen Preview</h3>
+        <span class="text-xs font-mono text-neutral-400 hidden sm:inline">(Ambiente interativo com navegação conectada)</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <a id="modalExternalLink" href="#" target="_blank" class="px-4 py-1.5 text-xs uppercase font-bold bg-white text-black rounded hover:bg-neutral-200 transition flex items-center gap-1.5 font-anton">
+          <span class="material-symbols-outlined text-[15px]">open_in_new</span> Janela Cheia
+        </a>
+        <button onclick="closePreview()" class="px-3 py-1.5 text-xs uppercase font-bold bg-[#262626] text-neutral-300 border border-[#3a3a3a] rounded hover:bg-red-950 hover:text-red-200 hover:border-red-800 transition">
+          Fechar &times;
+        </button>
+      </div>
+    </div>
+    <div class="flex-1 bg-white relative">
+      <iframe id="previewIframe" src="" class="w-full h-full border-none"></iframe>
+    </div>
+  </div>
+
+  <footer class="border-t border-[#222] bg-[#111] py-8 px-6 text-center text-xs font-mono text-neutral-500">
+    <p>FALSTEP &bull; HIGH-END LUXURY STREETWEAR &bull; 450-550 GSM PORTUGUESE HEAVYWEIGHT TEXTILES</p>
+    <p class="mt-1">Todos os botões, rotas e formulários foram testados e verificados com sucesso.</p>
+  </footer>
+
+  <script>
+    function openPreview(url, title) {
+      document.getElementById("modalTitle").innerText = title;
+      document.getElementById("modalExternalLink").href = url;
+      document.getElementById("previewIframe").src = url;
+      document.getElementById("previewModal").classList.remove("hidden");
+      document.getElementById("previewModal").classList.add("flex");
+    }
+
+    function closePreview() {
+      document.getElementById("previewModal").classList.remove("flex");
+      document.getElementById("previewModal").classList.add("hidden");
+      document.getElementById("previewIframe").src = "";
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closePreview();
+    });
+  </script>
+
+</body>
+</html>

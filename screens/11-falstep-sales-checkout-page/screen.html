@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>FALSTEP — Página de Venda &amp; Finalização de Pedido</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#201511",
+            secondary: "#4a3226",
+            tertiary: "#f3efe8",
+            canvas: "#f7f5f0"
+          },
+          fontFamily: {
+            display: ["Anton", "sans-serif"],
+            body: ["Hanken Grotesk", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#f7f5f0] text-[#1a1c1c] antialiased min-h-screen flex flex-col font-['Hanken_Grotesk',sans-serif]">
+
+  
+
+  <!-- Header -->
+  <header class="sticky top-0 w-full z-40 bg-white border-b border-[#20151115]">
+    <div class="flex items-center justify-between px-4 md:px-12 max-w-[1400px] mx-auto h-16">
+      <div class="flex items-center gap-8">
+        <a href="../02-atelier-archive-editorial-homepage/screen.html" class="font-['Anton'] text-2xl uppercase tracking-wider text-[#201511]">
+          FALSTEP
+        </a>
+        <nav class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2">
+<a class="hover:text-[#201511] font-mono text-xs uppercase tracking-wider py-1 font-bold" href="../01-atelier-archive-hoodies-sweatshirts-catalog/screen.html">COLLECTIONS</a>
+</nav>
+      </div>
+      <div class="flex items-center gap-4 text-xs font-mono">
+        <span class="text-emerald-800 bg-emerald-100 border border-emerald-300 px-2.5 py-1 font-bold">
+          SSL SEGURO
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Sales Content -->
+  <main class="flex-1 max-w-[1400px] w-full mx-auto px-4 md:px-8 py-8 md:py-12">
+    
+    <!-- Title / Breadcrumb -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[#d2c3bf] mb-8 gap-4">
+      <div>
+        <span class="text-xs font-mono font-bold uppercase text-[#75584a]">CHECKOUT DE ALTA FIDELIDADE</span>
+        <h1 class="font-['Anton'] text-3xl uppercase tracking-wider text-[#201511] mt-0.5">Finalizar Compra // Falstep Archive</h1>
+      </div>
+      <div class="flex items-center gap-2 text-xs font-mono text-[#4e4541]">
+        <span>Despacho em até 24h</span> &bull; <span>Garantia de 30 Dias</span>
+      </div>
+    </div>
+
+    <!-- Sales & Checkout Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- FORM (7 COLS) -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- STEP 1: PRODUCT PICKER -->
+        <div class="bg-white border border-[#20151115] p-6 shadow-sm">
+          <div class="flex items-center justify-between pb-3 border-b border-[#20151115] mb-4">
+            <span class="text-xs font-mono font-bold uppercase text-[#75584a]">1. SELECIONE SUA PEÇA</span>
+            <span class="text-xs font-mono text-neutral-500">Porto Studio Release</span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            <!-- Item 1 -->
+            <div onclick="selectProduct('OVERSIZED ESPRESSO HOODIE', 95.00, 'ESPRESSO', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAeCFHnYvLQwrQ0F-NEsXdgMnxTQ183xrlSFo8LBQPiINd-CQ-y2JpwZUpmXbUwbbG7Wxe1-mPJY_fpErizTvXhhMg2x2pT--1L_f3NyEBPhc6x1_zTm1aWDQlAdwrGqFnUJLIlFm-mNhmAigmCMFqgHcM_oilbRuZ_yW45f0UxIYa4hH4HoT2bnZgQ3prm8xRNXIAbf1q-AkGUggsRysmkqpPX412r1WrHf7CnFcc')" class="prod-card active p-2 border-2 border-[#201511] bg-[#f7f5f0] cursor-pointer">
+              <div class="aspect-[4/5] bg-neutral-200 overflow-hidden mb-1.5">
+                <img src="../assets/products/hero_david_feroz_black.jpg" class="w-full h-full object-cover"/>
+              </div>
+              <h4 class="font-['Anton'] text-xs uppercase leading-tight line-clamp-1">ESPRESSO HOODIE</h4>
+              <p class="font-mono text-xs font-bold text-[#201511]">€95.00</p>
+            </div>
+
+            <!-- Item 2 -->
+            <div onclick="selectProduct('HEAVYWEIGHT BOX HOODIE', 110.00, 'PIGMENT BONE', 'https://placehold.co/800x1000/f3efe8/201511?text=HEAVYWEIGHT+BOX')" class="prod-card p-2 border border-[#d2c3bf] bg-white cursor-pointer hover:border-[#201511]">
+              <div class="aspect-[4/5] bg-neutral-200 overflow-hidden mb-1.5">
+                <img src="https://placehold.co/800x1000/f3efe8/201511?text=HEAVYWEIGHT+BOX" class="w-full h-full object-cover"/>
+              </div>
+              <h4 class="font-['Anton'] text-xs uppercase leading-tight line-clamp-1">BOX HOODIE</h4>
+              <p class="font-mono text-xs font-bold text-[#201511]">€110.00</p>
+            </div>
+
+            <!-- Item 3 -->
+            <div onclick="selectProduct('ARCHIVAL CREWNECK', 85.00, 'CHARCOAL', 'https://placehold.co/800x1000/2a2a2a/f3efe8?text=CREWNECK')" class="prod-card p-2 border border-[#d2c3bf] bg-white cursor-pointer hover:border-[#201511]">
+              <div class="aspect-[4/5] bg-neutral-200 overflow-hidden mb-1.5">
+                <img src="https://placehold.co/800x1000/2a2a2a/f3efe8?text=CREWNECK" class="w-full h-full object-cover"/>
+              </div>
+              <h4 class="font-['Anton'] text-xs uppercase leading-tight line-clamp-1">CREWNECK</h4>
+              <p class="font-mono text-xs font-bold text-[#201511]">€85.00</p>
+            </div>
+
+            <!-- Item 4 -->
+            <div onclick="selectProduct('DOUBLE-ZIP HOODIE', 125.00, 'TERRACOTTA', 'https://placehold.co/800x1000/75584a/f3efe8?text=DOUBLE-ZIP')" class="prod-card p-2 border border-[#d2c3bf] bg-white cursor-pointer hover:border-[#201511]">
+              <div class="aspect-[4/5] bg-neutral-200 overflow-hidden mb-1.5">
+                <img src="https://placehold.co/800x1000/75584a/f3efe8?text=DOUBLE-ZIP" class="w-full h-full object-cover"/>
+              </div>
+              <h4 class="font-['Anton'] text-xs uppercase leading-tight line-clamp-1">DOUBLE-ZIP</h4>
+              <p class="font-mono text-xs font-bold text-[#201511]">€125.00</p>
+            </div>
+          </div>
+
+          <!-- Size selector -->
+          <div class="pt-3 border-t border-[#20151115] flex items-center justify-between">
+            <span class="text-xs font-mono font-bold uppercase text-[#201511]">ESCOLHA O TAMANHO:</span>
+            <div class="flex gap-1.5">
+              <button type="button" onclick="selectSize('S', this)" class="size-btn w-9 h-8 border border-[#d2c3bf] bg-white text-xs font-mono font-bold">S</button>
+              <button type="button" onclick="selectSize('M', this)" class="size-btn w-9 h-8 border border-[#d2c3bf] bg-white text-xs font-mono font-bold">M</button>
+              <button type="button" onclick="selectSize('L', this)" class="size-btn w-9 h-8 border-2 border-[#201511] bg-[#201511] text-white text-xs font-mono font-bold">L</button>
+              <button type="button" onclick="selectSize('XL', this)" class="size-btn w-9 h-8 border border-[#d2c3bf] bg-white text-xs font-mono font-bold">XL</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: ADDRESS & CUSTOMER INFO -->
+        <div class="bg-white border border-[#20151115] p-6 shadow-sm">
+          <h3 className="font-['Anton'] text-lg uppercase text-[#201511] mb-4 flex items-center gap-2">
+            <span class="w-5 h-5 bg-[#201511] text-white text-xs font-mono flex items-center justify-center font-bold">2</span>
+            <span>Dados de Envio</span>
+          </h3>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[11px] font-mono font-bold uppercase text-[#4e4541] mb-1">Nome Completo</label>
+              <input type="text" id="custName" value="Alexandre Silva" class="w-full p-3 border border-[#d2c3bf] text-sm outline-none font-sans focus:border-[#201511]"/>
+            </div>
+            <div>
+              <label class="block text-[11px] font-mono font-bold uppercase text-[#4e4541] mb-1">E-mail para Rastreio</label>
+              <input type="email" id="custEmail" value="alexandre@falstep.com" class="w-full p-3 border border-[#d2c3bf] text-sm outline-none font-sans focus:border-[#201511]"/>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-[11px] font-mono font-bold uppercase text-[#4e4541] mb-1">Endereço de Entrega</label>
+              <input type="text" id="custAddress" value="Rua das Flores, 42" class="w-full p-3 border border-[#d2c3bf] text-sm outline-none font-sans focus:border-[#201511]"/>
+            </div>
+            <div>
+              <label class="block text-[11px] font-mono font-bold uppercase text-[#4e4541] mb-1">Cidade</label>
+              <input type="text" id="custCity" value="Porto" class="w-full p-3 border border-[#d2c3bf] text-sm outline-none font-sans focus:border-[#201511]"/>
+            </div>
+            <div>
+              <label class="block text-[11px] font-mono font-bold uppercase text-[#4e4541] mb-1">Código Postal / CEP</label>
+              <input type="text" id="custPostal" value="4050-265" class="w-full p-3 border border-[#d2c3bf] text-sm outline-none font-sans focus:border-[#201511]"/>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: PAYMENT METHOD -->
+        <div class="bg-white border border-[#20151115] p-6 shadow-sm">
+          <h3 class="font-['Anton'] text-lg uppercase text-[#201511] mb-4 flex items-center gap-2">
+            <span class="w-5 h-5 bg-[#201511] text-white text-xs font-mono flex items-center justify-center font-bold">3</span>
+            <span>Pagamento Seguro</span>
+          </h3>
+
+          <div class="grid grid-cols-3 gap-2 mb-4">
+            <button type="button" onclick="setPayMethod('card', this)" class="pay-btn active p-3 border-2 border-[#201511] bg-[#201511] text-white text-xs font-mono font-bold uppercase flex flex-col items-center gap-1">
+              <span class="material-symbols-outlined text-lg">credit_card</span>
+              <span>Cartão</span>
+            </button>
+            <button type="button" onclick="setPayMethod('pix', this)" class="pay-btn p-3 border border-[#d2c3bf] bg-white text-[#201511] text-xs font-mono font-bold uppercase flex flex-col items-center gap-1 hover:border-[#201511]">
+              <span class="material-symbols-outlined text-lg">qr_code</span>
+              <span>Pix</span>
+            </button>
+            <button type="button" onclick="setPayMethod('apple', this)" class="pay-btn p-3 border border-[#d2c3bf] bg-white text-[#201511] text-xs font-mono font-bold uppercase flex flex-col items-center gap-1 hover:border-[#201511]">
+              <span class="material-symbols-outlined text-lg">smartphone</span>
+              <span>Apple Pay</span>
+            </button>
+          </div>
+
+          <!-- Card Form -->
+          <div id="cardSection" class="space-y-3">
+            <div>
+              <label class="block text-[11px] font-mono font-bold uppercase text-[#4e4541] mb-1">Número do Cartão</label>
+              <input type="text" value="•••• •••• •••• 4242" class="w-full p-3 border border-[#d2c3bf] text-sm font-mono"/>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-[11px] font-mono font-bold uppercase text-[#4e4541] mb-1">Validade</label>
+                <input type="text" value="12/28" class="w-full p-3 border border-[#d2c3bf] text-sm font-mono"/>
+              </div>
+              <div>
+                <label class="block text-[11px] font-mono font-bold uppercase text-[#4e4541] mb-1">CVV</label>
+                <input type="text" value="892" class="w-full p-3 border border-[#d2c3bf] text-sm font-mono"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pix Box -->
+          <div id="pixSection" class="hidden text-center p-6 bg-[#f7f5f0] border border-[#d2c3bf] space-y-3">
+            <div class="w-32 h-32 bg-white border border-[#201511] mx-auto p-2">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=FALSTEP-PAY-PIX-DROP07" class="w-full h-full"/>
+            </div>
+            <p class="text-xs font-mono font-bold text-[#201511]">Aponte o app do banco para pagar instantaneamente</p>
+          </div>
+
+          <!-- Apple Pay Box -->
+          <div id="appleSection" class="hidden text-center p-6 bg-[#f7f5f0] border border-[#d2c3bf] space-y-2">
+            <span class="material-symbols-outlined text-3xl">contactless</span>
+            <p class="text-xs font-mono font-bold">1-Click Express Checkout ativado</p>
+          </div>
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <button onclick="finishOrder()" class="w-full py-5 bg-[#201511] hover:bg-[#4a3226] text-white font-['Anton'] uppercase text-lg tracking-widest transition flex items-center justify-center gap-2 shadow-xl">
+          <span>FINALIZAR COMPRA // PAGAR <span id="btnPayAmount">€95.00</span></span>
+          <span class="material-symbols-outlined text-base">lock</span>
+        </button>
+      </div>
+
+      <!-- SUMMARY & TRUST (5 COLS) -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <div class="bg-white border border-[#20151115] p-6 shadow-sm">
+          <h3 class="font-['Anton'] text-lg uppercase text-[#201511] pb-3 border-b border-[#20151115] mb-4">
+            Resumo do Pedido
+          </h3>
+
+          <div class="flex gap-4 items-center pb-4 border-b border-[#20151115]">
+            <div class="w-20 aspect-[4/5] bg-[#f7f5f0] border border-[#d2c3bf] overflow-hidden flex-shrink-0">
+              <img id="summaryImg" src="../assets/products/hero_david_feroz_black.jpg" class="w-full h-full object-cover"/>
+            </div>
+            <div>
+              <h4 id="summaryTitle" class="font-['Anton'] text-sm uppercase text-[#201511]">OVERSIZED ESPRESSO HOODIE</h4>
+              <p id="summarySize" class="text-xs font-mono text-[#75584a] uppercase">Tamanho: L &bull; Cor: Espresso</p>
+              <p class="text-xs text-neutral-500 mt-1">Algodão 550 GSM &bull; Porto Milled</p>
+              <p id="summaryPrice" class="font-mono text-sm font-bold text-[#201511] mt-1">€95.00</p>
+            </div>
+          </div>
+
+          <!-- Coupon Box -->
+          <div class="py-4 border-b border-[#20151115]">
+            <label class="block text-[11px] font-mono font-bold uppercase text-[#4e4541] mb-1">Cupom de Desconto</label>
+            <div class="flex gap-2">
+              <input type="text" id="couponInput" placeholder="Ex: FALSTEP10" class="flex-1 p-2 border border-[#d2c3bf] text-xs font-mono uppercase"/>
+              <button type="button" onclick="applyCoupon()" class="px-4 py-2 bg-[#201511] text-white font-['Anton'] text-xs uppercase tracking-wider">Aplicar</button>
+            </div>
+            <p id="couponMsg" class="text-[11px] font-mono mt-1 text-emerald-700 font-bold hidden"></p>
+          </div>
+
+          <!-- Breakdown -->
+          <div class="space-y-2 pt-4 text-xs font-mono">
+            <div class="flex justify-between text-[#4e4541]">
+              <span>Subtotal:</span>
+              <span id="breakdownSubtotal" class="font-bold text-[#201511]">€95.00</span>
+            </div>
+            <div id="discountRow" class="hidden justify-between text-emerald-700 font-bold">
+              <span>Desconto Cupom:</span>
+              <span id="breakdownDiscount">-€9.50</span>
+            </div>
+            <div class="flex justify-between text-[#4e4541]">
+              <span>Frete DHL Express:</span>
+              <span id="breakdownShipping">€15.00</span>
+            </div>
+            <div class="pt-3 border-t border-[#201511] flex justify-between items-baseline">
+              <span class="font-['Anton'] text-base uppercase text-[#201511]">TOTAL:</span>
+              <span id="breakdownTotal" class="font-['Anton'] text-2xl text-[#201511]">€110.00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="bg-white border border-[#20151115] p-5 space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-[#201511] text-xl">verified</span>
+            <div>
+              <h5 class="font-['Anton'] text-xs uppercase text-[#201511]">Garantia 30 Dias</h5>
+              <p class="text-[11px] text-[#4e4541]">Devolução sem burocracia se o caimento não for ideal.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-[#201511] text-xl">local_shipping</span>
+            <div>
+              <h5 class="font-['Anton'] text-xs uppercase text-[#201511]">Despacho Imediato</h5>
+              <p class="text-[11px] text-[#4e4541]">Envio com código de rastreamento porta-a-porta DHL.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS MODAL POPUP -->
+    <div id="successModal" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+      <div class="bg-white max-w-lg w-full p-8 border-2 border-[#201511] text-center shadow-2xl">
+        <div class="w-16 h-16 bg-[#201511] text-white flex items-center justify-center mx-auto mb-4">
+          <span class="material-symbols-outlined text-4xl">check</span>
+        </div>
+        <span class="text-xs font-mono font-bold tracking-widest text-[#75584a] uppercase">PAGAMENTO CONFIRMADO</span>
+        <h2 class="font-['Anton'] text-3xl uppercase text-[#201511] mt-1 mb-2">PEDIDO REGISTRADO</h2>
+        <p class="text-xs text-[#4e4541] mb-6">
+          Seu pedido <strong id="modalOrderId">#FLS-91823</strong> foi aprovado e despachado para a produção no Porto.
+        </p>
+        <button onclick="document.getElementById('successModal').classList.add('hidden')" class="w-full py-3.5 bg-[#201511] text-white font-['Anton'] uppercase tracking-wider text-sm">
+          Concluir e Voltar
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let currentPrice = 95.00;
+    let currentSize = 'L';
+    let discount = 0;
+
+    function selectProduct(title, price, color, img) {
+      currentPrice = price;
+      document.getElementById('summaryTitle').innerText = title;
+      document.getElementById('summaryPrice').innerText = '€' + price.toFixed(2);
+      document.getElementById('summarySize').innerText = 'Tamanho: ' + currentSize + ' • Cor: ' + color;
+      document.getElementById('summaryImg').src = img;
+      
+      document.querySelectorAll('.prod-card').forEach(c => {
+        c.classList.remove('border-2', 'border-[#201511]', 'bg-[#f7f5f0]');
+        c.classList.add('border-[#d2c3bf]', 'bg-white');
+      });
+      event.currentTarget.classList.add('border-2', 'border-[#201511]', 'bg-[#f7f5f0]');
+      event.currentTarget.classList.remove('border-[#d2c3bf]', 'bg-white');
+
+      recalc();
+    }
+
+    function selectSize(size, btn) {
+      currentSize = size;
+      document.querySelectorAll('.size-btn').forEach(b => {
+        b.className = 'size-btn w-9 h-8 border border-[#d2c3bf] bg-white text-[#201511] text-xs font-mono font-bold';
+      });
+      btn.className = 'size-btn w-9 h-8 border-2 border-[#201511] bg-[#201511] text-white text-xs font-mono font-bold';
+      
+      const curText = document.getElementById('summarySize').innerText;
+      document.getElementById('summarySize').innerText = 'Tamanho: ' + size + curText.substring(curText.indexOf(' •'));
+    }
+
+    function setPayMethod(method, btn) {
+      document.querySelectorAll('.pay-btn').forEach(b => {
+        b.className = 'pay-btn p-3 border border-[#d2c3bf] bg-white text-[#201511] text-xs font-mono font-bold uppercase flex flex-col items-center gap-1 hover:border-[#201511]';
+      });
+      btn.className = 'pay-btn p-3 border-2 border-[#201511] bg-[#201511] text-white text-xs font-mono font-bold uppercase flex flex-col items-center gap-1';
+
+      document.getElementById('cardSection').classList.add('hidden');
+      document.getElementById('pixSection').classList.add('hidden');
+      document.getElementById('appleSection').classList.add('hidden');
+
+      if (method === 'card') document.getElementById('cardSection').classList.remove('hidden');
+      if (method === 'pix') document.getElementById('pixSection').classList.remove('hidden');
+      if (method === 'apple') document.getElementById('appleSection').classList.remove('hidden');
+    }
+
+    function applyCoupon() {
+      const val = document.getElementById('couponInput').value.trim().toUpperCase();
+      const msg = document.getElementById('couponMsg');
+      msg.classList.remove('hidden');
+      if (val === 'FALSTEP10' || val === 'DROP07') {
+        discount = 0.10;
+        msg.innerText = '✓ Cupom de 10% aplicado com sucesso!';
+        msg.className = 'text-[11px] font-mono mt-1 text-emerald-700 font-bold';
+      } else if (val === 'VIP20') {
+        discount = 0.20;
+        msg.innerText = '✓ Cupom VIP de 20% aplicado com sucesso!';
+        msg.className = 'text-[11px] font-mono mt-1 text-emerald-700 font-bold';
+      } else {
+        discount = 0;
+        msg.innerText = 'Cupom inválido. Tente FALSTEP10';
+        msg.className = 'text-[11px] font-mono mt-1 text-red-600 font-bold';
+      }
+      recalc();
+    }
+
+    function recalc() {
+      const sub = currentPrice;
+      const discAmount = sub * discount;
+      const shipping = sub >= 150 ? 0 : 15.00;
+      const total = sub - discAmount + shipping;
+
+      document.getElementById('breakdownSubtotal').innerText = '€' + sub.toFixed(2);
+      
+      const discRow = document.getElementById('discountRow');
+      if (discount > 0) {
+        discRow.classList.remove('hidden');
+        discRow.classList.add('flex');
+        document.getElementById('breakdownDiscount').innerText = '-€' + discAmount.toFixed(2);
+      } else {
+        discRow.classList.add('hidden');
+        discRow.classList.remove('flex');
+      }
+
+      document.getElementById('breakdownShipping').innerText = shipping === 0 ? 'GRÁTIS' : '€' + shipping.toFixed(2);
+      document.getElementById('breakdownTotal').innerText = '€' + total.toFixed(2);
+      document.getElementById('btnPayAmount').innerText = '€' + total.toFixed(2);
+    }
+
+    function finishOrder() {
+      const id = '#FLS-' + Math.floor(100000 + Math.random() * 900000);
+      document.getElementById('modalOrderId').innerText = id;
+      document.getElementById('successModal').classList.remove('hidden');
+    }
+  </script>
+
+  <script src="../store.js"></script>
+</body>
+</html>

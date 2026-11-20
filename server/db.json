@@ -1,0 +1,328 @@
+{
+  "users": [
+    {
+      "id": "usr_admin",
+      "name": "Administrador Falstep",
+      "email": "admin@falstep.com",
+      "password": "admin",
+      "role": "admin",
+      "createdAt": "2026-10-01T12:00:00.000Z"
+    },
+    {
+      "id": "usr_demo",
+      "name": "Edilson Cabinda",
+      "email": "cliente@falstep.com",
+      "password": "123",
+      "role": "customer",
+      "createdAt": "2026-10-15T15:30:00.000Z"
+    },
+    {
+      "id": "usr_1795204192744_aypco",
+      "name": "ed",
+      "email": "edilson@falstep.com",
+      "password": "1234",
+      "role": "customer",
+      "createdAt": "2026-11-20T19:49:52.744Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "ssssss-3816",
+      "title": "ssssss",
+      "subtitle": "sssss",
+      "price": 100,
+      "color": "Pitch Black",
+      "category": "T-SHIRTS",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "edition": "LIMITED RUN // 150 PIECES",
+      "image": "/images/products/hero_david_pink_diet.jpg",
+      "gallery": [
+        "/images/products/hero_david_pink_diet.jpg"
+      ],
+      "description": "Pe\u00e7a de edi\u00e7\u00e3o limitada constru\u00edda com corte boxy contempor\u00e2neo em oficinas no norte de Portugal.",
+      "specs": {
+        "origin": "Porto, Portugal",
+        "weight": "320 GSM",
+        "composition": "100% Algod\u00e3o Org\u00e2nico",
+        "treatment": "Lavagem Enzim\u00e1tica a Frio"
+      },
+      "createdAt": "2026-11-20T19:18:13.816Z",
+      "stock": 25,
+      "inStock": true,
+      "sku": "FS-SSSSSS"
+    },
+    {
+      "id": "tee-feroz-black",
+      "title": "FEROZ SAVAGE OVERSIZED TEE",
+      "subtitle": "320 GSM Heavyweight Silhouette",
+      "price": 65,
+      "color": "Pitch Black // Neon Pink Panther",
+      "category": "T-SHIRTS",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "edition": "LIMITED EDITION // 150 PIECES",
+      "image": "/images/products/hero_david_feroz_black.jpg",
+      "gallery": [
+        "/images/products/hero_david_feroz_black.jpg",
+        "/images/products/tee_savage_black.png"
+      ],
+      "description": "Architectural boxy silhouette cut from bespoke 320 GSM organic Portuguese cotton. Features high-density screenprint of the neon pink panther leaping through cyan arches with brutalist 'FEROZ SAVAGE' typography.",
+      "specs": {
+        "origin": "Porto, Portugal",
+        "weight": "320 GSM",
+        "composition": "100% Organic Combed Cotton",
+        "treatment": "Cold Pre-Shrunk Garment Wash"
+      },
+      "updatedAt": "2026-11-20T19:28:46.016Z",
+      "stock": 25,
+      "inStock": true,
+      "sku": "FS-TEE-FE"
+    },
+    {
+      "id": "tee-diamond-pink",
+      "title": "DIAMOND DIET OVERSIZED TEE",
+      "subtitle": "Heavyweight 320 GSM Vintage Washed Cotton",
+      "price": 65,
+      "color": "Dusty Rose // Diamond Ruby",
+      "category": "T-SHIRTS",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "edition": "LIMITED EDITION // 150 PIECES",
+      "image": "/images/products/hero_david_pink_diet.jpg",
+      "gallery": [
+        "/images/products/hero_david_pink_diet.jpg"
+      ],
+      "description": "'Keep The Calories, I'll Take Carats' back print statement graphic with crystal diamond lips. Sculpted with dropped shoulders and reinforced twin-needle stitching for lasting architectural drape.",
+      "specs": {
+        "origin": "Porto, Portugal",
+        "weight": "320 GSM",
+        "composition": "100% Heavy Jersey Cotton",
+        "treatment": "Vintage Enzyme Softening"
+      },
+      "stock": 25,
+      "inStock": true,
+      "sku": "FS-TEE-DI"
+    },
+    {
+      "id": "tee-dunk-white",
+      "title": "RETRO DUNK ARCHIVE TEE",
+      "subtitle": "Vintage Porsche & Basketball Collage",
+      "price": 60,
+      "color": "Optic White // Multi",
+      "category": "GRAPHICS",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "edition": "FALSE STEP\u00ae CORE ARCHIVE",
+      "image": "/images/products/tee_dunk_white.png",
+      "gallery": [
+        "/images/products/tee_dunk_white.png"
+      ],
+      "description": "Multilayered montage graphic combining classical marble statues, sky slam dunk, and vintage 911 coupe silhouette in vibrant cyan and peach neon tones over optic white jersey.",
+      "specs": {
+        "weight": "300 GSM",
+        "origin": "Porto, Portugal",
+        "composition": "100% Ringspun Cotton",
+        "treatment": "Silicon Garment Washed"
+      },
+      "updatedAt": "2026-11-20T19:52:27.242Z",
+      "stock": 25,
+      "inStock": true,
+      "sku": "FS-TEE-DU"
+    },
+    {
+      "id": "tee-savage-green",
+      "title": "SEVAGE TIGER BOTANIC TEE",
+      "subtitle": "Forest Green Heavyweight Jersey",
+      "price": 65,
+      "color": "Forest Green // Multi",
+      "category": "T-SHIRTS",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "edition": "DROP EXCLUSIVE",
+      "image": "/images/products/tee_savage_green.png",
+      "gallery": [
+        "/images/products/tee_savage_green.png"
+      ],
+      "description": "Vibrant botanical bedroom illustration featuring the slumbering Bengal tiger and stylized 'SEVAGE' graffiti typography over a rich racing green cotton base.",
+      "specs": {
+        "origin": "Porto, Portugal",
+        "weight": "320 GSM",
+        "composition": "100% Combed Cotton",
+        "treatment": "Bio-Polished Anti-Pill"
+      },
+      "stock": 25,
+      "inStock": true,
+      "sku": "FS-TEE-SA"
+    },
+    {
+      "id": "tee-savage-noir",
+      "title": "SEVAGE TIGER NOIR TEE",
+      "subtitle": "Obsidian Black Heavyweight Jersey",
+      "price": 65,
+      "color": "Obsidian Black // Multi",
+      "category": "T-SHIRTS",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "edition": "DROP EXCLUSIVE",
+      "image": "/images/products/tee_savage_black.png",
+      "gallery": [
+        "/images/products/tee_savage_black.png"
+      ],
+      "description": "The classic 'SEVAGE' tiger slumber artwork contrasted against deep obsidian black. Premium 1x1 rib collar that holds shape perpetually.",
+      "specs": {
+        "origin": "Porto, Portugal",
+        "weight": "320 GSM",
+        "composition": "100% Combed Cotton",
+        "treatment": "Carbon Peached Finish"
+      },
+      "stock": 25,
+      "inStock": true,
+      "sku": "FS-TEE-SA"
+    }
+  ],
+  "orders": [
+    {
+      "id": "FLS-849201",
+      "userId": "usr_demo",
+      "customerName": "Edilson Cabinda",
+      "customerEmail": "cliente@falstep.com",
+      "items": [
+        {
+          "id": "tee-feroz-black",
+          "title": "FEROZ SAVAGE OVERSIZED TEE",
+          "price": 65,
+          "size": "L",
+          "qty": 1,
+          "image": "/images/products/hero_david_feroz_black.jpg"
+        },
+        {
+          "id": "tee-dunk-white",
+          "title": "RETRO DUNK ARCHIVE TEE",
+          "price": 60,
+          "size": "XL",
+          "qty": 1,
+          "image": "/images/products/tee_dunk_white.png"
+        }
+      ],
+      "subtotal": 125,
+      "shippingCost": 0,
+      "total": 125,
+      "shippingAddress": {
+        "fullName": "Edilson Cabinda",
+        "address": "Avenida da Liberdade 120, 3\u00ba Esq",
+        "city": "Lisboa",
+        "postalCode": "1250-096",
+        "country": "Portugal"
+      },
+      "status": "Em Tr\u00e2nsito",
+      "createdAt": "2026-10-25T14:30:00.000Z",
+      "trackingCode": "PT849201940",
+      "carrier": "CTT Express"
+    }
+  ],
+  "settings": {
+    "announcement": "PORTUGUESE HEAVYWEIGHT TEXTILES // ENVIOS PARA TODO O MUNDO // DROP 07 DISPON\u00cdVEL",
+    "heroBadge": "DROP 07 // FEROZ SAVAGE CAPSULE",
+    "heroTitle": "FEROZ SAVAGE &\nDIAMOND DIET",
+    "heroSubtitle": "Classical sculpture reimagined through contemporary underground brutalism. Heavyweight 320 GSM boxy proportions sculpted from bespoke Portuguese milled textiles.",
+    "freeShippingThreshold": 100,
+    "contactEmail": "atelier@falstep.com",
+    "contactPhone": "+351 912 345 678",
+    "heroCta1": "EXPLORAR COLE\u00c7\u00c3O",
+    "heroCta2": "VER DETALHES (320 GSM)",
+    "heroBgType": "video",
+    "heroBgImage": "/images/products/hero_david_feroz_black.jpg"
+  },
+  "coupons": [
+    {
+      "id": "coup_01",
+      "code": "FALSTEP10",
+      "type": "percentage",
+      "value": 10,
+      "minSpend": 50,
+      "usageCount": 18,
+      "maxUsage": 100,
+      "active": true,
+      "createdAt": "2026-10-28T10:00:00Z"
+    },
+    {
+      "id": "coup_02",
+      "code": "VIPDROP20",
+      "type": "percentage",
+      "value": 20,
+      "minSpend": 120,
+      "usageCount": 7,
+      "maxUsage": 50,
+      "active": true,
+      "createdAt": "2026-10-28T10:00:00Z"
+    },
+    {
+      "id": "coup_03",
+      "code": "PORTOGRATIS",
+      "type": "fixed",
+      "value": 15,
+      "minSpend": 80,
+      "usageCount": 4,
+      "maxUsage": 30,
+      "active": true,
+      "createdAt": "2026-10-29T14:30:00Z"
+    }
+  ],
+  "collections": [
+    {
+      "id": "col_drop07",
+      "name": "DROP 07 // FEROZ SAVAGE CAPSULE",
+      "slug": "drop-07-feroz-savage",
+      "tagline": "Escultura cl\u00e1ssica de m\u00e1rmore romano fundida com brutalismo contempor\u00e2neo.",
+      "cover": "/images/products/hero_david_feroz_black.jpg",
+      "badge": "EDI\u00c7\u00c3O LIMITADA // 150 UNIDADES",
+      "status": "active",
+      "productIds": [
+        "tee-feroz-black",
+        "tee-diamond-pink",
+        "tee-dunk-white"
+      ],
+      "createdAt": "2026-10-28T12:00:00Z"
+    },
+    {
+      "id": "col_core",
+      "name": "CORE ARCHIVE // HEAVYWEIGHT 320 GSM",
+      "slug": "core-archive",
+      "tagline": "Essenciais permanentes tecidos em malha pesada portuguesa no Porto.",
+      "cover": "/images/products/tee_black_fs24.jpg",
+      "badge": "PRODU\u00c7\u00c3O CONT\u00cdNUA",
+      "status": "active",
+      "productIds": [
+        "tee-savage-green",
+        "tee-savage-noir",
+        "tee-black-fs24"
+      ],
+      "createdAt": "2026-10-25T10:00:00Z"
+    }
+  ]
+}

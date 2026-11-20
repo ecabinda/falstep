@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FALSTEP - High-End Store &amp; Bag</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Anton & Hanken Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with CDN plugin container-queries & forms -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#52443f",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#ffdbcb",
+            "inverse-surface": "#2f3131",
+            "tertiary-fixed": "#e6e2db",
+            "inverse-primary": "#d7c2bb",
+            "on-surface": "#1a1c1c",
+            "surface": "#f9f9f9",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed": "#241915",
+            "primary-fixed-dim": "#d7c2bb",
+            "surface-bright": "#f9f9f9",
+            "outline": "#807571",
+            "on-secondary-fixed-variant": "#5b4134",
+            "secondary-container": "#fed8c6",
+            "surface-container-highest": "#e2e2e2",
+            "on-tertiary-fixed-variant": "#484742",
+            "tertiary-container": "#1c1c18",
+            "on-error-container": "#93000a",
+            "on-background": "#1a1c1c",
+            "outline-variant": "#d2c3bf",
+            "tertiary-fixed-dim": "#c9c6c0",
+            "on-secondary-container": "#795c4e",
+            "primary": "#000000",
+            "secondary": "#75584a",
+            "on-primary": "#ffffff",
+            "tertiary": "#000000",
+            "primary-container": "#241915",
+            "surface-container-high": "#e8e8e8",
+            "on-primary-container": "#92807a",
+            "on-surface-variant": "#4e4541",
+            "secondary-fixed-dim": "#e4bfae",
+            "surface-container-low": "#f3f3f3",
+            "primary-fixed": "#f4ded7",
+            "surface-tint": "#6b5b55",
+            "surface-container": "#eeeeee",
+            "inverse-on-surface": "#f0f1f1",
+            "background": "#f9f9f9",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed": "#1c1c18",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#dadada",
+            "on-error": "#ffffff",
+            "on-tertiary-container": "#86847e",
+            "surface-variant": "#e2e2e2",
+            "on-secondary-fixed": "#2a170c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "margin": "3rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.5rem",
+            "gutter-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Hanken Grotesk"],
+            "headline-lg-mobile": ["Anton"],
+            "headline-md": ["Anton"],
+            "label-caps": ["Hanken Grotesk"],
+            "body-md": ["Hanken Grotesk"],
+            "headline-lg": ["Anton"],
+            "headline-sm": ["Anton"],
+            "display-hero": ["Anton"],
+            "title-lg": ["Hanken Grotesk"],
+            "display-hero-mobile": ["Anton"],
+            "title-md": ["Hanken Grotesk"],
+            "label-mono-stat": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["36px", { "lineHeight": "38px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-md": ["32px", { "lineHeight": "36px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "label-caps": ["12px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-lg": ["56px", { "lineHeight": "58px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "display-hero": ["96px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "title-lg": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-hero-mobile": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-mono-stat": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Custom subtle scrollbar for drawer content */
+    .cart-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .cart-scroll::-webkit-scrollbar-track {
+      background: #f3efe8;
+    }
+    .cart-scroll::-webkit-scrollbar-thumb {
+      background: #241915;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased relative min-h-screen selection:bg-primary-container selection:text-on-primary">
+<!-- ================= TOP APP BAR (Shared Component) ================= -->
+<header class="docked full-width top-0 z-30 bg-primary-container dark:bg-primary border-b border-outline-variant/20 dark:border-outline/30">
+<div class="relative flex justify-between items-center w-full px-6 lg:px-12 max-w-[1600px] mx-auto h-16">
+<!-- Brand Logo Anchor -->
+<a class="text-headline-md font-headline-md uppercase tracking-wider text-on-primary dark:text-inverse-primary hover:opacity-85 transition-opacity" href="../02-atelier-archive-editorial-homepage/screen.html">
+        FALSTEP
+      </a>
+<!-- Navigation Links (Active tab is DROPS) -->
+<nav class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2">
+<a class="text-on-primary-container hover:text-on-primary uppercase text-label-caps font-label-caps tracking-widest transition-colors duration-150 py-1" href="../01-atelier-archive-hoodies-sweatshirts-catalog/screen.html">COLLECTIONS</a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-5">
+<button aria-label="Account" class="text-on-primary hover:text-primary-fixed transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</button>
+<button class="flex items-center gap-2 bg-on-primary-fixed text-on-primary px-3.5 py-1.5 border border-outline-variant/30 text-label-caps font-label-caps hover:bg-black transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span>BAG (2)</span>
+</button>
+</div>
+</div>
+</header>
+
+<!-- ================= BACKGROUND STORE CATALOG (Blurred & Dimmed Ground Canvas) ================= -->
+<!-- Visual background layer behind the slide-out cart -->
+<main class="filter blur-[3px] opacity-40 pointer-events-none select-none max-w-[1600px] mx-auto px-6 lg:px-12 py-10 transition-all duration-300">
+<!-- Hero Header Unit -->
+<div class="border-b border-outline-variant/30 pb-8 mb-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-surface-container-high px-2 py-0.5 text-label-caps font-label-caps text-on-surface tracking-widest border border-outline-variant/40">DROP 014</span>
+<span class="text-label-mono-stat font-label-mono-stat text-on-surface-variant">SERIAL: 2025-ARCH-091</span>
+</div>
+<h1 class="text-display-hero font-display-hero uppercase leading-none tracking-tight">RAW TEXTURE</h1>
+</div>
+<div class="max-w-md text-body-md font-body-md text-on-surface-variant">
+        Architectural heavy fleece and double-spun Mediterranean combed knits. Cut boxy and dropped with utilitarian flatlock stitching.
+      </div>
+</div>
+<!-- Product Grid Bento -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Catalog Item 1 -->
+<div class="md:col-span-6 bg-surface-container-lowest border border-outline-variant/40 p-4">
+<div class="aspect-[4/5] bg-surface-container-low w-full relative overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="An editorial streetwear lookbook shoot of an oversized dark espresso brown hoodie draped on a minimalist concrete plinth, high-contrast Mediterranean warm sunbeams carving sharp diagonal shadows, architectural brutalist minimalist atmosphere, cinematic grain, luxury garment detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOy6dyte6n9TOF_KmHF9nmwnSIVMhdgLMf5R21nBDk4QDj08Bq5Diz4QG2XJtwA3kT6Ob8V9rMQUFmAri9Dm7FmK_dkA6AKxufvmUVPXawKzo7QpgggCr17eUwc5YzCX-ozfQ2mbhXai9zBO9G1eMEVzfvB8JBhFtv11SBha-f6rZLLramz561L0gAfIXEQjdDnoEf5FYw1XOz2aWctXvPYPISe_XLtOd07Yccdzo"/>
+<span class="absolute top-3 left-3 bg-primary-container text-on-primary text-label-caps font-label-caps px-2 py-1">IN STOCK // L01</span>
+</div>
+<div class="flex justify-between items-baseline pt-2 border-t border-outline-variant/20">
+<div>
+<h3 class="font-title-md text-title-md uppercase">OVERSIZED ESPRESSO HOODIE</h3>
+<p class="font-label-mono-stat text-label-mono-stat text-on-surface-variant">480 GSM VINTAGE WASH COTTON</p>
+</div>
+<span class="font-headline-sm text-headline-sm">€95.00</span>
+</div>
+</div>
+<!-- Catalog Item 2 -->
+<div class="md:col-span-6 bg-surface-container-lowest border border-outline-variant/40 p-4">
+<div class="aspect-[4/5] bg-surface-container-low w-full relative overflow-hidden mb-4">
+<img class="w-full h-full object-cover" data-alt="A model standing in front of a raw travertine wall in Barcelona wearing a crisp heavyweight bone cream boxy t-shirt, harsh Mediterranean natural lighting, stark contrast, luxury streetwear editorial aesthetic, sharp focus on garment neckline and drape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP09aF3UxmEmg6U0xzatVVf1tWgeVTiJ-e-N4sz41ORU3ywiDaBmwk30KJ1XZRuGE_oMtWZLCFOISqW6Pbpj9u-Ghq4IHYlHjohY_fisV50w3iJA1lQlmcLDDRf1WzQvR1L_ZwiKY5TQYIInmBFBfMiwIwM7SKR2DxqKTzt4yUzQ9RjXDCOWuUgq0lbn9NBMP9WgDiqesnEsgOeEmkupSeyT74LDY3ziXakOzY384"/>
+<span class="absolute top-3 left-3 bg-surface-container-lowest text-on-surface text-label-caps font-label-caps px-2 py-1 border border-outline-variant">LIMITED 80/150</span>
+</div>
+<div class="flex justify-between items-baseline pt-2 border-t border-outline-variant/20">
+<div>
+<h3 class="font-title-md text-title-md uppercase">HEAVYWEIGHT BOXY TEE</h3>
+<p class="font-label-mono-stat text-label-mono-stat text-on-surface-variant">300 GSM RAW COMBED JERSEY</p>
+</div>
+<span class="font-headline-sm text-headline-sm">€50.00</span>
+</div>
+</div>
+</div>
+</main>
+<!-- ================= ACTIVE SLIDE-OUT DRAWER OVERLAY ================= -->
+<!-- Backdrop scrim -->
+<div class="fixed inset-0 bg-[#201511]/60 z-40 transition-opacity"></div>
+<!-- Cart Flyout Panel (Right Anchored) -->
+<aside aria-label="Shopping Cart Drawer" class="fixed top-0 right-0 h-full w-full max-w-[500px] z-50 bg-surface-container-lowest border-l border-primary-container flex flex-col justify-between shadow-2xl transition-transform" id="cartDrawer">
+<!-- 1. TOP BAR -->
+<div class="p-6 border-b border-outline-variant/40 flex items-center justify-between bg-surface-container-lowest shrink-0">
+<div class="flex items-center gap-3">
+<h2 class="text-title-lg font-title-lg uppercase tracking-tight text-on-surface">
+          YOUR BAG
+        </h2>
+<span class="text-label-caps font-label-caps bg-primary-container text-on-primary px-2 py-0.5">
+          2 ITEMS
+        </span>
+</div>
+<button aria-label="Close Shopping Bag" class="w-8 h-8 flex items-center justify-center border border-outline-variant/40 text-on-surface hover:bg-primary-container hover:text-on-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- 2. FREE SHIPPING PROGRESS BAR -->
+<div class="bg-surface-container-low px-6 py-4 border-b border-outline-variant/30 shrink-0">
+<div class="flex items-center justify-between mb-2">
+<p class="text-label-caps font-label-caps text-on-surface uppercase">
+          ADD <span class="font-bold text-primary">€15.00</span> MORE TO UNLOCK FREE WORLDWIDE SHIPPING
+        </p>
+<span class="text-label-mono-stat font-label-mono-stat text-secondary">85%</span>
+</div>
+<!-- Progress Bar Track & Fill -->
+<div class="w-full h-2 bg-surface-container-high relative overflow-hidden">
+<div class="h-full bg-primary-container transition-all duration-500 ease-out" style="width: 85%;"></div>
+</div>
+<div class="mt-2 flex items-center gap-1.5 text-label-mono-stat font-label-mono-stat text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px]">local_shipping</span>
+<span>Standard Worldwide Express: 2-4 working days</span>
+</div>
+</div>
+<!-- 3. SCROLLABLE MIDDLE CONTENT (Cart Items + Upsell) -->
+<div class="cart-scroll overflow-y-auto flex-1 px-6 py-5 flex flex-col divide-y divide-outline-variant/30">
+<!-- CART ITEMS LIST -->
+<div class="space-y-6 pb-6">
+<!-- Cart Item 1 -->
+<article class="flex gap-4 pt-1 items-start">
+<div class="w-20 aspect-[4/5] bg-surface-container-low border border-outline-variant/30 shrink-0 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Editorial close-up of a luxury heavy espresso brown hoodie folded neatly on textured travertine stone, dramatic Mediterranean side light casting sharp brutalist shadows, premium woven cotton texture highlighted" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk2HoZRwpVd1XAZJvzMPeJS1ZxOqL8bTiWaOXKPi07EuMHV9AF0Zdvy3t88TosppfgTxxeFHTqeKvpbTEg5LaPRzwoWhHTXpGGW0M1cvbmlyPRBzzgA82URF4DE79AT0gKUbuqb4O1CYdYrGPGaMbsevh6eETEHgfAgl8nZJirRXGKf109uHCeVV-erqgvfBKy4JZX-3g02hOLcSd0HhUaUtYZpNSgEtvIH7E9XlU"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start gap-2">
+<h3 class="text-body-md font-body-md font-bold uppercase text-on-surface leading-snug truncate">
+                OVERSIZED ESPRESSO HOODIE
+              </h3>
+<button aria-label="Remove OVERSIZED ESPRESSO HOODIE" class="text-on-surface-variant hover:text-error transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<p class="text-label-mono-stat font-label-mono-stat text-on-surface-variant uppercase mt-0.5">
+              Size: L • Color: Espresso Brown
+            </p>
+<div class="flex items-center justify-between mt-4">
+<!-- Utilitarian Quantity Stepper -->
+<div class="inline-flex items-center border border-outline-variant/50">
+<button aria-label="Decrease quantity" class="w-7 h-7 flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+</button>
+<span class="w-7 h-7 flex items-center justify-center text-label-caps font-label-caps bg-surface-container-lowest border-x border-outline-variant/50">
+                  1
+                </span>
+<button aria-label="Increase quantity" class="w-7 h-7 flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+<!-- Price -->
+<span class="text-title-md font-title-md text-on-surface">
+                €95.00
+              </span>
+</div>
+</div>
+</article>
+<!-- Cart Item 2 -->
+<article class="flex gap-4 pt-4 border-t border-outline-variant/20 items-start">
+<div class="w-20 aspect-[4/5] bg-surface-container-low border border-outline-variant/30 shrink-0 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Editorial lookbook product thumbnail of a bone cream heavyweight boxy t-shirt on a warm off-white minimalist background, luxury fashion studio lighting with warm taupe and deep espresso accents, clean fabric drape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPN2c-Nf6E9qnkrAWI83XKW3Gk_xpyW-LLgvQziYCdfQSKwns-HxYKRq_svqEKV92ubRnS2chEZRwUxQdfslnzOOR5ujhSZ9Pnhn2aGdsezA-63gfp61xBc6agF14CVvdFLDF1rD9tFzBOHO17UEu8ru-ODEVUGXvvg-02-l2-hqkCzRTwor_HbZcoNTxmFajU5XIA1ehYBk0PY8gYFuX1Une_QBN4oOlhoa5_WoE"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start gap-2">
+<h3 class="text-body-md font-body-md font-bold uppercase text-on-surface leading-snug truncate">
+                HEAVYWEIGHT BOXY TEE
+              </h3>
+<button aria-label="Remove HEAVYWEIGHT BOXY TEE" class="text-on-surface-variant hover:text-error transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<p class="text-label-mono-stat font-label-mono-stat text-on-surface-variant uppercase mt-0.5">
+              Size: M • Color: Bone Cream
+            </p>
+<div class="flex items-center justify-between mt-4">
+<!-- Utilitarian Quantity Stepper -->
+<div class="inline-flex items-center border border-outline-variant/50">
+<button aria-label="Decrease quantity" class="w-7 h-7 flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">remove</span>
+</button>
+<span class="w-7 h-7 flex items-center justify-center text-label-caps font-label-caps bg-surface-container-lowest border-x border-outline-variant/50">
+                  1
+                </span>
+<button aria-label="Increase quantity" class="w-7 h-7 flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</button>
+</div>
+<!-- Price -->
+<span class="text-title-md font-title-md text-on-surface">
+                €50.00
+              </span>
+</div>
+</div>
+</article>
+</div>
+<!-- UPSELL SECTION ('COMPLETE THE LOOK') -->
+<section class="pt-5 pb-2">
+<div class="flex items-center justify-between mb-3">
+<h4 class="text-label-caps font-label-caps tracking-widest uppercase text-on-surface">
+            COMPLETE THE LOOK
+          </h4>
+<span class="text-label-mono-stat font-label-mono-stat text-secondary uppercase">CAPSULE PAIRINGS</span>
+</div>
+<!-- Horizontal Upsell Card Row -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Upsell 1 -->
+<div class="bg-surface-container-low border border-outline-variant/30 p-2.5 flex flex-col justify-between">
+<div class="aspect-square bg-surface-container w-full overflow-hidden mb-2">
+<img class="w-full h-full object-cover" data-alt="Close up shot of a ribbed knit espresso brown streetwear beanie laid over a smooth brutalist stone surface, natural warm daylight, high detail of rich wool fabric texture with dark mocha and cream highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQsWrcJ6sbUaMx2nm7n8nq7DhR-7yvN5uywUKqq5e0KX22iZfZ6WYnNcX1cLv2dEn-25O52IyrxZa1Aa4eYZIoGP713QzrcAhE7Nj9NM1dCcVWFMYtdkyPnz0K2Jk0MO7YkQ_JeF-_lo-4yH9O7hTD55vHe8_1VExaVmhdxjIBC73EGPF3-8CNFheFTU0t-1TaKwhfAyNvrS1lLh6qCmxI5n6LICz5GAotWRRZXZM"/>
+</div>
+<div>
+<p class="text-label-caps font-label-caps uppercase text-on-surface line-clamp-1">ESPRESSO BEANIE</p>
+<p class="text-label-mono-stat font-label-mono-stat text-on-surface-variant mb-2">€35.00</p>
+</div>
+<button class="w-full py-1.5 bg-surface-container-lowest border border-primary-container text-on-surface text-label-caps font-label-caps uppercase hover:bg-primary-container hover:text-on-primary transition-colors text-center" type="button">
+              + QUICK ADD
+            </button>
+</div>
+<!-- Upsell 2 -->
+<div class="bg-surface-container-low border border-outline-variant/30 p-2.5 flex flex-col justify-between">
+<div class="aspect-square bg-surface-container w-full overflow-hidden mb-2">
+<img class="w-full h-full object-cover" data-alt="Editorial flatlay product shot of a 3-pack heavy ribbed archive streetwear socks in espresso, cream, and taupe tones with woven typography, soft editorial contrast, high-key studio daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDclDYAc_pSxGqhi2FWPO41j0OU1h4SDdLp0DORupGz-ThHELZPBttyidtht4EIwfrAJmdF_i77M-lGg2cmeSClrxa1gHpOds9Yy2MOP-pjsmowgqz9eBF8gjQe15GG1M0O0HP3-EB6SOenZWQk4tqUZPlzfbS7tl_yK34hrH5LMid_Yt8xceHQFdNdjXdgDMVq90cjHVFXbbIcbXLH5Q36GxK0-GkXyL_tvYBMoo8"/>
+</div>
+<div>
+<p class="text-label-caps font-label-caps uppercase text-on-surface line-clamp-1">ARCHIVE SOCKS 3-PACK</p>
+<p class="text-label-mono-stat font-label-mono-stat text-on-surface-variant mb-2">€25.00</p>
+</div>
+<button class="w-full py-1.5 bg-surface-container-lowest border border-primary-container text-on-surface text-label-caps font-label-caps uppercase hover:bg-primary-container hover:text-on-primary transition-colors text-center" type="button">
+              + QUICK ADD
+            </button>
+</div>
+</div>
+</section>
+</div>
+<!-- 4. SUMMARY & CHECKOUT FOOTER -->
+<div class="p-6 bg-surface-container-lowest border-t border-outline-variant/40 shrink-0 space-y-4">
+<!-- Promo Code Expander -->
+<details class="group select-none">
+<summary class="flex justify-between items-center cursor-pointer list-none text-label-caps font-label-caps text-on-surface uppercase tracking-wider py-1 hover:text-secondary transition-colors">
+<span>PROMO CODE / GIFT VOUCHER</span>
+<span class="material-symbols-outlined text-[16px] group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-2 flex gap-2">
+<input class="flex-1 bg-surface-container-low border border-outline-variant/60 text-body-md font-body-md px-3 py-2 text-on-surface focus:border-primary-container focus:ring-0 uppercase placeholder:text-outline" placeholder="ENTER CODE" type="text"/>
+<button class="bg-surface-container-high px-4 text-label-caps font-label-caps border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary transition-colors" type="button">
+            APPLY
+          </button>
+</div>
+</details>
+<!-- Subtotal Calculation -->
+<div class="pt-2 border-t border-outline-variant/20 space-y-1">
+<div class="flex justify-between items-baseline">
+<span class="text-title-md font-title-md uppercase text-on-surface">SUBTOTAL</span>
+<span class="text-headline-sm font-headline-sm text-on-surface">€145.00</span>
+</div>
+<p class="text-label-mono-stat font-label-mono-stat text-on-surface-variant">
+          Taxes &amp; shipping calculated at checkout
+        </p>
+</div>
+<!-- High-Impact Checkout Button -->
+<button class="w-full bg-[#201511] text-on-primary py-4 px-6 text-label-caps font-label-caps tracking-[0.16em] uppercase hover:bg-secondary transition-colors duration-150 flex items-center justify-center gap-2 border border-primary-container" type="button">
+<span>PROCEED TO CHECKOUT</span>
+<span>•</span>
+<span>€145.00</span>
+</button>
+<!-- Trust Badges & Secure Checkout Guarantee -->
+<div class="pt-1 flex flex-col items-center gap-2">
+<div class="flex items-center justify-center gap-4 text-outline opacity-80">
+<!-- Apple Pay Badge -->
+<span class="text-label-caps font-label-caps border border-outline-variant/60 px-2 py-0.5 tracking-tight"> Pay</span>
+<!-- Klarna Badge -->
+<span class="text-label-caps font-label-caps border border-outline-variant/60 px-2 py-0.5 font-bold tracking-tight">Klarna.</span>
+<!-- Visa Badge -->
+<span class="text-label-caps font-label-caps border border-outline-variant/60 px-2 py-0.5 font-bold italic tracking-tight">VISA</span>
+<!-- Mastercard Badge -->
+<span class="text-label-caps font-label-caps border border-outline-variant/60 px-2 py-0.5 tracking-tight flex items-center gap-0.5">
+<span class="w-2 h-2 rounded-full bg-outline inline-block"></span>
+<span class="w-2 h-2 rounded-full bg-outline-variant inline-block -ml-1"></span>
+<span>MC</span>
+</span>
+</div>
+<p class="text-label-mono-stat font-label-mono-stat text-outline text-[10px] tracking-wider uppercase">
+          SECURE 256-BIT ENCRYPTION // 14-DAY ARCHIVE RETURN POLICY
+        </p>
+</div>
+</div>
+</aside>
+<!-- ================= FOOTER (Shared Component) ================= -->
+<footer class="docked full-width border-t border-outline-variant/20 dark:border-outline/30 bg-surface-container-low dark:bg-surface-container-lowest mt-20">
+<div class="w-full px-6 lg:px-12 py-16 max-w-[1600px] mx-auto flex flex-col gap-12">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-outline-variant/20 pb-8">
+<span class="text-headline-lg font-headline-lg uppercase text-primary dark:text-inverse-primary leading-none">
+          FALSTEP
+        </span>
+<div class="flex flex-wrap gap-6">
+<a class="text-on-surface-variant dark:text-outline text-body-md font-body-md uppercase tracking-wider hover:text-primary dark:hover:text-on-primary underline underline-offset-4 transition-all duration-150" href="#">
+            EARLY ACCESS VIP
+          </a>
+<a class="text-on-surface-variant dark:text-outline text-body-md font-body-md uppercase tracking-wider hover:text-primary dark:hover:text-on-primary underline underline-offset-4 transition-all duration-150" href="#">
+            EDITORIAL MANIFESTO
+          </a>
+<a class="text-on-surface-variant dark:text-outline text-body-md font-body-md uppercase tracking-wider hover:text-primary dark:hover:text-on-primary underline underline-offset-4 transition-all duration-150" href="#">
+            SHIPPING &amp; DROPS
+          </a>
+<a class="text-on-surface-variant dark:text-outline text-body-md font-body-md uppercase tracking-wider hover:text-primary dark:hover:text-on-primary underline underline-offset-4 transition-all duration-150" href="#">
+            TERMS OF RELEASE
+          </a>
+<a class="text-on-surface-variant dark:text-outline text-body-md font-body-md uppercase tracking-wider hover:text-primary dark:hover:text-on-primary underline underline-offset-4 transition-all duration-150" href="#">
+            ARCHIVE VAULT
+          </a>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center text-label-mono-stat font-label-mono-stat text-on-surface-variant gap-4">
+<span>© 2025 ARCHIVE DROP CULTURE LTD. ALL RIGHTS RESERVED. STRICTLY LIMITED RUNS.</span>
+<span>LAT: 41.3879° N, LON: 2.1699° E // TIMEZONE: CET</span>
+</div>
+</div>
+</footer>
+<script src="../store.js"></script>
+</body></html>

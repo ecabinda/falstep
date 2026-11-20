@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FALSTEP — HOODIES &amp; SWEATSHIRTS</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#52443f",
+            "on-tertiary": "#ffffff",
+            "primary-fixed": "#f4ded7",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#92807a",
+            "on-background": "#1a1c1c",
+            "surface-dim": "#dadada",
+            "tertiary-fixed-dim": "#c9c6c0",
+            "on-secondary": "#ffffff",
+            "background": "#ffffff",
+            "inverse-primary": "#d7c2bb",
+            "inverse-on-surface": "#f0f1f1",
+            "surface-container-highest": "#e2e2e2",
+            "surface-container": "#eeeeee",
+            "on-error": "#ffffff",
+            "secondary": "#75584a",
+            "inverse-surface": "#2f3131",
+            "outline": "#807571",
+            "secondary-fixed-dim": "#e4bfae",
+            "error": "#ba1a1a",
+            "surface-variant": "#e2e2e2",
+            "on-secondary-fixed-variant": "#5b4134",
+            "tertiary-fixed": "#e6e2db",
+            "primary-container": "#201511",
+            "secondary-container": "#fed8c6",
+            "on-surface": "#201511",
+            "tertiary": "#000000",
+            "on-tertiary-container": "#86847e",
+            "surface-tint": "#6b5b55",
+            "surface-container-high": "#e8e8e8",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#4e4541",
+            "primary": "#201511",
+            "on-primary-fixed": "#201511",
+            "surface-container-low": "#f7f5f0",
+            "primary-fixed-dim": "#d7c2bb",
+            "surface-container-lowest": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#1c1c18",
+            "on-secondary-container": "#795c4e",
+            "outline-variant": "#e5ded8",
+            "on-secondary-fixed": "#2a170c",
+            "surface-bright": "#ffffff",
+            "tertiary-container": "#1c1c18",
+            "secondary-fixed": "#ffdbcb",
+            "on-tertiary-fixed-variant": "#484742",
+            "surface": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0px",
+            "lg": "0px",
+            "xl": "0px",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "margin": "3rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "gutter-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "display-hero-mobile": ["Anton"],
+            "title-lg": ["Hanken Grotesk"],
+            "headline-lg": ["Anton"],
+            "label-caps": ["Hanken Grotesk"],
+            "label-mono-stat": ["Hanken Grotesk"],
+            "title-md": ["Hanken Grotesk"],
+            "headline-md": ["Anton"],
+            "headline-lg-mobile": ["Anton"],
+            "headline-sm": ["Anton"],
+            "body-md": ["Hanken Grotesk"],
+            "display-hero": ["Anton"],
+            "body-lg": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "display-hero-mobile": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "title-lg": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg": ["56px", { "lineHeight": "58px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-caps": ["12px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "700" }],
+            "label-mono-stat": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-md": ["32px", { "lineHeight": "36px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["36px", { "lineHeight": "38px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "display-hero": ["96px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-surface text-primary antialiased selection:bg-primary selection:text-white">
+
+<!-- TOP APP BAR -->
+<header class="sticky top-0 w-full z-50 bg-surface border-b border-outline-variant">
+<div class="relative flex items-center justify-between px-margin-mobile md:px-margin max-w-[1600px] mx-auto h-16">
+<!-- Logo -->
+<div class="flex items-center gap-8">
+<a class="font-headline-md text-headline-md tracking-tighter uppercase text-primary" href="../02-atelier-archive-editorial-homepage/screen.html">FALSTEP</a>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2">
+<a class="text-primary border-b-2 border-primary font-bold uppercase text-label-caps font-label-caps tracking-widest transition-colors duration-150 py-1" href="../01-atelier-archive-hoodies-sweatshirts-catalog/screen.html">COLLECTIONS</a>
+</nav>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-5">
+<button aria-label="Search Catalog" class="flex items-center text-primary hover:text-secondary transition-colors duration-150">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button aria-label="Wishlist" class="hidden sm:flex items-center text-primary hover:text-secondary transition-colors duration-150">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<span class="text-outline-variant">|</span>
+<button class="font-label-caps text-label-caps tracking-wider text-primary hover:text-secondary transition-colors duration-150">EUR €</button>
+<button class="bg-primary text-white font-label-caps text-label-caps px-3.5 py-2 uppercase tracking-wider hover:bg-secondary transition-all duration-150">
+          BAG (0)
+        </button>
+</div>
+</div>
+</header>
+<!-- MAIN VIEWPORT CANVAS -->
+<main class="max-w-[1600px] mx-auto px-margin-mobile md:px-margin py-8 md:py-12">
+<!-- BREADCRUMBS -->
+<nav aria-label="Breadcrumb" class="mb-4">
+<ol class="flex items-center space-x-2 font-label-mono-stat text-label-mono-stat uppercase text-on-surface-variant tracking-widest">
+<li><a class="hover:text-primary transition-colors" href="../02-atelier-archive-editorial-homepage/screen.html">HOME</a></li>
+<li class="text-outline-variant">/</li>
+<li><a class="hover:text-primary transition-colors" href="../01-atelier-archive-hoodies-sweatshirts-catalog/screen.html">COLLECTIONS</a></li>
+<li class="text-outline-variant">/</li>
+<li class="text-primary font-bold">HOODIES &amp; SWEATSHIRTS</li>
+</ol>
+</nav>
+<!-- EDITORIAL CATEGORY HEADER -->
+<div class="border-b border-primary pb-8 mb-6">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+<div>
+<div class="inline-flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-caps text-label-caps tracking-widest uppercase text-secondary">ARCHIVAL FLEECE DIVISION</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase text-primary tracking-tight m-0 p-0">
+            ALL HOODIES &amp; SWEATSHIRTS [32 PIECES]
+          </h1>
+</div>
+<div class="lg:max-w-md">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Engineered from bespoke 450–500GSM ultra-dense Portuguese French Terry. Pre-shrunk, garment-dyed with raw tactile ribbing, architectural boxy fits, and double-needle perimeter hems designed for perpetual longevity.
+          </p>
+</div>
+</div>
+</div>
+<!-- FILTER & SORT TOOLBAR -->
+<section class="border border-primary bg-surface mb-8">
+<div class="p-3 md:p-4 flex flex-wrap items-center justify-between gap-4">
+<!-- Left Filter Pills -->
+<div class="flex flex-wrap items-center gap-2">
+<!-- Category Pill -->
+<div class="relative group">
+<button class="border border-primary px-3.5 py-2 font-label-caps text-label-caps uppercase flex items-center gap-2 bg-surface hover:bg-surface-container-low transition-colors duration-150">
+<span>CATEGORY (ALL)</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+<!-- Size Pill -->
+<div class="relative group">
+<button class="border border-outline px-3.5 py-2 font-label-caps text-label-caps uppercase flex items-center gap-2 bg-surface hover:border-primary hover:bg-surface-container-low transition-colors duration-150">
+<span>SIZE (S-XXL)</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+<!-- Color Tones Pill -->
+<div class="relative group">
+<button class="border border-outline px-3.5 py-2 font-label-caps text-label-caps uppercase flex items-center gap-2 bg-surface hover:border-primary hover:bg-surface-container-low transition-colors duration-150">
+<span>COLOR TONES (EARTH &amp; NOIR)</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+<!-- Price Range Pill -->
+<div class="relative group">
+<button class="border border-outline px-3.5 py-2 font-label-caps text-label-caps uppercase flex items-center gap-2 bg-surface hover:border-primary hover:bg-surface-container-low transition-colors duration-150">
+<span>PRICE RANGE</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+</div>
+<!-- In Stock Toggle -->
+<label class="flex items-center gap-2.5 px-3 py-1.5 border border-outline hover:border-primary cursor-pointer select-none bg-surface">
+<input checked="" class="w-3.5 h-3.5 rounded-none accent-primary text-primary focus:ring-0 border-primary cursor-pointer" type="checkbox"/>
+<span class="font-label-caps text-label-caps uppercase">IN STOCK ONLY</span>
+</label>
+</div>
+<!-- Right Sorting & Density -->
+<div class="flex items-center gap-4 w-full lg:w-auto justify-between lg:justify-end border-t lg:border-t-0 pt-2 lg:pt-0 border-outline-variant">
+<!-- Sort Dropdown -->
+<div class="flex items-center gap-2">
+<span class="font-label-mono-stat text-label-mono-stat text-on-surface-variant uppercase hidden sm:inline">CRITERIA:</span>
+<div class="relative">
+<select class="border border-primary bg-surface py-1.5 pl-3 pr-8 font-label-caps text-label-caps uppercase appearance-none focus:outline-none cursor-pointer rounded-none">
+<option selected="">SORT BY: NEWEST DROPS</option>
+<option>PRICE: LOW TO HIGH</option>
+<option>PRICE: HIGH TO LOW</option>
+<option>FABRIC WEIGHT (HEAVIEST)</option>
+<option>MOST POPULAR</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-[16px]" data-icon="unfold_more">unfold_more</span>
+</div>
+</div>
+<!-- Grid Density Switcher -->
+<div class="hidden sm:flex items-center border border-primary divide-x divide-primary" id="gridSwitchContainer">
+<button class="p-1.5 hover:bg-surface-container-low transition-colors text-on-surface-variant hover:text-primary" id="btnGrid3" title="3-Column View">
+<span class="material-symbols-outlined text-[20px]" data-icon="view_agenda">view_agenda</span>
+</button>
+<button class="p-1.5 bg-primary text-white transition-colors" id="btnGrid4" title="4-Column View">
+<span class="material-symbols-outlined text-[20px]" data-icon="grid_view">grid_view</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- PRODUCT CATALOG GRID -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-16" id="productGrid">
+<!-- PRODUCT CARD 1 -->
+<article class="group border border-outline-variant flex flex-col bg-surface hover:border-primary transition-all duration-200">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Streetwear model standing in a brutalist concrete courtyard wearing an oversized deep espresso brown hoodie crafted from heavy 450GSM French terry. Shot in crisp natural daylight with razor sharp focus, raw architectural shadows, and an ultra minimalist high fashion aesthetic." src="../assets/products/hero_david_feroz_black.jpg"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-surface-container-low border border-primary text-primary font-label-caps text-[10px] tracking-widest px-2 py-0.5 uppercase">SELLING FAST</span>
+</div>
+<div class="absolute top-3 right-3">
+<button aria-label="Add to wishlist" class="w-8 h-8 flex items-center justify-center bg-surface border border-outline-variant hover:border-primary text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<!-- Quick Add Size Bar (Revealed on hover) -->
+<div class="absolute inset-x-0 bottom-0 bg-primary/95 text-white p-2.5 translate-y-full group-hover:translate-y-0 transition-transform duration-200 hidden md:flex items-center justify-between">
+<span class="font-label-mono-stat text-label-mono-stat text-outline-variant uppercase">QUICK ADD:</span>
+<div class="flex gap-1.5">
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">S</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">M</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">L</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">XL</button>
+</div>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between border-t border-outline-variant">
+<div>
+<div class="flex items-center justify-between text-outline font-label-mono-stat text-[11px] mb-1">
+<span>EDITION 09 / 450GSM</span>
+<span class="text-primary font-bold">12 LEFT</span>
+</div>
+<h2 class="font-title-md text-title-md text-primary uppercase tracking-tight line-clamp-1 mb-2">
+              OVERSIZED MOCHA HOODIE 450GSM
+            </h2>
+</div>
+<div class="pt-3 border-t border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-1.5" title="Available Colorways">
+<span class="w-3 h-3 rounded-full bg-[#201511] border border-outline cursor-pointer" title="Deep Espresso"></span>
+<span class="w-3 h-3 rounded-full bg-[#F3EFE8] border border-outline cursor-pointer" title="Warm Cream"></span>
+<span class="w-3 h-3 rounded-full bg-[#3B3835] border border-outline cursor-pointer" title="Noir Charcoal"></span>
+</div>
+<span class="font-bold font-title-md text-primary">€89.00</span>
+</div>
+</div>
+</article>
+<!-- PRODUCT CARD 2 -->
+<article class="group border border-outline-variant flex flex-col bg-surface hover:border-primary transition-all duration-200">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial lookbook photograph of a male model wearing a boxy vintage washed charcoal zip hoodie with custom hardware zipper. Captured against a pale textured travertine wall, bathed in soft, diffused Mediterranean daylight. Minimalist luxury streetwear presentation." src="../assets/products/hero_david_pink_diet.jpg"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-primary text-white font-label-caps text-[10px] tracking-widest px-2 py-0.5 uppercase">DROP EXCLUSIVE</span>
+</div>
+<div class="absolute top-3 right-3">
+<button aria-label="Add to wishlist" class="w-8 h-8 flex items-center justify-center bg-surface border border-outline-variant hover:border-primary text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<!-- Quick Add Size Bar -->
+<div class="absolute inset-x-0 bottom-0 bg-primary/95 text-white p-2.5 translate-y-full group-hover:translate-y-0 transition-transform duration-200 hidden md:flex items-center justify-between">
+<span class="font-label-mono-stat text-label-mono-stat text-outline-variant uppercase">QUICK ADD:</span>
+<div class="flex gap-1.5">
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">S</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">M</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">L</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold opacity-40 cursor-not-allowed">XL</button>
+</div>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between border-t border-outline-variant">
+<div>
+<div class="flex items-center justify-between text-outline font-label-mono-stat text-[11px] mb-1">
+<span>EDITION 09 / 500GSM</span>
+<span class="text-secondary font-bold">FEW UNITS</span>
+</div>
+<h2 class="font-title-md text-title-md text-primary uppercase tracking-tight line-clamp-1 mb-2">
+              VINTAGE WASH ZIP HOODIE
+            </h2>
+</div>
+<div class="pt-3 border-t border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-1.5" title="Available Colorways">
+<span class="w-3 h-3 rounded-full bg-[#4A3226] border border-outline cursor-pointer" title="Washed Umber"></span>
+<span class="w-3 h-3 rounded-full bg-[#1A1A1A] border border-outline cursor-pointer" title="Faded Pitch"></span>
+</div>
+<span class="font-bold font-title-md text-primary">€95.00</span>
+</div>
+</div>
+</article>
+<!-- PRODUCT CARD 3 -->
+<article class="group border border-outline-variant flex flex-col bg-surface hover:border-primary transition-all duration-200">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial look of a unisex streetwear silhouette wearing an ivory bone heavyweight crewneck sweater with seamless drop shoulders. Clean studio lighting on white textured linen background, emphasizing high-gauge fleece density and immaculate tailored drape." src="../assets/products/tee_dunk_white.png"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-surface-container-low border border-primary text-primary font-label-caps text-[10px] tracking-widest px-2 py-0.5 uppercase">ARCHIVE RE-ISSUE</span>
+</div>
+<div class="absolute top-3 right-3">
+<button aria-label="Add to wishlist" class="w-8 h-8 flex items-center justify-center bg-surface border border-outline-variant hover:border-primary text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<!-- Quick Add Size Bar -->
+<div class="absolute inset-x-0 bottom-0 bg-primary/95 text-white p-2.5 translate-y-full group-hover:translate-y-0 transition-transform duration-200 hidden md:flex items-center justify-between">
+<span class="font-label-mono-stat text-label-mono-stat text-outline-variant uppercase">QUICK ADD:</span>
+<div class="flex gap-1.5">
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">S</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">M</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">L</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">XL</button>
+</div>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between border-t border-outline-variant">
+<div>
+<div class="flex items-center justify-between text-outline font-label-mono-stat text-[11px] mb-1">
+<span>EDITION 08 / 480GSM</span>
+<span class="text-primary font-bold">RESTOCKED</span>
+</div>
+<h2 class="font-title-md text-title-md text-primary uppercase tracking-tight line-clamp-1 mb-2">
+              BOXY HEAVYWEIGHT CREWNECK - BONE
+            </h2>
+</div>
+<div class="pt-3 border-t border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-1.5" title="Available Colorways">
+<span class="w-3 h-3 rounded-full bg-[#EAE5DC] border border-outline cursor-pointer" title="Bone"></span>
+<span class="w-3 h-3 rounded-full bg-[#FFFFFF] border border-outline cursor-pointer" title="Chalk White"></span>
+<span class="w-3 h-3 rounded-full bg-[#201511] border border-outline cursor-pointer" title="Deep Espresso"></span>
+</div>
+<span class="font-bold font-title-md text-primary">€85.00</span>
+</div>
+</div>
+</article>
+<!-- PRODUCT CARD 4 -->
+<article class="group border border-outline-variant flex flex-col bg-surface hover:border-primary transition-all duration-200">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="High contrast fashion capture of a model wearing a relaxed raw-edge hem pullover hoodie in deep washed umber brown. Industrial rooftop setting with stark geometry and deep afternoon Mediterranean sun rays creating a rich sculptural mood." src="../assets/products/tee_savage_green.png"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-surface-container-low border border-primary text-primary font-label-caps text-[10px] tracking-widest px-2 py-0.5 uppercase">STRICTLY LIMITED</span>
+</div>
+<div class="absolute top-3 right-3">
+<button aria-label="Add to wishlist" class="w-8 h-8 flex items-center justify-center bg-surface border border-outline-variant hover:border-primary text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<!-- Quick Add Size Bar -->
+<div class="absolute inset-x-0 bottom-0 bg-primary/95 text-white p-2.5 translate-y-full group-hover:translate-y-0 transition-transform duration-200 hidden md:flex items-center justify-between">
+<span class="font-label-mono-stat text-label-mono-stat text-outline-variant uppercase">QUICK ADD:</span>
+<div class="flex gap-1.5">
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">S</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">M</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">L</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">XL</button>
+</div>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between border-t border-outline-variant">
+<div>
+<div class="flex items-center justify-between text-outline font-label-mono-stat text-[11px] mb-1">
+<span>EDITION 09 / 450GSM</span>
+<span class="text-primary font-bold">READY TO SHIP</span>
+</div>
+<h2 class="font-title-md text-title-md text-primary uppercase tracking-tight line-clamp-1 mb-2">
+              TERRAIN RELAXED PULLOVER
+            </h2>
+</div>
+<div class="pt-3 border-t border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-1.5" title="Available Colorways">
+<span class="w-3 h-3 rounded-full bg-[#52443F] border border-outline cursor-pointer" title="Terrain Earth"></span>
+<span class="w-3 h-3 rounded-full bg-[#181818] border border-outline cursor-pointer" title="Noir Black"></span>
+</div>
+<span class="font-bold font-title-md text-primary">€92.00</span>
+</div>
+</div>
+</article>
+<!-- PRODUCT CARD 5 -->
+<article class="group border border-outline-variant flex flex-col bg-surface hover:border-primary transition-all duration-200">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial lookbook photo of a female model wearing an oversized noir black hooded sweatshirt with raw seam detailing along the dropped sleeves. Setting is a minimalist gallery space with polished gray screed floor and high-key ambient light." src="../assets/products/tee_savage_black.png"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-surface-container-low border border-primary text-primary font-label-caps text-[10px] tracking-widest px-2 py-0.5 uppercase">CORE STAPLE</span>
+</div>
+<div class="absolute top-3 right-3">
+<button aria-label="Add to wishlist" class="w-8 h-8 flex items-center justify-center bg-surface border border-outline-variant hover:border-primary text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="absolute inset-x-0 bottom-0 bg-primary/95 text-white p-2.5 translate-y-full group-hover:translate-y-0 transition-transform duration-200 hidden md:flex items-center justify-between">
+<span class="font-label-mono-stat text-label-mono-stat text-outline-variant uppercase">QUICK ADD:</span>
+<div class="flex gap-1.5">
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">S</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">M</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">L</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">XL</button>
+</div>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between border-t border-outline-variant">
+<div>
+<div class="flex items-center justify-between text-outline font-label-mono-stat text-[11px] mb-1">
+<span>EDITION 09 / 500GSM</span>
+<span class="text-primary font-bold">IN STOCK</span>
+</div>
+<h2 class="font-title-md text-title-md text-primary uppercase tracking-tight line-clamp-1 mb-2">
+              TACTILE NOIR HOODIE 500GSM
+            </h2>
+</div>
+<div class="pt-3 border-t border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-[#111111] border border-outline cursor-pointer" title="Absolute Noir"></span>
+<span class="w-3 h-3 rounded-full bg-[#201511] border border-outline cursor-pointer" title="Espresso Brown"></span>
+</div>
+<span class="font-bold font-title-md text-primary">€98.00</span>
+</div>
+</div>
+</article>
+<!-- PRODUCT CARD 6 -->
+<article class="group border border-outline-variant flex flex-col bg-surface hover:border-primary transition-all duration-200">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Male model sitting outdoors on stone steps wearing an olive taupe French terry quarter-zip pullover sweater with clean raglan cuts. Bright natural Mediterranean midday sun highlighting the heavy textured loopback fleece fabric craftsmanship." src="../assets/products/tee_black_fs24.jpg"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-primary text-white font-label-caps text-[10px] tracking-widest px-2 py-0.5 uppercase">SELLING FAST</span>
+</div>
+<div class="absolute top-3 right-3">
+<button aria-label="Add to wishlist" class="w-8 h-8 flex items-center justify-center bg-surface border border-outline-variant hover:border-primary text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="absolute inset-x-0 bottom-0 bg-primary/95 text-white p-2.5 translate-y-full group-hover:translate-y-0 transition-transform duration-200 hidden md:flex items-center justify-between">
+<span class="font-label-mono-stat text-label-mono-stat text-outline-variant uppercase">QUICK ADD:</span>
+<div class="flex gap-1.5">
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">S</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">M</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">L</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">XL</button>
+</div>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between border-t border-outline-variant">
+<div>
+<div class="flex items-center justify-between text-outline font-label-mono-stat text-[11px] mb-1">
+<span>EDITION 09 / 460GSM</span>
+<span class="text-secondary font-bold">LOW STOCK</span>
+</div>
+<h2 class="font-title-md text-title-md text-primary uppercase tracking-tight line-clamp-1 mb-2">
+              QUARTER-ZIP HEAVY FLEECE
+            </h2>
+</div>
+<div class="pt-3 border-t border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-[#5C5648] border border-outline cursor-pointer" title="Olive Taupe"></span>
+<span class="w-3 h-3 rounded-full bg-[#EAE5DC] border border-outline cursor-pointer" title="Warm Bone"></span>
+</div>
+<span class="font-bold font-title-md text-primary">€94.00</span>
+</div>
+</div>
+</article>
+<!-- PRODUCT CARD 7 -->
+<article class="group border border-outline-variant flex flex-col bg-surface hover:border-primary transition-all duration-200">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial lookbook shot of a model wearing a chalk white heavy terry hoodie with a relaxed double-layered hood. Stood in front of an architectural modernist white concrete column with sharp angular shadows and ultra-clean styling." src="../assets/products/graphic_fs21_main.jpg"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-surface-container-low border border-primary text-primary font-label-caps text-[10px] tracking-widest px-2 py-0.5 uppercase">RESTOCKED</span>
+</div>
+<div class="absolute top-3 right-3">
+<button aria-label="Add to wishlist" class="w-8 h-8 flex items-center justify-center bg-surface border border-outline-variant hover:border-primary text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="absolute inset-x-0 bottom-0 bg-primary/95 text-white p-2.5 translate-y-full group-hover:translate-y-0 transition-transform duration-200 hidden md:flex items-center justify-between">
+<span class="font-label-mono-stat text-label-mono-stat text-outline-variant uppercase">QUICK ADD:</span>
+<div class="flex gap-1.5">
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">S</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">M</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">L</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">XL</button>
+</div>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between border-t border-outline-variant">
+<div>
+<div class="flex items-center justify-between text-outline font-label-mono-stat text-[11px] mb-1">
+<span>EDITION 07 / 450GSM</span>
+<span class="text-primary font-bold">CLASSIC CUT</span>
+</div>
+<h2 class="font-title-md text-title-md text-primary uppercase tracking-tight line-clamp-1 mb-2">
+              RAW CHALK PULLOVER HOODIE
+            </h2>
+</div>
+<div class="pt-3 border-t border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-[#F4F4F2] border border-outline cursor-pointer" title="Raw Chalk"></span>
+<span class="w-3 h-3 rounded-full bg-[#201511] border border-outline cursor-pointer" title="Espresso Brown"></span>
+</div>
+<span class="font-bold font-title-md text-primary">€89.00</span>
+</div>
+</div>
+</article>
+<!-- PRODUCT CARD 8 -->
+<article class="group border border-outline-variant flex flex-col bg-surface hover:border-primary transition-all duration-200">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Streetwear model standing sideways showcasing the oversized silhouette of a deep washed umber brown hoodie with dropped shoulder seams and thick ribbed waist cuffs. Architectural urban background with brutalist limestone textures." src="../assets/products/hero_david_feroz_black.jpg"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-primary text-white font-label-caps text-[10px] tracking-widest px-2 py-0.5 uppercase">LIMITED RESTOCK</span>
+</div>
+<div class="absolute top-3 right-3">
+<button aria-label="Add to wishlist" class="w-8 h-8 flex items-center justify-center bg-surface border border-outline-variant hover:border-primary text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="absolute inset-x-0 bottom-0 bg-primary/95 text-white p-2.5 translate-y-full group-hover:translate-y-0 transition-transform duration-200 hidden md:flex items-center justify-between">
+<span class="font-label-mono-stat text-label-mono-stat text-outline-variant uppercase">QUICK ADD:</span>
+<div class="flex gap-1.5">
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">S</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">M</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">L</button>
+<button class="w-6 h-6 border border-outline text-white text-[11px] font-bold hover:bg-white hover:text-primary transition-colors">XL</button>
+</div>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1 justify-between border-t border-outline-variant">
+<div>
+<div class="flex items-center justify-between text-outline font-label-mono-stat text-[11px] mb-1">
+<span>EDITION 09 / 500GSM</span>
+<span class="text-secondary font-bold">8 UNITS LEFT</span>
+</div>
+<h2 class="font-title-md text-title-md text-primary uppercase tracking-tight line-clamp-1 mb-2">
+              WASHED UMBER HEAVY HOODIE
+            </h2>
+</div>
+<div class="pt-3 border-t border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-[#4A3226] border border-outline cursor-pointer" title="Washed Umber"></span>
+<span class="w-3 h-3 rounded-full bg-[#201511] border border-outline cursor-pointer" title="Deep Espresso"></span>
+<span class="w-3 h-3 rounded-full bg-[#EAE5DC] border border-outline cursor-pointer" title="Warm Bone"></span>
+</div>
+<span class="font-bold font-title-md text-primary">€92.00</span>
+</div>
+</div>
+</article>
+</div>
+<!-- PAGINATION & INFINITE SCROLL SECTION -->
+<div class="border-t border-outline-variant pt-10 flex flex-col items-center justify-center gap-4">
+<div class="w-full max-w-xs bg-outline-variant h-1 overflow-hidden">
+<div class="bg-primary h-full w-[37.5%]"></div>
+</div>
+<p class="font-label-mono-stat text-label-mono-stat text-on-surface-variant uppercase">
+        SHOWING 12 OF 32 TOTAL SILHOUETTES
+      </p>
+<button class="mt-2 border-2 border-primary bg-surface text-primary px-8 py-3.5 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-200 active:scale-[0.99]">
+        LOAD MORE PIECES [SHOWING 12 OF 32]
+      </button>
+</div>
+<!-- TECHNICAL FLEECE CRAFTSMANSHIP BANNER -->
+<section class="mt-20 border border-primary p-6 md:p-10 bg-surface-container-low">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-primary">
+<div class="flex flex-col justify-start pr-4">
+<span class="font-label-mono-stat text-label-mono-stat text-secondary mb-2">01 / FIBER &amp; ORIGIN</span>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary mb-2">100% PORTUGUESE YARN</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Spun from combed ring-spun cotton fibers at historic family mills in Porto, offering an ultra-soft hand feel without compromising architectural rigidity.</p>
+</div>
+<div class="flex flex-col justify-start md:pl-8 md:pr-4 pt-6 md:pt-0">
+<span class="font-label-mono-stat text-label-mono-stat text-secondary mb-2">02 / CALIBRATION</span>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary mb-2">450–500 GSM GAUGE</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">True heavyweight construction crafted to hold drape and posture through years of daily wear. Pre-shrunk to completely prevent wash shrinkage.</p>
+</div>
+<div class="flex flex-col justify-start md:pl-8 pt-6 md:pt-0">
+<span class="font-label-mono-stat text-label-mono-stat text-secondary mb-2">03 / FINISHING</span>
+<h3 class="font-headline-sm text-headline-sm uppercase text-primary mb-2">PIGMENT GARMENT DYE</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Cold-batch dyed in small archival lots creating nuanced variations at the seams and seams that gracefully patina with extended wear.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="w-full bg-surface-container-low border-t border-outline-variant">
+<div class="w-full px-margin-mobile md:px-margin py-space-xl max-w-[1600px] mx-auto flex flex-col gap-space-lg">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-outline-variant">
+<div class="md:col-span-2">
+<span class="font-headline-sm text-headline-sm uppercase tracking-tight text-primary">FALSTEP</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-3 max-w-sm">
+            Independent sartorial laboratory operating at the intersection of Mediterranean leisure aesthetics and brutalist London drop culture.
+          </p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps uppercase text-primary mb-3">NAVIGATION</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:text-primary underline underline-offset-4 transition-all duration-150" href="#">CLIENT SERVICE</a></li>
+<li><a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:text-primary underline underline-offset-4 transition-all duration-150" href="#">SHIPPING &amp; DROPS</a></li>
+<li><a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:text-primary underline underline-offset-4 transition-all duration-150" href="#">TERMS OF RELEASE</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps uppercase text-primary mb-3">ARCHIVES</h4>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:text-primary underline underline-offset-4 transition-all duration-150" href="#">LOOKBOOK ARCHIVE</a></li>
+<li><a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:text-primary underline underline-offset-4 transition-all duration-150" href="#">AUTHENTICITY</a></li>
+<li><a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:text-primary underline underline-offset-4 transition-all duration-150" href="#">PRIVACY POLICY</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between text-on-surface-variant font-body-md text-body-md gap-4">
+<p class="font-label-mono-stat text-label-mono-stat uppercase">
+          © 2025 FALSTEP LTD. ALL RIGHTS RESERVED. CRAFTED FOR THE CULTURALLY ASTUTE.
+        </p>
+<div class="flex items-center gap-6">
+<span class="font-label-mono-stat text-label-mono-stat uppercase text-primary font-bold">LEGAL: VAT 402 9182 04</span>
+<span class="font-label-mono-stat text-label-mono-stat uppercase">PORTO / LONDON</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- SCRIPT FOR GRID DENSITY TOGGLE -->
+<script>
+    const grid = document.getElementById('productGrid');
+    const btn3 = document.getElementById('btnGrid3');
+    const btn4 = document.getElementById('btnGrid4');
+
+    if (btn3 && btn4 && grid) {
+      btn3.addEventListener('click', () => {
+        grid.classList.remove('lg:grid-cols-4');
+        grid.classList.add('lg:grid-cols-3');
+        btn3.classList.add('bg-primary', 'text-white');
+        btn3.classList.remove('text-on-surface-variant');
+        btn4.classList.remove('bg-primary', 'text-white');
+        btn4.classList.add('text-on-surface-variant');
+      });
+
+      btn4.addEventListener('click', () => {
+        grid.classList.remove('lg:grid-cols-3');
+        grid.classList.add('lg:grid-cols-4');
+        btn4.classList.add('bg-primary', 'text-white');
+        btn4.classList.remove('text-on-surface-variant');
+        btn3.classList.remove('bg-primary', 'text-white');
+        btn3.classList.add('text-on-surface-variant');
+      });
+    }
+  </script>
+<script src="../store.js"></script>
+</body></html>

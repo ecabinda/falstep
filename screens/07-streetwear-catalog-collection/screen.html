@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FALSTEP - ALL HOODIES &amp; SWEATSHIRTS</title>
+<!-- Google Fonts: Anton & Hanken Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#52443f",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#ffdbcb",
+            "inverse-surface": "#2f3131",
+            "tertiary-fixed": "#e6e2db",
+            "inverse-primary": "#d7c2bb",
+            "on-surface": "#1a1c1c",
+            "surface": "#f9f9f9",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed": "#241915",
+            "primary-fixed-dim": "#d7c2bb",
+            "surface-bright": "#f9f9f9",
+            "outline": "#807571",
+            "on-secondary-fixed-variant": "#5b4134",
+            "secondary-container": "#fed8c6",
+            "surface-container-highest": "#e2e2e2",
+            "on-tertiary-fixed-variant": "#484742",
+            "tertiary-container": "#1c1c18",
+            "on-error-container": "#93000a",
+            "on-background": "#1a1c1c",
+            "outline-variant": "#d2c3bf",
+            "tertiary-fixed-dim": "#c9c6c0",
+            "on-secondary-container": "#795c4e",
+            "primary": "#000000",
+            "secondary": "#75584a",
+            "on-primary": "#ffffff",
+            "tertiary": "#000000",
+            "primary-container": "#241915",
+            "surface-container-high": "#e8e8e8",
+            "on-primary-container": "#92807a",
+            "on-surface-variant": "#4e4541",
+            "secondary-fixed-dim": "#e4bfae",
+            "surface-container-low": "#f3f3f3",
+            "primary-fixed": "#f4ded7",
+            "surface-tint": "#6b5b55",
+            "surface-container": "#eeeeee",
+            "inverse-on-surface": "#f0f1f1",
+            "background": "#f9f9f9",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed": "#1c1c18",
+            "on-secondary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#dadada",
+            "on-error": "#ffffff",
+            "on-tertiary-container": "#86847e",
+            "surface-variant": "#e2e2e2",
+            "on-secondary-fixed": "#2a170c"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "margin": "3rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.5rem",
+            "gutter-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Hanken Grotesk"],
+            "headline-lg-mobile": ["Anton"],
+            "headline-md": ["Anton"],
+            "label-caps": ["Hanken Grotesk"],
+            "body-md": ["Hanken Grotesk"],
+            "headline-lg": ["Anton"],
+            "headline-sm": ["Anton"],
+            "display-hero": ["Anton"],
+            "title-lg": ["Hanken Grotesk"],
+            "display-hero-mobile": ["Anton"],
+            "title-md": ["Hanken Grotesk"],
+            "label-mono-stat": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["36px", { "lineHeight": "38px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-md": ["32px", { "lineHeight": "36px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "label-caps": ["12px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-lg": ["56px", { "lineHeight": "58px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "display-hero": ["96px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "title-lg": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-hero-mobile": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-mono-stat": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Editorial Drop Marquee Animation */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 24s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-surface-container-lowest">
+
+<!-- ==================== TOP NAVIGATION BAR (SHARED COMPONENT) ==================== -->
+<header class="sticky top-0 z-50 bg-primary-container dark:bg-primary border-b border-outline-variant/20 dark:border-outline/30">
+<div class="relative flex justify-between items-center w-full px-6 lg:px-12 max-w-[1600px] mx-auto h-16">
+<div class="flex items-center gap-8">
+<a class="text-headline-md font-headline-md uppercase tracking-wider text-on-primary dark:text-inverse-primary hover:text-primary-fixed transition-colors duration-150" href="../02-atelier-archive-editorial-homepage/screen.html">
+  FALSTEP
+</a>
+</div>
+<nav class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2">
+<a class="text-primary border-b-2 border-primary font-bold uppercase text-label-caps font-label-caps tracking-widest transition-colors duration-150 py-1" href="../01-atelier-archive-hoodies-sweatshirts-catalog/screen.html">COLLECTIONS</a>
+</nav>
+<div class="flex items-center gap-6 text-on-primary">
+<button aria-label="Search Catalog" class="text-on-primary-container hover:text-on-primary transition-colors flex items-center">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</button>
+<button class="flex items-center gap-2 border border-outline-variant/30 hover:border-outline-variant px-3 py-1.5 rounded-none bg-tertiary-container text-on-primary transition-all duration-150 group">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest font-bold">BAG (0)</span>
+</button>
+</div>
+</div>
+</header>
+<!-- ==================== MAIN EDITORIAL HERO & CATALOG ==================== -->
+<main class="w-full max-w-[1600px] mx-auto px-6 lg:px-12 py-8 lg:py-12">
+<!-- Breadcrumb Telemetry Header -->
+<nav aria-label="Breadcrumb" class="mb-4">
+<ol class="flex items-center space-x-2 text-label-mono-stat font-label-mono-stat text-on-surface-variant uppercase tracking-widest">
+<li><a class="hover:text-primary transition-colors" href="#">INDEX</a></li>
+<li><span>/</span></li>
+<li><a class="hover:text-primary transition-colors" href="#">COLLECTION</a></li>
+<li><span>/</span></li>
+<li class="text-primary font-bold">HOODIES &amp; SWEATSHIRTS</li>
+</ol>
+</nav>
+<!-- Category Header Section -->
+<header class="border-b border-outline-variant/30 pb-6 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<span class="inline-block w-2.5 h-2.5 bg-primary-container animate-pulse"></span>
+<span class="text-label-caps font-label-caps text-secondary uppercase tracking-widest font-bold">AUTUMN/WINTER 2025 RELEASE</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg text-primary-container uppercase tracking-tight">
+          ALL HOODIES &amp; SWEATSHIRTS [32 PIECES]
+        </h1>
+</div>
+<div class="text-right">
+<p class="text-label-mono-stat font-label-mono-stat text-on-surface-variant uppercase">SPECIFICATION: RAW 450GSM TO 520GSM LOOPBACK COTTON</p>
+<p class="text-label-mono-stat font-label-mono-stat text-secondary font-semibold uppercase">DESIGNED IN LONDON // MILLED IN PORTUGAL</p>
+</div>
+</header>
+<!-- ==================== FILTER & SORT HORIZONTAL TOOLBAR ==================== -->
+<section aria-label="Catalog Filtering &amp; Controls" class="border border-outline-variant/30 bg-surface-container-lowest p-3 lg:p-4 mb-10">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<!-- Left Filter Pills -->
+<div class="flex flex-wrap items-center gap-2">
+<!-- Category Dropdown Trigger -->
+<button class="flex items-center space-x-2 border border-outline-variant/40 px-3.5 py-2 hover:border-primary-container transition-colors bg-surface text-on-surface">
+<span class="text-label-caps font-label-caps tracking-widest font-bold">CATEGORY</span>
+<span class="material-symbols-outlined text-xs">keyboard_arrow_down</span>
+</button>
+<!-- Size Pill Filter -->
+<button class="flex items-center space-x-2 border border-outline-variant/40 px-3.5 py-2 hover:border-primary-container transition-colors bg-surface text-on-surface">
+<span class="text-label-caps font-label-caps tracking-widest font-bold">SIZE (S-XXL)</span>
+<span class="material-symbols-outlined text-xs">keyboard_arrow_down</span>
+</button>
+<!-- Color Tones Filter -->
+<button class="flex items-center space-x-2 border border-outline-variant/40 px-3.5 py-2 hover:border-primary-container transition-colors bg-surface text-on-surface">
+<span class="text-label-caps font-label-caps tracking-widest font-bold">COLOR TONES</span>
+<span class="material-symbols-outlined text-xs">keyboard_arrow_down</span>
+</button>
+<!-- Price Filter -->
+<button class="flex items-center space-x-2 border border-outline-variant/40 px-3.5 py-2 hover:border-primary-container transition-colors bg-surface text-on-surface">
+<span class="text-label-caps font-label-caps tracking-widest font-bold">PRICE</span>
+<span class="material-symbols-outlined text-xs">keyboard_arrow_down</span>
+</button>
+<!-- Stock Only Interactive Toggle -->
+<label class="flex items-center space-x-2.5 px-3 py-2 border border-outline-variant/30 bg-surface-container-low cursor-pointer select-none">
+<input checked="" class="form-checkbox h-3.5 w-3.5 rounded-none text-primary-container focus:ring-0 border-outline-variant/60 cursor-pointer" type="checkbox"/>
+<span class="text-label-caps font-label-caps tracking-wider text-primary font-bold">IN STOCK ONLY</span>
+</label>
+</div>
+<!-- Right Filter & Sort Group -->
+<div class="flex items-center space-x-4 w-full sm:w-auto justify-between sm:justify-end border-t sm:border-t-0 pt-3 sm:pt-0 border-outline-variant/20">
+<div class="flex items-center space-x-2 text-label-mono-stat font-label-mono-stat text-on-surface-variant">
+<span>SHOWING: <strong class="text-primary">1–8</strong> OF 32</span>
+</div>
+<!-- Sort Select Pill -->
+<div class="relative inline-block">
+<select aria-label="Sort Catalog" class="appearance-none bg-surface border border-outline-variant/40 px-4 py-2 pr-9 text-label-caps font-label-caps font-bold tracking-widest uppercase text-on-surface focus:outline-none focus:border-primary-container cursor-pointer">
+<option>SORT BY: NEWEST DROPS</option>
+<option>SORT BY: PRICE (LOW TO HIGH)</option>
+<option>SORT BY: PRICE (HIGH TO LOW)</option>
+<option>SORT BY: HEAVIEST GSM</option>
+<option>SORT BY: LIMITED STOCK</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-xs text-on-surface">
+              unfold_more
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== PRODUCT ARCHIVAL GRID (4 COLUMNS) ==================== -->
+<section aria-label="Hoodies and Sweatshirts Catalog" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
+<!-- ITEM 1 -->
+<article class="group border border-outline-variant/30 bg-surface-container-lowest flex flex-col justify-between hover:border-primary-container transition-colors duration-150">
+<div>
+<!-- Image Container (4:5 Aspect Ratio) with Editorial Studio Look -->
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial lookbook photograph of a male streetwear model standing against a stark architectural raw concrete wall, wearing an oversized heavyweight mocha brown 450GSM drop-shoulder fleece hoodie with relaxed matching sweatpants. The lighting is high-contrast, directional natural daylight creating rich deep coffee tones and tactile fabric shadow gradients in a high-fashion underground magazine aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqWW3ezD9m2ZpJTDtt2EmrUUWqqEsdBOuo2ydDYChFGuuyvoRL7vsTYQU_cHm2x4uygu-8hMoCansBsj5mMlB_HnYUOBw0mJ2o-xAU4oHjmEBG68X0uQQqIUHLVQBWgPMV2DcG5BwsibjqofXrLw6C849amR-IlBKwDmVbVdsgRI8JTjn3GiQEw5zOCRdhHZimB1BLZ_713TX8r1WzRkm46aJkVgXfQ78OQfj2Q4A"/>
+<!-- Badge Indicator -->
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-primary-container text-surface-container-lowest px-2 py-1 text-label-caps font-label-caps tracking-widest uppercase font-bold">
+                SELLING FAST
+              </span>
+</div>
+<!-- Quick Add Size Matrix Hover Overlay -->
+<div class="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-surface-container-lowest/95 border border-primary-container p-2 flex flex-col gap-1.5">
+<span class="text-label-mono-stat font-label-mono-stat text-center uppercase font-bold text-primary-container">QUICK SELECT SIZE</span>
+<div class="grid grid-cols-5 gap-1">
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">S</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">M</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">L</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">XL</button>
+<button class="border border-outline-variant/60 opacity-30 text-label-caps font-label-caps py-1 cursor-not-allowed">XXL</button>
+</div>
+</div>
+</div>
+<!-- Product Details Telemetry -->
+<div class="p-4 border-t border-outline-variant/30 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-label-mono-stat font-label-mono-stat text-secondary uppercase font-semibold">EDITION 008 // 450GSM</span>
+<!-- Color Variation Swatch Dots -->
+<div class="flex items-center space-x-1.5">
+<button aria-label="Espresso Brown" class="w-3.5 h-3.5 rounded-full bg-[#201511] ring-1 ring-primary-container ring-offset-1"></button>
+<button aria-label="Warm Cream" class="w-3.5 h-3.5 rounded-full bg-[#F3EFE8] border border-outline-variant/40 hover:scale-110 transition-transform"></button>
+<button aria-label="Washed Black" class="w-3.5 h-3.5 rounded-full bg-[#2C2B29] border border-outline-variant/40 hover:scale-110 transition-transform"></button>
+</div>
+</div>
+<h2 class="text-title-md font-title-md text-primary tracking-tight uppercase line-clamp-1">
+              OVERSIZED MOCHA HOODIE 450GSM
+            </h2>
+<div class="flex items-center justify-between pt-1">
+<span class="text-title-lg font-title-lg text-primary-container">€89.00</span>
+<span class="text-label-mono-stat font-label-mono-stat text-outline uppercase">3 PIECES LEFT</span>
+</div>
+</div>
+</div>
+</article>
+<!-- ITEM 2 -->
+<article class="group border border-outline-variant/30 bg-surface-container-lowest flex flex-col justify-between hover:border-primary-container transition-colors duration-150">
+<div>
+<!-- Image Container (4:5 Aspect Ratio) -->
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Fashion editorial close-up studio shot of a female model wearing a minimal bone white heavyweight oversized pullover hoodie made of crisp 480GSM brushed French terry cotton. The photo possesses an austere minimal luxury aesthetic, stark natural studio lighting, ultra sharp textile textures, pure monochrome bone cream and deep brown contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBm5NWUOpDKKKgcMCkFB4OdQA7oMbnpfmOyHoFTJAHkWyHAAeYhCmMKnDok5JEoONlzYuvVqoyBsf0NjyWCqYr_g7R_70h82QynWysiasijWp8q-mTfyBdgasy0FlCxlKY46o82C2ZP5puOWsk8H_cMDARLdzmUeQ0lFCjDSc1suSYTLE94XEn-gElsmfOKe6JFCkafpJ53YtHXaeQZRMoXF4oZ5Q2hR62zACliQw"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-secondary text-on-secondary px-2 py-1 text-label-caps font-label-caps tracking-widest uppercase font-bold">
+                DROP EXCLUSIVE
+              </span>
+</div>
+<!-- Quick Add Size Matrix Hover Overlay -->
+<div class="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-surface-container-lowest/95 border border-primary-container p-2 flex flex-col gap-1.5">
+<span class="text-label-mono-stat font-label-mono-stat text-center uppercase font-bold text-primary-container">QUICK SELECT SIZE</span>
+<div class="grid grid-cols-5 gap-1">
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">S</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">M</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">L</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">XL</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">XXL</button>
+</div>
+</div>
+</div>
+<!-- Product Details Telemetry -->
+<div class="p-4 border-t border-outline-variant/30 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-label-mono-stat font-label-mono-stat text-secondary uppercase font-semibold">EDITION 008 // 480GSM</span>
+<!-- Color Variation Swatch Dots -->
+<div class="flex items-center space-x-1.5">
+<button aria-label="Warm Cream" class="w-3.5 h-3.5 rounded-full bg-[#F3EFE8] ring-1 ring-primary-container ring-offset-1"></button>
+<button aria-label="Espresso Brown" class="w-3.5 h-3.5 rounded-full bg-[#201511] border border-outline-variant/40 hover:scale-110 transition-transform"></button>
+<button aria-label="Washed Black" class="w-3.5 h-3.5 rounded-full bg-[#2C2B29] border border-outline-variant/40 hover:scale-110 transition-transform"></button>
+</div>
+</div>
+<h2 class="text-title-md font-title-md text-primary tracking-tight uppercase line-clamp-1">
+              HEAVYWEIGHT BOXY TEE - BONE
+            </h2>
+<div class="flex items-center justify-between pt-1">
+<span class="text-title-lg font-title-lg text-primary-container">€55.00</span>
+<span class="text-label-mono-stat font-label-mono-stat text-primary font-semibold uppercase">READY TO SHIP</span>
+</div>
+</div>
+</div>
+</article>
+<!-- ITEM 3 -->
+<article class="group border border-outline-variant/30 bg-surface-container-lowest flex flex-col justify-between hover:border-primary-container transition-colors duration-150">
+<div>
+<!-- Image Container (4:5 Aspect Ratio) -->
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial lookbook studio shot of an athletic model displaying an acid wash charcoal and washed black heavy zip hoodie with dual two-way antique silver zippers. High architectural concrete setting, raw Brutalist minimalist mood, directional high-angle lighting emphasizing garment wash texture and structural silhouette against a pure beige background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeTzrFiwwtSoibxsptnYPl3hVKx7nkllKeeppBAuWx4geXrGaP3pvQ0NswbK-FR_hLrWNL6OikJWvxVLVQCH55lZfKIiLWXkQ87bhF6cEqfezHyinR7oKfdkBy8TBpQTss0jSHl89a1wuadKq9EmRPbaI0MHaEAduDas1iphGyagfzA7wlnPqdTvwF2H_Tgy4HmpBqy-CLaFZGirCGhshMG1IotHMe8zEt3qPF6-E"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-primary-container text-surface-container-lowest px-2 py-1 text-label-caps font-label-caps tracking-widest uppercase font-bold">
+                LIMITED 100 PIECES
+              </span>
+</div>
+<!-- Quick Add Size Matrix Hover Overlay -->
+<div class="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-surface-container-lowest/95 border border-primary-container p-2 flex flex-col gap-1.5">
+<span class="text-label-mono-stat font-label-mono-stat text-center uppercase font-bold text-primary-container">QUICK SELECT SIZE</span>
+<div class="grid grid-cols-5 gap-1">
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">S</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">M</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">L</button>
+<button class="border border-outline-variant/60 opacity-30 text-label-caps font-label-caps py-1 cursor-not-allowed">XL</button>
+<button class="border border-outline-variant/60 opacity-30 text-label-caps font-label-caps py-1 cursor-not-allowed">XXL</button>
+</div>
+</div>
+</div>
+<!-- Product Details Telemetry -->
+<div class="p-4 border-t border-outline-variant/30 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-label-mono-stat font-label-mono-stat text-secondary uppercase font-semibold">EDITION 008 // 500GSM</span>
+<!-- Color Variation Swatch Dots -->
+<div class="flex items-center space-x-1.5">
+<button aria-label="Washed Black" class="w-3.5 h-3.5 rounded-full bg-[#2C2B29] ring-1 ring-primary-container ring-offset-1"></button>
+<button aria-label="Espresso Brown" class="w-3.5 h-3.5 rounded-full bg-[#201511] border border-outline-variant/40 hover:scale-110 transition-transform"></button>
+</div>
+</div>
+<h2 class="text-title-md font-title-md text-primary tracking-tight uppercase line-clamp-1">
+              ACID WASH ZIP HOODIE
+            </h2>
+<div class="flex items-center justify-between pt-1">
+<span class="text-title-lg font-title-lg text-primary-container">€110.00</span>
+<span class="text-label-mono-stat font-label-mono-stat text-error uppercase font-bold">FEW REMAINING</span>
+</div>
+</div>
+</div>
+</article>
+<!-- ITEM 4 -->
+<article class="group border border-outline-variant/30 bg-surface-container-lowest flex flex-col justify-between hover:border-primary-container transition-colors duration-150">
+<div>
+<!-- Image Container (4:5 Aspect Ratio) -->
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Front editorial model view showcasing a relaxed raw-hem espresso brown crewneck sweatshirt crafted from loopback terry cotton. Ambient high-contrast studio illumination, muted Mediterranean architectural stone surfaces in background, showcasing crisp precision tailoring and clean drape in warm espresso and bone shades." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4DPy_LRIH47AqF0GqdcthypNGt1MdVSWtbJ005ijbNLLPbP6ScGlno4LMBelPavJ_eZm_gll64CgCwovpDBaMbiKlWG4q0-48AwyFYwpwPpu-edbnRXgaRbEf4s0-Mo2Wv3aChWOjzq_z4oN_2v-9iLgbA25me7x--w_ObK1qMo87Bv6i8j_0etdRj0RhfxGB--qrZAHDe0OBPPUt86-pILksCbxzX15RfnLb2PI"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-primary-container text-surface-container-lowest px-2 py-1 text-label-caps font-label-caps tracking-widest uppercase font-bold">
+                SELLING FAST
+              </span>
+</div>
+<!-- Quick Add Size Matrix Hover Overlay -->
+<div class="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-surface-container-lowest/95 border border-primary-container p-2 flex flex-col gap-1.5">
+<span class="text-label-mono-stat font-label-mono-stat text-center uppercase font-bold text-primary-container">QUICK SELECT SIZE</span>
+<div class="grid grid-cols-5 gap-1">
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">S</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">M</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">L</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">XL</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">XXL</button>
+</div>
+</div>
+</div>
+<!-- Product Details Telemetry -->
+<div class="p-4 border-t border-outline-variant/30 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-label-mono-stat font-label-mono-stat text-secondary uppercase font-semibold">EDITION 008 // 420GSM</span>
+<!-- Color Variation Swatch Dots -->
+<div class="flex items-center space-x-1.5">
+<button aria-label="Espresso Brown" class="w-3.5 h-3.5 rounded-full bg-[#201511] ring-1 ring-primary-container ring-offset-1"></button>
+<button aria-label="Warm Cream" class="w-3.5 h-3.5 rounded-full bg-[#F3EFE8] border border-outline-variant/40 hover:scale-110 transition-transform"></button>
+</div>
+</div>
+<h2 class="text-title-md font-title-md text-primary tracking-tight uppercase line-clamp-1">
+              ARCHIVE MINIMAL CREWNECK - MOCHA
+            </h2>
+<div class="flex items-center justify-between pt-1">
+<span class="text-title-lg font-title-lg text-primary-container">€82.00</span>
+<span class="text-label-mono-stat font-label-mono-stat text-primary font-semibold uppercase">READY TO SHIP</span>
+</div>
+</div>
+</div>
+</article>
+<!-- ITEM 5 -->
+<article class="group border border-outline-variant/30 bg-surface-container-lowest flex flex-col justify-between hover:border-primary-container transition-colors duration-150">
+<div>
+<!-- Image Container (4:5 Aspect Ratio) -->
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Studio fashion capture of a model wearing an ultra-heavyweight 520GSM oversized double-layered hooded sweatshirt in deep charcoal espresso wash. Brutalist concrete background, high-definition textile macro details, clean high fashion drop aesthetics in monochrome neutral lighting with subtle grain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpXWOZAttL47vuzFfw5ha5lG8MFIicqIJJ3BN_xzGv5P5qg8skKO2_bGGjlLk9IdaCAu4TyjAMAdRx9bkxhY1VMcQgV1vFBB9faMfkWaZ4FGdjSezpQzCavsAeh8KbDALo3JKiR6E0yxpfYT5q7RqYWoGK4gNXsbCEgeXCHP6XXFZoSN072xBpx3txcbg49Hqwbs-kwPZcxcccytwoRqG8bC0980olicoFN4CuSyI"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-secondary text-on-secondary px-2 py-1 text-label-caps font-label-caps tracking-widest uppercase font-bold">
+                HEAVIEST FLEECE
+              </span>
+</div>
+<!-- Quick Add Size Matrix Hover Overlay -->
+<div class="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-surface-container-lowest/95 border border-primary-container p-2 flex flex-col gap-1.5">
+<span class="text-label-mono-stat font-label-mono-stat text-center uppercase font-bold text-primary-container">QUICK SELECT SIZE</span>
+<div class="grid grid-cols-5 gap-1">
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">S</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">M</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">L</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">XL</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">XXL</button>
+</div>
+</div>
+</div>
+<!-- Product Details Telemetry -->
+<div class="p-4 border-t border-outline-variant/30 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-label-mono-stat font-label-mono-stat text-secondary uppercase font-semibold">EDITION 008 // 520GSM</span>
+<!-- Color Variation Swatch Dots -->
+<div class="flex items-center space-x-1.5">
+<button aria-label="Washed Black" class="w-3.5 h-3.5 rounded-full bg-[#2C2B29] ring-1 ring-primary-container ring-offset-1"></button>
+<button aria-label="Espresso Brown" class="w-3.5 h-3.5 rounded-full bg-[#201511] border border-outline-variant/40 hover:scale-110 transition-transform"></button>
+<button aria-label="Warm Cream" class="w-3.5 h-3.5 rounded-full bg-[#F3EFE8] border border-outline-variant/40 hover:scale-110 transition-transform"></button>
+</div>
+</div>
+<h2 class="text-title-md font-title-md text-primary tracking-tight uppercase line-clamp-1">
+              DOUBLE-LAYERED HOODIE 520GSM
+            </h2>
+<div class="flex items-center justify-between pt-1">
+<span class="text-title-lg font-title-lg text-primary-container">€125.00</span>
+<span class="text-label-mono-stat font-label-mono-stat text-primary font-semibold uppercase">READY TO SHIP</span>
+</div>
+</div>
+</div>
+</article>
+<!-- ITEM 6 -->
+<article class="group border border-outline-variant/30 bg-surface-container-lowest flex flex-col justify-between hover:border-primary-container transition-colors duration-150">
+<div>
+<!-- Image Container (4:5 Aspect Ratio) -->
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial lookbook photograph showing a standing model in a warm sand bone half-zip relaxed pullover fleece sweatshirt with clean technical collar framing. Bright natural daylight, Mediterranean gallery wall setting with soft shadows, raw linen aesthetic and stark contrast espresso elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwamb6HfvPDtVS_kBcfRP_ybCZG49YmVQiv1_8SY1b3sRFZc6iu2yjAe1s7ygM4huWbo6g3p-pXQn9OcsTHeW7Jb3F_AtvXKC69F8qxFOYUujuUb2t6gvghPViR_bacQ31xlUbjqcvw-wX3iEYNucmFO0DlHo1xfyBIxdJY2NNi245qEL3Y6GSm5lAPSeTeyPpwNcPH8VfyLRubpIEL9mHSWl_WBOtYe0lcbz2fyw"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-primary-container text-surface-container-lowest px-2 py-1 text-label-caps font-label-caps tracking-widest uppercase font-bold">
+                DROP EXCLUSIVE
+              </span>
+</div>
+<!-- Quick Add Size Matrix Hover Overlay -->
+<div class="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-surface-container-lowest/95 border border-primary-container p-2 flex flex-col gap-1.5">
+<span class="text-label-mono-stat font-label-mono-stat text-center uppercase font-bold text-primary-container">QUICK SELECT SIZE</span>
+<div class="grid grid-cols-5 gap-1">
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">S</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">M</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">L</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">XL</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">XXL</button>
+</div>
+</div>
+</div>
+<!-- Product Details Telemetry -->
+<div class="p-4 border-t border-outline-variant/30 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-label-mono-stat font-label-mono-stat text-secondary uppercase font-semibold">EDITION 008 // 450GSM</span>
+<!-- Color Variation Swatch Dots -->
+<div class="flex items-center space-x-1.5">
+<button aria-label="Warm Cream" class="w-3.5 h-3.5 rounded-full bg-[#F3EFE8] ring-1 ring-primary-container ring-offset-1"></button>
+<button aria-label="Espresso Brown" class="w-3.5 h-3.5 rounded-full bg-[#201511] border border-outline-variant/40 hover:scale-110 transition-transform"></button>
+</div>
+</div>
+<h2 class="text-title-md font-title-md text-primary tracking-tight uppercase line-clamp-1">
+              HALF-ZIP OVERSIZED PULLOVER - BONE
+            </h2>
+<div class="flex items-center justify-between pt-1">
+<span class="text-title-lg font-title-lg text-primary-container">€95.00</span>
+<span class="text-label-mono-stat font-label-mono-stat text-outline uppercase">6 PIECES LEFT</span>
+</div>
+</div>
+</div>
+</article>
+<!-- ITEM 7 -->
+<article class="group border border-outline-variant/30 bg-surface-container-lowest flex flex-col justify-between hover:border-primary-container transition-colors duration-150">
+<div>
+<!-- Image Container (4:5 Aspect Ratio) -->
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial lookbook studio photograph of a model in a deep espresso brown distressed thermal-lined heavyweight zip hoodie. The model is standing in a razor-sharp brutalist architectural studio with geometric shadow projections. Garment shows rich heavy rib details and matte dark coffee texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwjxq16Wc3g7gfn8YfHM2rXIent8k9hSvDOPl6nMocrUm6PZZDkWzddhK_3sYAqjy3MLkcqRLYM7ERMD4n_5_Kx9h-TU1yScD0ZtHULF5i_eJWJzIUj3_upF1itfXswx-5MhHEJ_0sDfXJuYYUacMFJ_AC-2xwfp47yFEk0iFNpYkW97vmtR0-UUYbYBD2vuTOfmwbT9sGNpTfeV1gnUXdDBERbESyDJ1d0l0wURg"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-primary-container text-surface-container-lowest px-2 py-1 text-label-caps font-label-caps tracking-widest uppercase font-bold">
+                SELLING FAST
+              </span>
+</div>
+<!-- Quick Add Size Matrix Hover Overlay -->
+<div class="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-surface-container-lowest/95 border border-primary-container p-2 flex flex-col gap-1.5">
+<span class="text-label-mono-stat font-label-mono-stat text-center uppercase font-bold text-primary-container">QUICK SELECT SIZE</span>
+<div class="grid grid-cols-5 gap-1">
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">S</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">M</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">L</button>
+<button class="border border-outline-variant/60 opacity-30 text-label-caps font-label-caps py-1 cursor-not-allowed">XL</button>
+<button class="border border-outline-variant/60 opacity-30 text-label-caps font-label-caps py-1 cursor-not-allowed">XXL</button>
+</div>
+</div>
+</div>
+<!-- Product Details Telemetry -->
+<div class="p-4 border-t border-outline-variant/30 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-label-mono-stat font-label-mono-stat text-secondary uppercase font-semibold">EDITION 008 // 470GSM</span>
+<!-- Color Variation Swatch Dots -->
+<div class="flex items-center space-x-1.5">
+<button aria-label="Espresso Brown" class="w-3.5 h-3.5 rounded-full bg-[#201511] ring-1 ring-primary-container ring-offset-1"></button>
+<button aria-label="Washed Black" class="w-3.5 h-3.5 rounded-full bg-[#2C2B29] border border-outline-variant/40 hover:scale-110 transition-transform"></button>
+</div>
+</div>
+<h2 class="text-title-md font-title-md text-primary tracking-tight uppercase line-clamp-1">
+              THERMAL-LINED ZIP HOODIE - MOCHA
+            </h2>
+<div class="flex items-center justify-between pt-1">
+<span class="text-title-lg font-title-lg text-primary-container">€115.00</span>
+<span class="text-label-mono-stat font-label-mono-stat text-outline uppercase">2 PIECES LEFT</span>
+</div>
+</div>
+</div>
+</article>
+<!-- ITEM 8 -->
+<article class="group border border-outline-variant/30 bg-surface-container-lowest flex flex-col justify-between hover:border-primary-container transition-colors duration-150">
+<div>
+<!-- Image Container (4:5 Aspect Ratio) -->
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial lookbook studio photograph of a model in a raw ecru cream sun-bleached boxy heavyweight crewneck sweatshirt with dropped shoulders. High key warm minimalist gallery background, clean sunlight angles casting geometric lines on high-grade loopback knit fabric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBwWC4Kd26hw4LA_DmmQr_FXRZIw7aVKPm_V2HRUCJ8Mv5NDDXgLndm2sMHRSxxZ3biEGyoEfMlNDm8XDdLjV1qbebkj_euOQb6sAnKNfO0ZcX6UC8_hGyfZvdoPxbpyO7FIGhzL9uJP1snu6t5Sm-bLMXx-8FtkEZ546MGvWOb7SBRnw25azRdP9D6ffP0TaNl-9uY1q-GKQTriA8NbqSMPECWz0a4woGruJZz2M"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1">
+<span class="bg-secondary text-on-secondary px-2 py-1 text-label-caps font-label-caps tracking-widest uppercase font-bold">
+                RESTOCK
+              </span>
+</div>
+<!-- Quick Add Size Matrix Hover Overlay -->
+<div class="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-surface-container-lowest/95 border border-primary-container p-2 flex flex-col gap-1.5">
+<span class="text-label-mono-stat font-label-mono-stat text-center uppercase font-bold text-primary-container">QUICK SELECT SIZE</span>
+<div class="grid grid-cols-5 gap-1">
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">S</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">M</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">L</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">XL</button>
+<button class="border border-outline-variant/60 hover:bg-primary-container hover:text-on-primary text-label-caps font-label-caps py-1 transition-colors">XXL</button>
+</div>
+</div>
+</div>
+<!-- Product Details Telemetry -->
+<div class="p-4 border-t border-outline-variant/30 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-label-mono-stat font-label-mono-stat text-secondary uppercase font-semibold">EDITION 008 // 450GSM</span>
+<!-- Color Variation Swatch Dots -->
+<div class="flex items-center space-x-1.5">
+<button aria-label="Warm Cream" class="w-3.5 h-3.5 rounded-full bg-[#F3EFE8] ring-1 ring-primary-container ring-offset-1"></button>
+<button aria-label="Espresso Brown" class="w-3.5 h-3.5 rounded-full bg-[#201511] border border-outline-variant/40 hover:scale-110 transition-transform"></button>
+</div>
+</div>
+<h2 class="text-title-md font-title-md text-primary tracking-tight uppercase line-clamp-1">
+              BOXY RAW-HEM CREWNECK - BONE
+            </h2>
+<div class="flex items-center justify-between pt-1">
+<span class="text-title-lg font-title-lg text-primary-container">€78.00</span>
+<span class="text-label-mono-stat font-label-mono-stat text-primary font-semibold uppercase">READY TO SHIP</span>
+</div>
+</div>
+</div>
+</article>
+</section>
+<!-- ==================== PAGINATION & LOAD MORE ==================== -->
+<div class="flex flex-col items-center justify-center space-y-4 py-8 border-t border-outline-variant/30">
+<div class="text-label-mono-stat font-label-mono-stat text-on-surface-variant uppercase tracking-wider">
+        CATALOG DISPATCH STATUS: 8 OF 32 PIECES DISPLAYED
+      </div>
+<!-- Progress Bar Graphic -->
+<div class="w-64 h-1 bg-surface-container-high overflow-hidden">
+<div class="w-1/4 h-full bg-primary-container"></div>
+</div>
+<!-- Main Action: Load More Button -->
+<button class="bg-surface-container-low border border-primary-container text-primary-container hover:bg-primary-container hover:text-surface-container-lowest px-10 py-4 transition-colors duration-150 text-label-caps font-label-caps tracking-widest uppercase font-bold">
+        LOAD MORE PIECES [12 OF 32]
+      </button>
+</div>
+<!-- ==================== ARCHIVAL ACCORDION SPECIFICATIONS ==================== -->
+<section aria-label="Textile Standards" class="mt-16 border-t border-primary-container/20 pt-10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="border-l border-primary-container/30 pl-4">
+<span class="text-label-mono-stat font-label-mono-stat text-secondary uppercase font-bold">01 // HEAVYWEIGHT GSM STANDARDS</span>
+<h3 class="text-title-md font-title-md text-primary-container mt-1 uppercase">450 TO 520 GSM LOOPBACK</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">Custom spun Portuguese long-staple cotton tailored to drape boxy without synthetic polyester blending.</p>
+</div>
+<div class="border-l border-primary-container/30 pl-4">
+<span class="text-label-mono-stat font-label-mono-stat text-secondary uppercase font-bold">02 // PIGMENT DYEING PROCESS</span>
+<h3 class="text-title-md font-title-md text-primary-container mt-1 uppercase">MINERAL STONE WASHED</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">Each piece undergoes manual mineral cold enzyme washes to establish unique distressed seam fading.</p>
+</div>
+<div class="border-l border-primary-container/30 pl-4">
+<span class="text-label-mono-stat font-label-mono-stat text-secondary uppercase font-bold">03 // VAULT RUN EXCLUSIVITY</span>
+<h3 class="text-title-md font-title-md text-primary-container mt-1 uppercase">SERIALIZED EMBROIDERY</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">Once an edition count of 100 or 150 sells out, dies are retired to prevent secondary reissue dilution.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- ==================== FOOTER (SHARED COMPONENT) ==================== -->
+<footer class="docked full-width border-t border-outline-variant/20 dark:border-outline/30 bg-surface-container-low dark:bg-surface-container-lowest mt-20">
+<div class="w-full px-6 lg:px-12 py-16 max-w-[1600px] mx-auto flex flex-col gap-12">
+<!-- Upper Section: Brand + Links Grid -->
+<div class="flex flex-col lg:flex-row justify-between items-start gap-10">
+<div class="max-w-md">
+<a class="text-headline-lg font-headline-lg uppercase text-primary dark:text-inverse-primary tracking-tight" href="../02-atelier-archive-editorial-homepage/screen.html">
+            FALSTEP
+          </a>
+<p class="text-body-md font-body-md text-on-surface-variant dark:text-outline mt-3">
+            An uncompromising convergence of Mediterranean editorial leisure and raw British drop-culture hype. Strictly limited garment allocations released in seasonal drops.
+          </p>
+<!-- Newsletter Alert Box -->
+<div class="mt-6 flex flex-col gap-2">
+<span class="text-label-caps font-label-caps tracking-widest text-primary font-bold uppercase">SMS / EMAIL DROP VIP PRIORITY</span>
+<div class="flex items-stretch border border-primary-container bg-surface-container-lowest">
+<input class="w-full bg-transparent px-3 py-2 text-label-caps font-label-caps text-on-surface placeholder:text-on-surface-variant focus:outline-none border-0 ring-0" placeholder="ENTER ACCESS EMAIL..." type="email"/>
+<button class="bg-primary-container text-surface-container-lowest px-6 text-label-caps font-label-caps tracking-widest uppercase font-bold hover:bg-secondary transition-colors">
+                JOIN
+              </button>
+</div>
+</div>
+</div>
+<!-- Links Cluster -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-8">
+<div>
+<span class="text-label-mono-stat font-label-mono-stat text-secondary uppercase font-bold tracking-widest">DISPATCH &amp; VAULT</span>
+<ul class="mt-4 space-y-2.5">
+<li>
+<a class="hover:text-primary dark:hover:text-on-primary underline underline-offset-4 transition-all duration-150 text-body-md font-body-md text-on-surface-variant dark:text-outline uppercase tracking-wider block" href="#">
+                  EARLY ACCESS VIP
+                </a>
+</li>
+<li>
+<a class="hover:text-primary dark:hover:text-on-primary underline underline-offset-4 transition-all duration-150 text-body-md font-body-md text-on-surface-variant dark:text-outline uppercase tracking-wider block" href="#">
+                  SHIPPING &amp; DROPS
+                </a>
+</li>
+<li>
+<a class="hover:text-primary dark:hover:text-on-primary underline underline-offset-4 transition-all duration-150 text-body-md font-body-md text-on-surface-variant dark:text-outline uppercase tracking-wider block" href="#">
+                  ARCHIVE VAULT
+                </a>
+</li>
+</ul>
+</div>
+<div>
+<span class="text-label-mono-stat font-label-mono-stat text-secondary uppercase font-bold tracking-widest">LEGAL &amp; IDENTITY</span>
+<ul class="mt-4 space-y-2.5">
+<li>
+<a class="hover:text-primary dark:hover:text-on-primary underline underline-offset-4 transition-all duration-150 text-body-md font-body-md text-on-surface-variant dark:text-outline uppercase tracking-wider block" href="#">
+                  EDITORIAL MANIFESTO
+                </a>
+</li>
+<li>
+<a class="hover:text-primary dark:hover:text-on-primary underline underline-offset-4 transition-all duration-150 text-body-md font-body-md text-on-surface-variant dark:text-outline uppercase tracking-wider block" href="#">
+                  TERMS OF RELEASE
+                </a>
+</li>
+</ul>
+</div>
+<div>
+<span class="text-label-mono-stat font-label-mono-stat text-secondary uppercase font-bold tracking-widest">STUDIO TELEMETRY</span>
+<ul class="mt-4 space-y-1.5 text-label-mono-stat font-label-mono-stat text-on-surface-variant">
+<li>LAT: 51.5074° N</li>
+<li>LON: 0.1278° W</li>
+<li>STATUS: VAULT LIVE</li>
+<li>CURRENCY: EUR / GBP</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Lower Section: Copyright & Legal Notice -->
+<div class="border-t border-outline-variant/30 dark:border-outline/40 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+<p class="text-label-mono-stat font-label-mono-stat text-on-surface-variant uppercase tracking-wider">
+          © 2025 ARCHIVE DROP CULTURE LTD. ALL RIGHTS RESERVED. STRICTLY LIMITED RUNS.
+        </p>
+<div class="flex items-center space-x-6 text-label-mono-stat font-label-mono-stat text-on-surface-variant uppercase">
+<span>PORTUGUESE FLEECE 450GSM</span>
+<span>•</span>
+<span>NO RESTOCKS GUARANTEED</span>
+</div>
+</div>
+</div>
+</footer>
+<script src="../store.js"></script>
+</body></html>

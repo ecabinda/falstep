@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FALSTEP — Drop 07: Terrain &amp; Shadow</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#52443f",
+            "on-tertiary": "#ffffff",
+            "primary-fixed": "#f4ded7",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#92807a",
+            "on-background": "#1a1c1c",
+            "surface-dim": "#dadada",
+            "tertiary-fixed-dim": "#c9c6c0",
+            "on-secondary": "#ffffff",
+            "background": "#f9f9f9",
+            "inverse-primary": "#d7c2bb",
+            "inverse-on-surface": "#f0f1f1",
+            "surface-container-highest": "#e2e2e2",
+            "surface-container": "#eeeeee",
+            "on-error": "#ffffff",
+            "secondary": "#75584a",
+            "inverse-surface": "#2f3131",
+            "outline": "#807571",
+            "secondary-fixed-dim": "#e4bfae",
+            "error": "#ba1a1a",
+            "surface-variant": "#e2e2e2",
+            "on-secondary-fixed-variant": "#5b4134",
+            "tertiary-fixed": "#e6e2db",
+            "primary-container": "#241915",
+            "secondary-container": "#fed8c6",
+            "on-surface": "#1a1c1c",
+            "tertiary": "#000000",
+            "on-tertiary-container": "#86847e",
+            "surface-tint": "#6b5b55",
+            "surface-container-high": "#e8e8e8",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#4e4541",
+            "primary": "#000000",
+            "on-primary-fixed": "#241915",
+            "surface-container-low": "#f3f3f3",
+            "primary-fixed-dim": "#d7c2bb",
+            "surface-container-lowest": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#1c1c18",
+            "on-secondary-container": "#795c4e",
+            "outline-variant": "#d2c3bf",
+            "on-secondary-fixed": "#2a170c",
+            "surface-bright": "#f9f9f9",
+            "tertiary-container": "#1c1c18",
+            "secondary-fixed": "#ffdbcb",
+            "on-tertiary-fixed-variant": "#484742",
+            "surface": "#f9f9f9"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "margin": "3rem",
+            "space-xs": "0.25rem",
+            "margin-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "gutter-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "display-hero-mobile": ["Anton"],
+            "title-lg": ["Hanken Grotesk"],
+            "headline-lg": ["Anton"],
+            "label-caps": ["Hanken Grotesk"],
+            "label-mono-stat": ["Hanken Grotesk"],
+            "title-md": ["Hanken Grotesk"],
+            "headline-md": ["Anton"],
+            "headline-lg-mobile": ["Anton"],
+            "headline-sm": ["Anton"],
+            "body-md": ["Hanken Grotesk"],
+            "display-hero": ["Anton"],
+            "body-lg": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "display-hero-mobile": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "title-lg": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg": ["56px", { "lineHeight": "58px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-caps": ["12px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "700" }],
+            "label-mono-stat": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-md": ["32px", { "lineHeight": "36px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["36px", { "lineHeight": "38px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "display-hero": ["96px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: inline-flex;
+      white-space: nowrap;
+      animation: marquee 22s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  
+    /* Free-code interactive effects */
+    @keyframes marquee {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+    .animate-marquee {
+      display: inline-block;
+      animation: marquee 25s linear infinite;
+    }
+    @keyframes shimmerSweep {
+      0% { transform: translateX(-150%) skewX(-20deg); }
+      100% { transform: translateX(250%) skewX(-20deg); }
+    }
+    .btn-shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-shimmer::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transform: translateX(-150%) skewX(-20deg);
+      pointer-events: none;
+    }
+    .btn-shimmer:hover::after {
+      animation: shimmerSweep 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .tilt-card {
+      transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+      will-change: transform;
+    }
+    .tilt-card:hover {
+      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.3);
+    }
+
+</style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface antialiased selection:bg-primary selection:text-on-primary">
+
+<!-- 2. Sticky TopNavBar (From Shared Components Schema) -->
+<header class="absolute top-0 left-0 w-full z-50 bg-transparent pt-4">
+<div class="relative flex items-center justify-between px-margin-mobile md:px-margin max-w-[1600px] mx-auto h-14">
+<!-- Brand Logo with Frosted Pill -->
+<div class="flex items-center">
+<a class="px-4 py-1.5 bg-black/45 backdrop-blur-md border border-white/25 rounded-md font-['Anton'] text-2xl tracking-wider uppercase text-white hover:bg-black/65 hover:border-white/50 transition-all duration-200 shadow-xl flex items-center gap-2" href="../02-atelier-archive-editorial-homepage/screen.html">
+  FALSTEP
+</a>
+</div>
+<!-- Desktop Navigation Links Centered with Elevated Frosted Pill -->
+<nav class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2">
+<a class="px-5 py-2 bg-black/50 backdrop-blur-md border border-white/25 hover:border-white/60 hover:bg-black/75 rounded-full text-white text-xs font-bold tracking-widest uppercase transition-all duration-200 shadow-xl flex items-center gap-2 btn-shimmer" href="../01-atelier-archive-hoodies-sweatshirts-catalog/screen.html">
+  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+  <span>COLLECTIONS</span>
+</a>
+</nav>
+<!-- Trailing Action Cluster with Frosted Badges -->
+<div class="flex items-center gap-3">
+<div class="hidden sm:flex items-center px-3 py-1.5 bg-black/45 backdrop-blur-md border border-white/25 rounded text-white text-[11px] font-mono shadow-lg">
+  <span>EUR €</span>
+</div>
+<!-- Cart Bag Trigger -->
+<button class="relative flex items-center gap-2 px-4 py-1.5 bg-black/50 hover:bg-white text-white hover:text-black backdrop-blur-md border border-white/25 hover:border-white rounded-md transition-all duration-200 shadow-xl btn-shimmer font-bold text-xs uppercase tracking-wider">
+  <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+  <span class="hidden sm:inline">Bag</span>
+  <span class="ml-1 px-1.5 py-0.5 text-[10px] font-mono font-bold bg-white text-black rounded-sm shadow">0</span>
+</button>
+</div>
+</div>
+</header>
+<!-- 3. Hero Section: Full-Bleed Editorial Hero Banner -->
+<main>
+<section class="border-b border-outline-variant/40 bg-black relative overflow-hidden">
+<div class="w-full relative min-h-[700px] lg:min-h-[88vh] flex flex-col justify-between overflow-hidden group">
+  <!-- Full-Bleed Hero Image (occupies full width and height) -->
+  <canvas id="hero-video-canvas" class="absolute inset-0 w-full h-full object-cover object-center pointer-events-none" style="width:100%;height:100%;object-fit:cover;transform:translateZ(0);"></canvas>
+
+  <!-- Subtle gradient scrim for typography legibility -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 via-50% to-transparent pointer-events-none"></div>
+
+
+
+  <!-- Bottom Hero Content Overlay -->
+  <div class="relative z-10 max-w-[1600px] w-full mx-auto px-6 pb-10 pt-20 mt-auto">
+    <div class="max-w-2xl">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-2 h-2 bg-[#f3efe8]"></span>
+        <span class="font-label-caps text-label-caps uppercase text-[#f3efe8] tracking-widest text-xs font-bold">FALSE STEP® &bull; DROP 07 CAPSULE</span>
+      </div>
+      <h1 class="font-display-hero text-5xl sm:text-7xl lg:text-8xl uppercase tracking-tighter text-white leading-none drop-shadow-md">
+        FEROZ SAVAGE &amp;<br/>DIAMOND DIET
+      </h1>
+      <p class="font-body-lg text-sm sm:text-base text-[#e5ded8] pt-3 max-w-xl leading-relaxed drop-shadow">
+        Classical Roman marble sculpting fused with raw underground brutalism. Boxy heavyweight proportions sculpted from bespoke Portuguese milled textiles, engineered for perpetual permanence.
+      </p>
+
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row gap-3 pt-6 max-w-md">
+        <a href="../01-atelier-archive-hoodies-sweatshirts-catalog/screen.html" class="flex-1 bg-white text-[#201511] font-headline-sm text-center uppercase tracking-wider py-4 px-6 hover:bg-[#f3efe8] transition-colors font-bold text-sm">
+          EXPLORAR COLEÇÃO
+        </a>
+        <a href="../01-atelier-archive-hoodies-sweatshirts-catalog/screen.html" class="flex-1 bg-black/60 backdrop-blur-sm border border-white text-white font-headline-sm text-center uppercase tracking-wider py-4 px-6 hover:bg-white hover:text-black transition-colors font-bold text-sm">
+          VER PRODUTOS
+        </a>
+      </div>
+    </div>
+
+    </div>
+</div>
+</section>
+<!-- 4. Trending Grid: 4-Column Heavyweight Capsule Showcase -->
+<section class="py-space-xl border-b border-outline-variant/40">
+<div class="max-w-[1600px] mx-auto px-margin-mobile md:px-margin">
+<!-- Section Header Bar -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-space-lg pb-space-sm border-b border-outline-variant/40">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">INDEX // VOLUME 07</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-primary tracking-tight">TRENDING CAPSULE SILHOUETTES</h2>
+</div>
+<div class="mt-2 sm:mt-0 flex items-center gap-space-md font-label-caps text-label-caps">
+<span class="text-on-surface-variant uppercase tracking-widest">SHOWING 4 OF 24 ITEMS</span>
+<a class="text-primary underline underline-offset-4 hover:text-secondary uppercase transition-colors" href="../01-atelier-archive-hoodies-sweatshirts-catalog/screen.html">VIEW FULL CATALOGUE</a>
+</div>
+</div>
+<!-- 4-Column Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<article class="group border border-outline-variant/30 bg-surface-container-lowest flex flex-col justify-between transition-all duration-200 hover:border-primary">
+<div class="relative overflow-hidden aspect-[4/5] bg-[#F3EFE8]">
+<!-- Badge -->
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-primary text-on-primary font-label-caps text-[10px] px-2 py-0.5 uppercase tracking-widest">
+                  DROP EXCLUSIVE
+                </span>
+</div>
+<!-- Image with Hover Detail Swap -->
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Studio lookbook clean product photography of a heavy luxury streetwear oversized hoodie in asphalt black washed terry cotton. Styled boxy with dropped shoulders on a warm bone background under harsh direct flash lighting. Deep espresso tones and tactile thick ribbed cuffs." src="../assets/products/hero_david_feroz_black.jpg"/>
+<!-- Quick Size Matrix Reveal on Hover -->
+<div class="absolute inset-x-0 bottom-0 bg-surface-container-lowest/95 border-t border-outline-variant/40 p-2 translate-y-full group-hover:translate-y-0 transition-transform duration-200 flex justify-between items-center gap-1">
+<span class="font-label-caps text-[10px] uppercase text-on-surface-variant px-1">QUICK ADD:</span>
+<div class="flex gap-1">
+<button class="w-7 h-7 border border-outline-variant/60 font-label-caps text-[11px] text-primary hover:bg-primary hover:text-on-primary transition-colors">S</button>
+<button class="w-7 h-7 border border-outline-variant/60 font-label-caps text-[11px] text-primary hover:bg-primary hover:text-on-primary transition-colors">M</button>
+<button class="w-7 h-7 bg-primary text-on-primary font-label-caps text-[11px]">L</button>
+<button class="w-7 h-7 border border-outline-variant/60 font-label-caps text-[11px] text-primary hover:bg-primary hover:text-on-primary transition-colors">XL</button>
+</div>
+</div>
+</div>
+<!-- Card Telemetry & Details -->
+<div class="p-space-md border-t border-outline-variant/30 flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-mono-stat text-label-mono-stat text-on-surface-variant uppercase">EDITION // 01</span>
+<!-- Swatches -->
+<div class="flex gap-1.5 items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-[#1c1c18] border border-outline-variant/40" title="Earth Noir"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#75584a] border border-outline-variant/40" title="Warm Mocha"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#e2e2e2] border border-outline-variant/40" title="Stone"></span>
+</div>
+</div>
+<h3 class="font-title-md text-title-md text-primary font-bold uppercase tracking-tight line-clamp-1">
+                  FEROZ SAVAGE OVERSIZED TEE 320GSM
+                </h3>
+</div>
+<div class="pt-space-sm mt-space-sm border-t border-outline-variant/20 flex justify-between items-center">
+<span class="font-title-lg text-title-lg text-primary">€65.00</span>
+<span class="font-label-mono-stat text-label-mono-stat text-secondary uppercase font-semibold">12 LEFT</span>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="group border border-outline-variant/30 bg-surface-container-lowest flex flex-col justify-between transition-all duration-200 hover:border-primary">
+<div class="relative overflow-hidden aspect-[4/5] bg-[#F3EFE8]">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-[#ba1a1a] text-on-primary font-label-caps text-[10px] px-2 py-0.5 uppercase tracking-widest">
+                  LIMITED STOCK
+                </span>
+</div>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial lookbook photo of a model wearing a heavyweight boxy archive t-shirt in washed espresso brown cotton. Minimalist typography graphic print on center back with dropped raw hems. Bright flash on a stark architectural brutalist background in Paris." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0HIztlyY5qPQDrg8d0BgiJnsPczy-372e79AZG-1YtRvQs1G32jTpAS-p6ugxHE3tAjR-bOmVofIXvQJJAcb8sG6BvM2tJx7oSWM1Ib1aOMVP6RIUMwdB8bFMMkaWc1lG6HpSx-n1_cJtFUpmqxbDwVlh1Bo8mTbCXe0Oh4MxMgb5d7FRcEzwb9ONjhiw1Xso2c7Ijn3HtwLKr-zdpe3AowQvWFqWe-y0J275lQk"/>
+<div class="absolute inset-x-0 bottom-0 bg-surface-container-lowest/95 border-t border-outline-variant/40 p-2 translate-y-full group-hover:translate-y-0 transition-transform duration-200 flex justify-between items-center gap-1">
+<span class="font-label-caps text-[10px] uppercase text-on-surface-variant px-1">QUICK ADD:</span>
+<div class="flex gap-1">
+<button class="w-7 h-7 border border-outline-variant/60 font-label-caps text-[11px] text-primary hover:bg-primary hover:text-on-primary transition-colors">S</button>
+<button class="w-7 h-7 bg-primary text-on-primary font-label-caps text-[11px]">M</button>
+<button class="w-7 h-7 border border-outline-variant/60 font-label-caps text-[11px] text-primary hover:bg-primary hover:text-on-primary transition-colors">L</button>
+<button class="w-7 h-7 border border-outline-variant/60 font-label-caps text-[11px] text-primary opacity-30 cursor-not-allowed">XL</button>
+</div>
+</div>
+</div>
+<div class="p-space-md border-t border-outline-variant/30 flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-mono-stat text-label-mono-stat text-on-surface-variant uppercase">EDITION // 02</span>
+<div class="flex gap-1.5 items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-[#201511] border border-outline-variant/40"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#f4ded7] border border-outline-variant/40"></span>
+</div>
+</div>
+<h3 class="font-title-md text-title-md text-primary font-bold uppercase tracking-tight line-clamp-1">
+                  DIAMOND DIET OVERSIZED TEE 320GSM
+                </h3>
+</div>
+<div class="pt-space-sm mt-space-sm border-t border-outline-variant/20 flex justify-between items-center">
+<span class="font-title-lg text-title-lg text-primary">€65.00</span>
+<span class="font-label-mono-stat text-label-mono-stat text-error uppercase font-semibold">STRICTLY LIMITED</span>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="group border border-outline-variant/30 bg-surface-container-lowest flex flex-col justify-between transition-all duration-200 hover:border-primary">
+<div class="relative overflow-hidden aspect-[4/5] bg-[#F3EFE8]">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-primary text-on-primary font-label-caps text-[10px] px-2 py-0.5 uppercase tracking-widest">
+                  DROP EXCLUSIVE
+                </span>
+</div>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial lookbook vertical photograph of washed cargo track pants in heavyweight washed charcoal cotton fabric. Architectural bellows pockets with thick metal hardware cords and bungee cinch ankles. Styled with chunky technical trainers on rough concrete steps." src="../assets/products/tee_dunk_white.png"/>
+<div class="absolute inset-x-0 bottom-0 bg-surface-container-lowest/95 border-t border-outline-variant/40 p-2 translate-y-full group-hover:translate-y-0 transition-transform duration-200 flex justify-between items-center gap-1">
+<span class="font-label-caps text-[10px] uppercase text-on-surface-variant px-1">QUICK ADD:</span>
+<div class="flex gap-1">
+<button class="w-7 h-7 border border-outline-variant/60 font-label-caps text-[11px] text-primary hover:bg-primary hover:text-on-primary transition-colors">S</button>
+<button class="w-7 h-7 border border-outline-variant/60 font-label-caps text-[11px] text-primary hover:bg-primary hover:text-on-primary transition-colors">M</button>
+<button class="w-7 h-7 border border-outline-variant/60 font-label-caps text-[11px] text-primary hover:bg-primary hover:text-on-primary transition-colors">L</button>
+<button class="w-7 h-7 bg-primary text-on-primary font-label-caps text-[11px]">XL</button>
+</div>
+</div>
+</div>
+<div class="p-space-md border-t border-outline-variant/30 flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-mono-stat text-label-mono-stat text-on-surface-variant uppercase">EDITION // 03</span>
+<div class="flex gap-1.5 items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-[#1a1c1c] border border-outline-variant/40"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#52443f] border border-outline-variant/40"></span>
+</div>
+</div>
+<h3 class="font-title-md text-title-md text-primary font-bold uppercase tracking-tight line-clamp-1">
+                  RETRO DUNK ARCHIVE TEE 300GSM
+                </h3>
+</div>
+<div class="pt-space-sm mt-space-sm border-t border-outline-variant/20 flex justify-between items-center">
+<span class="font-title-lg text-title-lg text-primary">€60.00</span>
+<span class="font-label-mono-stat text-label-mono-stat text-on-surface-variant uppercase font-semibold">PRE-ORDER</span>
+</div>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="group border border-outline-variant/30 bg-surface-container-lowest flex flex-col justify-between transition-all duration-200 hover:border-primary">
+<div class="relative overflow-hidden aspect-[4/5] bg-[#F3EFE8]">
+<div class="absolute top-3 left-3 z-10">
+<span class="bg-[#F3EFE8] text-primary border border-primary/30 font-label-caps text-[10px] px-2 py-0.5 uppercase tracking-widest">
+                  ARCHIVE REISSUE
+                </span>
+</div>
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Editorial lookbook photograph of a boxy tactical zipped overshirt in heavy washed sand canvas. Minimalist metallic double zipper and structured collar, worn unzipped over an off-white ribbed undershirt in high contrast street style." src="../assets/products/tee_savage_green.png"/>
+<div class="absolute inset-x-0 bottom-0 bg-surface-container-lowest/95 border-t border-outline-variant/40 p-2 translate-y-full group-hover:translate-y-0 transition-transform duration-200 flex justify-between items-center gap-1">
+<span class="font-label-caps text-[10px] uppercase text-on-surface-variant px-1">QUICK ADD:</span>
+<div class="flex gap-1">
+<button class="w-7 h-7 bg-primary text-on-primary font-label-caps text-[11px]">S</button>
+<button class="w-7 h-7 border border-outline-variant/60 font-label-caps text-[11px] text-primary hover:bg-primary hover:text-on-primary transition-colors">M</button>
+<button class="w-7 h-7 border border-outline-variant/60 font-label-caps text-[11px] text-primary hover:bg-primary hover:text-on-primary transition-colors">L</button>
+<button class="w-7 h-7 border border-outline-variant/60 font-label-caps text-[11px] text-primary hover:bg-primary hover:text-on-primary transition-colors">XL</button>
+</div>
+</div>
+</div>
+<div class="p-space-md border-t border-outline-variant/30 flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start mb-1">
+<span class="font-label-mono-stat text-label-mono-stat text-on-surface-variant uppercase">EDITION // 04</span>
+<div class="flex gap-1.5 items-center">
+<span class="w-2.5 h-2.5 rounded-full bg-[#d7c2bb] border border-outline-variant/40"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#241915] border border-outline-variant/40"></span>
+</div>
+</div>
+<h3 class="font-title-md text-title-md text-primary font-bold uppercase tracking-tight line-clamp-1">
+                  SEVAGE TIGER BOTANIC TEE 320GSM
+                </h3>
+</div>
+<div class="pt-space-sm mt-space-sm border-t border-outline-variant/20 flex justify-between items-center">
+<span class="font-title-lg text-title-lg text-primary">€65.00</span>
+<span class="font-label-mono-stat text-label-mono-stat text-secondary uppercase font-semibold">IN STOCK</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- 5. Lookbook Showcase: Editorial Horizontal BTS Spread & Manifesto -->
+<section id="editorial" class="border-b border-outline-variant/40 bg-surface-container-low py-space-xl scroll-mt-20">
+<div class="max-w-[1600px] mx-auto px-margin-mobile md:px-margin">
+<!-- Lookbook Editorial Header -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl items-end">
+<div class="lg:col-span-8">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest block mb-2">FIELD DISPATCH // PARIS &amp; LONDON</span>
+<h2 class="font-headline-lg text-headline-lg uppercase text-primary leading-tight">
+              CAMPAIGN 07: RAW LEISURE &amp; CONCRETE CULTURE
+            </h2>
+</div>
+<div class="lg:col-span-4">
+<p class="font-body-md text-body-md text-on-surface-variant border-l-2 border-primary pl-space-md">
+              We bridge Mediterranean holiday hedonism with cold British high-density metropolitan drops. No seasons, no corporate excess—only disciplined capsule drops crafted in finite numbers.
+            </p>
+</div>
+</div>
+<!-- Bento Horizontal Lookbook Spread -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
+<!-- Large Feature Shot (7 Cols) -->
+<div class="md:col-span-7 bg-[#F3EFE8] border border-outline-variant/40 relative group overflow-hidden h-[460px]">
+<img class="w-full h-full object-cover grayscale contrast-110 group-hover:scale-105 transition-transform duration-700" data-alt="Candid film-grain editorial photograph of two streetwear models lounging on a marble balcony in Paris after dawn, wearing oversized matching espresso brown track sets and vintage sunglasses. High-end leisure meets underground street drip with natural dramatic morning sun flare." src="../assets/products/hero_david_pink_diet.jpg"/>
+<div class="absolute bottom-4 left-4 bg-surface-container-lowest/90 px-3 py-1 font-label-caps text-label-caps text-primary uppercase">
+              LOOK 01 // DIAMOND DIET EDITORIAL
+            </div>
+</div>
+<!-- Secondary Vertical Shot (5 Cols) -->
+<div class="md:col-span-5 bg-[#F3EFE8] border border-outline-variant/40 relative group overflow-hidden h-[460px]">
+<img class="w-full h-full object-cover contrast-125 group-hover:scale-105 transition-transform duration-700" data-alt="Raw high-fashion candid photograph of a group of youth in Hackney London gathered outside a brutalist council estate at twilight, wearing heavyweight boxy hoodies and technical nylon pants. 35mm film grain aesthetic, moody shadows, and cinematic amber street lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKha3doZepP-aoMAlnHp6TWMyRVkW6qMC26d6L5syXd9IR2c5dMyprJjAWbtKQn9qnFLkECFTKoSHyxEzK2gUcBrYgRl7a3T-61XeqpyGjfFHqK7ZtCHaJ9Wap_TWqscUb-r1BRWBeTIjBYYXbxjbV9Lg3SQ6PE_-2_WJvaoEes0mh5Rz-8HMFMdylM4xFfD1XBQQhkCWLdSYFlLxU7FjaODH5PHe69gGTvSUwpZY"/>
+<div class="absolute bottom-4 left-4 bg-surface-container-lowest/90 px-3 py-1 font-label-caps text-label-caps text-primary uppercase">
+              LOOK 02 // EAST LONDON ARCHIVE
+            </div>
+</div>
+<!-- Horizontal Wide Manifesto Strip (Full 12 Cols) -->
+<div class="md:col-span-12 border border-outline-variant/40 bg-surface-container-lowest p-space-lg md:p-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="max-w-2xl">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest block mb-1">CRAFT MANIFESTO</span>
+<p class="font-title-lg text-title-lg text-primary uppercase tracking-tight">
+                "GARMENTS CONSTRUCTED FOR THOSE WHO EXIST BETWEEN UNDERGROUND MUSIC NIGHTS AND SUN-DRENCHED ESCAPISM. NEVER MASS PRODUCED. NEVER DISCOUNTED."
+              </p>
+</div>
+<a class="inline-flex items-center gap-space-sm bg-primary text-on-primary px-space-lg py-3 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary-container transition-colors shrink-0" href="#">
+              EXPLORE FULL LOOKBOOK
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Archival Technical Accordion Specs -->
+<section class="border-b border-outline-variant/40 bg-surface-container-lowest py-space-xl">
+<div class="max-w-[1600px] mx-auto px-margin-mobile md:px-margin">
+<div class="mb-space-lg">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">TECHNICAL TELEMETRY</span>
+<h2 class="font-headline-md text-headline-md uppercase text-primary">GARMENT INTEGRITY &amp; SPECIFICATIONS</h2>
+</div>
+<div class="border-t border-outline-variant/40 divide-y divide-outline-variant/40">
+<details class="group py-space-md cursor-pointer">
+<summary class="flex justify-between items-center list-none font-title-lg text-title-lg uppercase text-primary">
+<span>01. 480GSM - 520GSM PORTUGUESE COMBED FLEECE</span>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant pt-space-sm max-w-3xl">
+              Spun exclusively in Guimarães, Portugal from 100% pre-shrunk combed organic cotton. Our unbrushed French terry weave provides substantial architectural structure and raw drape without synthetic stiffeners.
+            </p>
+</details>
+<details class="group py-space-md cursor-pointer">
+<summary class="flex justify-between items-center list-none font-title-lg text-title-lg uppercase text-primary">
+<span>02. MINERAL &amp; COLD PIGMENT DYE METHODOLOGY</span>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant pt-space-sm max-w-3xl">
+              Each drop undergoes a bespoke 48-hour cold pigment wash bath followed by artisanal hand-finishing. Over time and continuous wear, seams naturally reveal micro-faded highs and lows unique to your body.
+            </p>
+</details>
+<details class="group py-space-md cursor-pointer">
+<summary class="flex justify-between items-center list-none font-title-lg text-title-lg uppercase text-primary">
+<span>03. DROP ARCHITECTURE &amp; ALLOCATION POLICIES</span>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant pt-space-sm max-w-3xl">
+              Each item features an embossed physical serialization woven inner label. Once a production capsule allocation sells out in full, the blueprint is permanently archived. No re-prints or duplicate color runs.
+            </p>
+</details>
+</div>
+</div>
+</section>
+</main>
+<!-- 7. Footer (Strictly Mapped From Shared Components JSON) -->
+<footer class="w-full bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant dark:border-outline">
+<div class="w-full px-margin-mobile md:px-margin py-space-xl max-w-[1600px] mx-auto flex flex-col gap-space-lg">
+<!-- Top 4-Column Modular Footer Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter pb-space-lg border-b border-outline-variant/40">
+<!-- Col 1: Brand & Manifesto -->
+<div class="flex flex-col justify-between">
+<div>
+<span class="font-headline-sm text-headline-sm uppercase tracking-tight text-primary dark:text-inverse-surface block mb-2">
+              FALSTEP
+            </span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Urban luxury drop ecosystem. Curated European construction blended with UK underground grit.
+            </p>
+</div>
+<div class="pt-space-md">
+<span class="font-label-mono-stat text-label-mono-stat text-on-surface-variant uppercase">HQ: LONDON / PARIS / BARCELONA</span>
+</div>
+</div>
+<!-- Col 2: Navigation Links (Shared Component Keys) -->
+<div>
+<h4 class="font-label-caps text-label-caps uppercase text-primary mb-space-sm">DISCOVERY &amp; SERVICES</h4>
+<ul class="space-y-2">
+<li>
+<a class="text-primary dark:text-inverse-primary font-label-caps text-label-caps uppercase hover:text-primary dark:hover:text-inverse-primary underline underline-offset-4 transition-all duration-150" href="#">
+                CLIENT SERVICE
+              </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline font-label-caps text-label-caps uppercase hover:text-primary dark:hover:text-inverse-primary underline underline-offset-4 transition-all duration-150" href="#">
+                SHIPPING &amp; DROPS
+              </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline font-label-caps text-label-caps uppercase hover:text-primary dark:hover:text-inverse-primary underline underline-offset-4 transition-all duration-150" href="#">
+                TERMS OF RELEASE
+              </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline font-label-caps text-label-caps uppercase hover:text-primary dark:hover:text-inverse-primary underline underline-offset-4 transition-all duration-150" href="#">
+                LOOKBOOK ARCHIVE
+              </a>
+</li>
+</ul>
+</div>
+<!-- Col 3: Legal & Authenticity (Shared Component Keys) -->
+<div>
+<h4 class="font-label-caps text-label-caps uppercase text-primary mb-space-sm">STANDARDS &amp; RIGHTS</h4>
+<ul class="space-y-2">
+<li>
+<a class="text-on-surface-variant dark:text-outline font-label-caps text-label-caps uppercase hover:text-primary dark:hover:text-inverse-primary underline underline-offset-4 transition-all duration-150" href="#">
+                AUTHENTICITY
+              </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline font-label-caps text-label-caps uppercase hover:text-primary dark:hover:text-inverse-primary underline underline-offset-4 transition-all duration-150" href="#">
+                PRIVACY POLICY
+              </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline font-label-caps text-label-caps uppercase hover:text-primary dark:hover:text-inverse-primary underline underline-offset-4 transition-all duration-150" href="#">
+                COOKIE PREFERENCES
+              </a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-outline font-label-caps text-label-caps uppercase hover:text-primary dark:hover:text-inverse-primary underline underline-offset-4 transition-all duration-150" href="#">
+                RECYCLING &amp; RE-ARCHIVE
+              </a>
+</li>
+</ul>
+</div>
+<!-- Col 4: Newsletter Early Drop Access Form -->
+<div>
+<h4 class="font-label-caps text-label-caps uppercase text-primary mb-space-sm">EARLY DROP ALLOCATION</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-sm">
+            Enter your email for early password releases and archive member invites.
+          </p>
+<form class="flex flex-col gap-2" onsubmit="event.preventDefault();">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/60 focus:border-primary focus:ring-0 text-primary text-body-md font-body-md px-3 py-2.5 rounded-none placeholder:text-outline placeholder:text-xs" placeholder="ENTER YOUR EMAIL FOR EARLY DROP ACCESS" type="email"/>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps uppercase py-2.5 px-4 hover:bg-primary-container transition-colors" type="submit">
+              JOIN THE ARCHIVE CLUB
+            </button>
+</form>
+</div>
+</div>
+<!-- Footer Bottom Copyright Bar -->
+<div class="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-4">
+<p class="font-body-md text-body-md text-on-surface-variant">
+          © 2025 FALSTEP LTD. ALL RIGHTS RESERVED. CRAFTED FOR THE CULTURALLY ASTUTE.
+        </p>
+<div class="flex items-center gap-space-md font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">
+<span>PARIS</span>
+<span>•</span>
+<span>LONDON</span>
+<span>•</span>
+<span>BARCELONA</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Micro-Interactions: Realtime Countdown Simulation -->
+<script>
+    (function initCountdown() {
+      let seconds = 45;
+      let minutes = 28;
+      let hours = 14;
+      let days = 3;
+
+      const secEl = document.getElementById('countdown-secs');
+      const minEl = document.getElementById('countdown-mins');
+      const hourEl = document.getElementById('countdown-hours');
+      const dayEl = document.getElementById('countdown-days');
+
+      setInterval(() => {
+        if (seconds > 0) {
+          seconds--;
+        } else {
+          seconds = 59;
+          if (minutes > 0) {
+            minutes--;
+          } else {
+            minutes = 59;
+            if (hours > 0) {
+              hours--;
+            } else {
+              hours = 23;
+              if (days > 0) days--;
+            }
+          }
+        }
+
+        if (secEl) secEl.textContent = String(seconds).padStart(2, '0');
+        if (minEl) minEl.textContent = String(minutes).padStart(2, '0');
+        if (hourEl) hourEl.textContent = String(hours).padStart(2, '0');
+        if (dayEl) dayEl.textContent = String(days).padStart(2, '0');
+      }, 1000);
+    })();
+  </script>
+<script src="../store.js"></script>
+
+<script>
+(function() {
+  const canvas = document.getElementById('hero-video-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d', { alpha: false });
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+
+  function resizeCanvas() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(canvas.clientWidth * dpr);
+    canvas.height = Math.round(canvas.clientHeight * dpr);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  const totalFrames = 190;
+  const fps = 24;
+  const frameInterval = 1000 / fps;
+  const images = new Array(totalFrames);
+  let currentFrameIndex = 0;
+  let lastTime = 0;
+
+  // First frame immediate
+  const first = new Image();
+  first.src = '../assets/hero-frames/ezgif-frame-001.jpg';
+  first.onload = function() { ctx.drawImage(first, 0, 0, 1280, 720); };
+  images[0] = first;
+
+  // Preload all
+  for (let i = 1; i <= totalFrames; i++) {
+    const pad = String(i).padStart(3, '0');
+    const img = new Image();
+    img.src = '../assets/hero-frames/ezgif-frame-' + pad + '.jpg';
+    images[i - 1] = img;
+  }
+
+  function loop(time) {
+    if (!lastTime) lastTime = time;
+    const delta = time - lastTime;
+    if (delta >= frameInterval) {
+      lastTime = time - (delta % frameInterval);
+      const img = images[currentFrameIndex];
+      if (img && img.complete && img.naturalWidth > 0) {
+        const cW = canvas.width, cH = canvas.height;
+        const iW = img.naturalWidth || 1280, iH = img.naturalHeight || 720;
+        const s = Math.max(cW / iW, cH / iH);
+        const dW = iW * s, dH = iH * s;
+        ctx.drawImage(img, (cW - dW)/2, (cH - dH)/2, dW, dH);
+      }
+      currentFrameIndex = (currentFrameIndex + 1) % totalFrames;
+    }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+
+<script>
+// Silky-Smooth 3D Card Tilt with LERP physics (zero tremor)
+document.querySelectorAll('article.group, .tilt-card').forEach(card => {
+  card.classList.add('tilt-card');
+  let targetX = 0, targetY = 0, currentX = 0, currentY = 0, rafId = null;
+  let rect = null;
+
+  card.addEventListener('mouseenter', () => {
+    rect = card.getBoundingClientRect();
+    if (!rafId) {
+      function loop() {
+        currentX += (targetX - currentX) * 0.12;
+        currentY += (targetY - currentY) * 0.12;
+        card.style.transform = `perspective(1000px) rotateX(${currentX.toFixed(2)}deg) rotateY(${currentY.toFixed(2)}deg) scale3d(1.015, 1.015, 1.015)`;
+        rafId = requestAnimationFrame(loop);
+      }
+      rafId = requestAnimationFrame(loop);
+    }
+  });
+
+  card.addEventListener('mousemove', e => {
+    if (!rect) rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    targetX = (y / (rect.height / 2)) * -5;
+    targetY = (x / (rect.width / 2)) * 5;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    targetX = 0; targetY = 0; rect = null;
+    setTimeout(() => {
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    }, 350);
+  });
+});
+</script>
+
+</body>
+</html>

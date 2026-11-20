@@ -1,0 +1,190 @@
+<!-- ==================== OVERLAY & SLIDE-OUT DRAWER ==================== -->
+<!-- Subtle Dim Overlay Screen -->
+<div class="fixed inset-0 bg-primary/60 z-50 transition-opacity duration-300" id="drawerOverlay"></div>
+<!-- Right Slide-out Drawer Panel (w-[480px]) -->
+<aside class="fixed top-0 right-0 h-full w-full sm:w-[480px] max-w-full bg-surface-container-lowest z-50 flex flex-col justify-between shadow-none border-l border-outline-variant" id="cartFlyout">
+<!-- DRAWER TOP BAR / HEADER -->
+<div class="flex-none p-space-md border-b border-outline-variant bg-surface-container-lowest">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-sm text-headline-sm uppercase tracking-tight text-primary">YOUR BAG</h2>
+<span class="bg-surface-container-low text-primary border border-outline-variant font-label-caps text-label-caps px-space-sm py-0.5 rounded-full">2 ITEMS</span>
+</div>
+<button aria-label="Close Shopping Bag" class="p-1 text-primary hover:text-secondary transition-colors duration-150" id="closeDrawer">
+<span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
+</button>
+</div>
+<!-- FREE SHIPPING PROGRESS BAR -->
+<div class="mt-space-md bg-surface-container-low border border-outline-variant p-space-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-mono-stat text-label-mono-stat uppercase text-primary font-bold">SHIPPING STATUS</span>
+<span class="font-label-mono-stat text-label-mono-stat text-on-surface-variant font-medium">85% UNLOCKED</span>
+</div>
+<div class="w-full bg-surface-variant h-1.5 overflow-hidden">
+<div class="bg-primary-container h-full w-[85%] transition-all duration-300"></div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5 text-xs">
+          Add <span class="font-bold text-primary">€15.00</span> more to unlock <span class="text-primary font-semibold uppercase">FREE WORLDWIDE SHIPPING</span>
+</p>
+</div>
+</div>
+<!-- SCROLLABLE CONTENT: ITEMS & UPSELLS -->
+<div class="flex-1 overflow-y-auto divide-y divide-outline-variant">
+<!-- CART ITEMS LIST -->
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- Cart Item 1 -->
+<div class="flex gap-space-md group">
+<div class="w-24 aspect-[4/5] bg-surface-container-low border border-outline-variant flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="High detail studio product shot of a luxury heavyweight hoodie in rich dark espresso brown laid flat against a minimal stone background. Architectural streetwear garment details including clean boxy drop shoulders, deep kangaroo pocket, and reinforced ribbed hems bathed in clean editorial studio lighting." src="../assets/products/hero_david_feroz_black.jpg"/>
+</div>
+<div class="flex flex-col justify-between flex-1 py-0.5">
+<div>
+<div class="flex justify-between items-start gap-space-xs">
+<h3 class="font-title-md text-title-md uppercase tracking-tight text-primary leading-tight">OVERSIZED ESPRESSO HOODIE</h3>
+<button aria-label="Remove item" class="text-outline hover:text-primary transition-colors duration-150">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+<p class="font-label-mono-stat text-label-mono-stat text-on-surface-variant uppercase mt-1">SIZE: L / COLOR: ESPRESSO BROWN</p>
+</div>
+<div class="flex justify-between items-center mt-space-sm pt-space-xs border-t border-outline-variant">
+<!-- Quantity Selector Box -->
+<div class="inline-flex items-center border border-outline-variant bg-surface-container-lowest">
+<button class="px-2.5 py-1 text-primary hover:bg-surface-container-low transition-colors duration-150 font-label-mono-stat text-xs leading-none">-</button>
+<span class="px-3 py-1 font-label-mono-stat text-label-mono-stat text-primary font-bold border-x border-outline-variant">1</span>
+<button class="px-2.5 py-1 text-primary hover:bg-surface-container-low transition-colors duration-150 font-label-mono-stat text-xs leading-none">+</button>
+</div>
+<span class="font-title-md text-title-md text-primary font-bold">€95.00</span>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="flex gap-space-md group pt-space-md border-t border-outline-variant">
+<div class="w-24 aspect-[4/5] bg-surface-container-low border border-outline-variant flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Detailed studio fashion still of a heavy boxy luxury t-shirt in bone cream white draped carefully on a concrete block. Natural directional light emphasizing the crisp collar, 300 GSM cotton weave, and warm mocha tonal palette with minimal modern streetwear aesthetic." src="../assets/products/hero_david_feroz_black.jpg"/>
+</div>
+<div class="flex flex-col justify-between flex-1 py-0.5">
+<div>
+<div class="flex justify-between items-start gap-space-xs">
+<h3 class="font-title-md text-title-md uppercase tracking-tight text-primary leading-tight">HEAVYWEIGHT BOXY TEE</h3>
+<button aria-label="Remove item" class="text-outline hover:text-primary transition-colors duration-150">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+<p class="font-label-mono-stat text-label-mono-stat text-on-surface-variant uppercase mt-1">SIZE: M / COLOR: BONE CREAM</p>
+</div>
+<div class="flex justify-between items-center mt-space-sm pt-space-xs border-t border-outline-variant">
+<!-- Quantity Selector Box -->
+<div class="inline-flex items-center border border-outline-variant bg-surface-container-lowest">
+<button class="px-2.5 py-1 text-primary hover:bg-surface-container-low transition-colors duration-150 font-label-mono-stat text-xs leading-none">-</button>
+<span class="px-3 py-1 font-label-mono-stat text-label-mono-stat text-primary font-bold border-x border-outline-variant">1</span>
+<button class="px-2.5 py-1 text-primary hover:bg-surface-container-low transition-colors duration-150 font-label-mono-stat text-xs leading-none">+</button>
+</div>
+<span class="font-title-md text-title-md text-primary font-bold">€50.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- UPSELL SECTION: COMPLETE THE LOOK -->
+<div class="p-space-md bg-surface-container-low">
+<div class="flex justify-between items-center mb-space-sm">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-primary">COMPLETE THE LOOK // PAIRINGS</span>
+<span class="font-label-mono-stat text-label-mono-stat text-on-surface-variant">2 PICKS</span>
+</div>
+<!-- Horizontal Scroll Row -->
+<div class="flex gap-space-md overflow-x-auto pb-space-xs scrollbar-none">
+<!-- Upsell Item 1 -->
+<div class="w-48 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-space-sm flex flex-col justify-between">
+<div class="aspect-square bg-surface-container-low border border-outline-variant overflow-hidden mb-space-xs">
+<img class="w-full h-full object-cover" data-alt="Chunky ribbed knit fisherman beanie in deep espresso brown wool folded on a warm light sandstone tabletop. High-contrast directional sunlight casting strong geometric brutalist shadows. Editorial streetwear drop accessory lookbook photograph." src="../assets/products/hero_david_feroz_black.jpg"/>
+</div>
+<div>
+<p class="font-title-md text-xs uppercase text-primary font-bold truncate">ESPRESSO KNIT BEANIE</p>
+<p class="font-label-mono-stat text-label-mono-stat text-on-surface-variant mb-space-xs">€35.00</p>
+</div>
+<button class="w-full py-1.5 px-2 bg-surface-container-low hover:bg-surface-variant border border-outline-variant text-primary font-label-caps text-label-caps uppercase text-center transition-colors duration-150">
+              + QUICK ADD
+            </button>
+</div>
+<!-- Upsell Item 2 -->
+<div class="w-48 flex-shrink-0 bg-surface-container-lowest border border-outline-variant p-space-sm flex flex-col justify-between">
+<div class="aspect-square bg-surface-container-low border border-outline-variant overflow-hidden mb-space-xs">
+<img class="w-full h-full object-cover" data-alt="Pair of thick architectural ribbed crew socks in bone white with subtle espresso brown knit typography on the outer ankle. Laid flat on an architectural raw concrete slab with crisp bright daylight in an underground fashion campaign style." src="../assets/products/hero_david_feroz_black.jpg"/>
+</div>
+<div>
+<p class="font-title-md text-xs uppercase text-primary font-bold truncate">ARCHIVE RIBBED SOCKS</p>
+<p class="font-label-mono-stat text-label-mono-stat text-on-surface-variant mb-space-xs">€15.00</p>
+</div>
+<button class="w-full py-1.5 px-2 bg-surface-container-low hover:bg-surface-variant border border-outline-variant text-primary font-label-caps text-label-caps uppercase text-center transition-colors duration-150">
+              + QUICK ADD
+            </button>
+</div>
+</div>
+</div>
+<!-- PROMO / ORDER NOTE EXPANDER TOGGLE -->
+<div class="px-space-md py-space-sm bg-surface-container-lowest">
+<details class="group cursor-pointer">
+<summary class="list-none flex items-center justify-between font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors">
+<span>+ ADD PROMO CODE OR GIFT CARD</span>
+<span class="material-symbols-outlined text-sm transition-transform duration-200 group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-space-sm pt-space-xs">
+<div class="flex">
+<input class="w-full bg-surface-container-lowest border border-outline-variant px-space-sm py-1.5 font-label-mono-stat text-xs uppercase text-primary focus:outline-none focus:border-primary rounded-none" placeholder="ENTER CODE" type="text"/>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-space-md py-1.5 uppercase transition-colors hover:bg-secondary">APPLY</button>
+</div>
+</div>
+</details>
+</div>
+</div>
+<!-- DRAWER FOOTER SUMMARY & CHECKOUT -->
+<div class="flex-none p-space-md border-t border-outline-variant bg-surface-container-lowest">
+<!-- Subtotal row -->
+<div class="flex justify-between items-baseline mb-space-xs">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant">SUBTOTAL</span>
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight">€145.00</span>
+</div>
+<p class="font-body-md text-xs text-on-surface-variant mb-space-md">
+        Shipping &amp; taxes calculated at checkout. Express delivery options available.
+      </p>
+<!-- CHECKOUT BUTTON -->
+<button class="w-full py-space-md bg-primary-container text-on-primary font-headline-sm text-headline-sm tracking-wide uppercase hover:bg-secondary transition-colors duration-150 flex items-center justify-center gap-space-sm">
+<span>PROCEED TO CHECKOUT • €145.00</span>
+</button>
+<!-- Monochrome Payment Methods & Trust Badges -->
+<div class="mt-space-md pt-space-sm border-t border-outline-variant flex flex-col items-center gap-space-xs">
+<div class="flex items-center justify-center gap-space-sm opacity-80 flex-wrap">
+<span class="font-label-mono-stat text-[10px] tracking-wider border border-outline-variant px-2 py-0.5 bg-surface-container-low text-primary uppercase font-bold">APPLE PAY</span>
+<span class="font-label-mono-stat text-[10px] tracking-wider border border-outline-variant px-2 py-0.5 bg-surface-container-low text-primary uppercase font-bold">VISA</span>
+<span class="font-label-mono-stat text-[10px] tracking-wider border border-outline-variant px-2 py-0.5 bg-surface-container-low text-primary uppercase font-bold">MASTERCARD</span>
+<span class="font-label-mono-stat text-[10px] tracking-wider border border-outline-variant px-2 py-0.5 bg-surface-container-low text-primary uppercase font-bold">KLARNA</span>
+<span class="font-label-mono-stat text-[10px] tracking-wider border border-outline-variant px-2 py-0.5 bg-surface-container-low text-primary uppercase font-bold">PAYPAL</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant mt-1">
+<span class="material-symbols-outlined text-xs" data-icon="lock">lock</span>
+<span class="font-label-mono-stat text-[10px] uppercase">ENCRYPTED 256-BIT ARCHIVE CHECKOUT</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Interactive script for demo closing toggle -->
+<script>
+    const closeBtn = document.getElementById('closeDrawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const drawer = document.getElementById('cartFlyout');
+
+    function toggleDrawer() {
+      if (drawer.classList.contains('translate-x-full')) {
+        drawer.classList.remove('translate-x-full');
+        overlay.classList.remove('hidden');
+      } else {
+        drawer.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+      }
+    }
+
+    if (closeBtn && overlay) {
+      closeBtn.addEventListener('click', toggleDrawer);
+      overlay.addEventListener('click', toggleDrawer);
+    }
+  </script>
