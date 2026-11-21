@@ -1,3 +1,4 @@
+import { getAssetPath } from "../utils/assets";
 import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
 import { PRODUCTS as initialProducts, INITIAL_COLLECTIONS, INITIAL_COUPONS } from "../data/products";
 
@@ -167,30 +168,65 @@ export function ProductsProvider({ children }) {
     return updatedProd;
   };
 
-  // UPLOAD IMAGE
+  // UPLOAD IMAGE with auto-compression for instant preview and safe localStorage storage
   const uploadImage = async (file) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onload = async () => {
+        const rawResult = reader.result;
+
+        // 1. Try server upload if backend server is online
         try {
           const res = await fetch("/api/upload", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               filename: file.name,
-              base64: reader.result,
+              base64: rawResult,
             }),
           });
           if (res.ok) {
             const data = await res.json();
             if (data.url) {
-              resolve(data.url);
+              resolve(getAssetPath(data.url));
               return;
             }
           }
         } catch (err) {}
-        // Fallback to dataUrl directly (works 100% offline and on GitHub Pages)
-        resolve(reader.result);
+
+        // 2. Client-side Canvas Compression (works 100% offline and on GitHub Pages)
+        try {
+          const img = new Image();
+          img.onload = () => {
+            try {
+              const canvas = document.createElement("canvas");
+              const MAX_DIM = 1200;
+              let width = img.width;
+              let height = img.height;
+              if (width > MAX_DIM || height > MAX_DIM) {
+                if (width > height) {
+                  height = Math.round((height * MAX_DIM) / width);
+                  width = MAX_DIM;
+                } else {
+                  width = Math.round((width * MAX_DIM) / height);
+                  height = MAX_DIM;
+                }
+              }
+              canvas.width = width;
+              canvas.height = height;
+              const ctx = canvas.getContext("2d");
+              ctx.drawImage(img, 0, 0, width, height);
+              const compressed = canvas.toDataURL("image/jpeg", 0.85);
+              resolve(compressed);
+            } catch (canvasErr) {
+              resolve(rawResult);
+            }
+          };
+          img.onerror = () => resolve(rawResult);
+          img.src = rawResult;
+        } catch (compErr) {
+          resolve(rawResult);
+        }
       };
       reader.onerror = (err) => reject(err);
       reader.readAsDataURL(file);

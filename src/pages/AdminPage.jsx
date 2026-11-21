@@ -1,3 +1,4 @@
+import { getAssetPath } from "../utils/assets";
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { useAuth, DEFAULT_USERS, DEFAULT_ORDERS } from "../context/AuthContext";
 import { useProducts } from "../context/ProductsContext";
@@ -1230,7 +1231,7 @@ export function AdminPage({ setActivePage }) {
                     ) : (
                       <div className="absolute inset-0 bg-black">
                         <img
-                          src={heroForm.heroBgImage}
+                          src={getAssetPath(heroForm.heroBgImage)}
                           alt=""
                           className="w-full h-full object-cover opacity-80"
                         />
@@ -1320,7 +1321,7 @@ export function AdminPage({ setActivePage }) {
                       <div>
                         <div className="aspect-[16/9] bg-zinc-900 overflow-hidden relative border-b border-[#20151110]">
                           <img
-                            src={col.cover}
+                            src={getAssetPath(col.cover)}
                             alt={col.name}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90"
                           />
@@ -1345,7 +1346,7 @@ export function AdminPage({ setActivePage }) {
                             {assignedProducts.slice(0, 4).map((p) => (
                               <img
                                 key={p.id}
-                                src={p.image}
+                                src={getAssetPath(p.image)}
                                 alt=""
                                 title={p.title}
                                 className="w-8 h-8 object-contain bg-[#fbf9f5] border border-[#20151115] p-0.5 rounded-sm"
@@ -1662,7 +1663,7 @@ export function AdminPage({ setActivePage }) {
                   <div>
                     <div className="aspect-[4/5] bg-[#fbf9f5] overflow-hidden relative mb-3 flex items-center justify-center border border-[#20151110]">
                       <img
-                        src={prod.image}
+                        src={getAssetPath(prod.image)}
                         alt={prod.title}
                         className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
                         onError={(e) => {
@@ -1864,7 +1865,7 @@ export function AdminPage({ setActivePage }) {
                       <div key={idx} className="py-2.5 flex items-center justify-between text-xs font-mono">
                         <div className="flex items-center gap-3">
                           <img
-                            src={item.image || "/images/products/hero_david_feroz_black.jpg"}
+                            src={getAssetPath(item.image || "/images/products/hero_david_feroz_black.jpg")}
                             alt=""
                             className="w-10 h-10 object-contain bg-[#fbf9f5] border border-[#20151110] p-0.5"
                           />
@@ -2298,7 +2299,7 @@ export function AdminPage({ setActivePage }) {
                   />
                   {collectionForm.customCoverUrl ? (
                     <div className="flex items-center justify-center gap-3">
-                      <img src={collectionForm.customCoverUrl} alt="" className="w-16 h-10 object-cover border" />
+                      <img src={getAssetPath(collectionForm.customCoverUrl || collectionForm.cover)} alt="" className="w-16 h-10 object-cover border" />
                       <span className="font-bold text-emerald-800">Capa Carregada do Computador</span>
                     </div>
                   ) : (
@@ -2317,7 +2318,7 @@ export function AdminPage({ setActivePage }) {
                           : "opacity-60 hover:opacity-100"
                       }`}
                     >
-                      <img src={img.url} alt="" className="w-full h-10 object-contain bg-[#fbf9f5]" />
+                      <img src={getAssetPath(img.url)} alt="" className="w-full h-10 object-contain bg-[#fbf9f5]" />
                     </div>
                   ))}
                 </div>
@@ -2340,7 +2341,7 @@ export function AdminPage({ setActivePage }) {
                         }`}
                       >
                         <div className="flex items-center gap-2">
-                          <img src={p.image} alt="" className="w-8 h-8 object-contain bg-white border p-0.5" />
+                          <img src={getAssetPath(p.image)} alt="" className="w-8 h-8 object-contain bg-white border p-0.5" />
                           <div>
                             <span className="font-bold text-[#201511] block">{p.title}</span>
                             <span className="text-[10px] text-[#75584a]">€{Number(p.price).toFixed(2)} &bull; {p.category}</span>
@@ -2402,7 +2403,7 @@ export function AdminPage({ setActivePage }) {
 
             {/* Banner preview */}
             <div className="relative aspect-[21/9] bg-black overflow-hidden mb-6 border border-[#20151120] rounded-sm">
-              <img src={previewCollection.cover} alt="" className="w-full h-full object-cover opacity-80" />
+              <img src={getAssetPath(previewCollection.cover)} alt="" className="w-full h-full object-cover opacity-80" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               <div className="absolute bottom-6 left-6 text-white max-w-lg">
                 <span className="px-2 py-0.5 bg-white/20 backdrop-blur-md text-[10px] font-mono font-bold uppercase tracking-widest mb-2 inline-block">
@@ -2421,7 +2422,7 @@ export function AdminPage({ setActivePage }) {
                 .filter((p) => previewCollection.productIds?.includes(p.id))
                 .map((p) => (
                   <div key={p.id} className="border border-[#20151115] p-2 bg-[#fbf9f5]">
-                    <img src={p.image} alt="" className="w-full aspect-[4/5] object-contain bg-white mb-2" />
+                    <img src={getAssetPath(p.image)} alt="" className="w-full aspect-[4/5] object-contain bg-white mb-2" />
                     <h5 className="font-['Anton'] text-xs uppercase truncate text-[#201511]">{p.title}</h5>
                     <span className="text-[11px] font-mono font-bold text-[#201511]">€{Number(p.price).toFixed(2)}</span>
                   </div>
@@ -2648,7 +2649,7 @@ export function AdminPage({ setActivePage }) {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                       <div className="w-20 h-20 bg-white border border-emerald-500 rounded p-1 shadow-md overflow-hidden flex items-center justify-center">
                         <img 
-                          src={editFormData.customImageUrl} 
+                          src={getAssetPath(editFormData.customImageUrl || editFormData.image)} 
                           alt="Uploaded product" 
                           className="w-full h-full object-contain" 
                         />
@@ -2698,7 +2699,7 @@ export function AdminPage({ setActivePage }) {
                         }`}
                       >
                         <div className="w-16 h-16 bg-[#fbf9f5] flex items-center justify-center overflow-hidden mb-1.5 border border-[#20151110]">
-                          <img src={img.url} alt={img.name} className="w-full h-full object-contain p-1" />
+                          <img src={getAssetPath(img.url)} alt={img.name} className="w-full h-full object-contain p-1" />
                         </div>
                         <span className="text-[10px] font-mono leading-tight line-clamp-1 font-bold text-[#201511]">
                           {img.name}
@@ -3022,6 +3023,7 @@ export function AdminPage({ setActivePage }) {
                     onChange={(e) => {
                       if (e.target.files && e.target.files[0]) {
                         processImageFile(e.target.files[0], "product_add");
+                        e.target.value = "";
                       }
                     }}
                   />
@@ -3030,7 +3032,7 @@ export function AdminPage({ setActivePage }) {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                       <div className="w-20 h-20 bg-white border border-emerald-500 rounded p-1 shadow-md overflow-hidden flex items-center justify-center">
                         <img 
-                          src={formData.customImageUrl} 
+                          src={getAssetPath(formData.customImageUrl || formData.image)} 
                           alt="Uploaded product" 
                           className="w-full h-full object-contain" 
                         />
@@ -3080,7 +3082,7 @@ export function AdminPage({ setActivePage }) {
                         }`}
                       >
                         <div className="w-16 h-16 bg-[#fbf9f5] flex items-center justify-center overflow-hidden mb-1.5 border border-[#20151110]">
-                          <img src={img.url} alt={img.name} className="w-full h-full object-contain p-1" />
+                          <img src={getAssetPath(img.url)} alt={img.name} className="w-full h-full object-contain p-1" />
                         </div>
                         <span className="text-[10px] font-mono leading-tight line-clamp-1 font-bold text-[#201511]">
                           {img.name}
