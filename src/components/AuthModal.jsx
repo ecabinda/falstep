@@ -32,21 +32,6 @@ export function AuthModal({ onLoginSuccess }) {
     }
   };
 
-  const handleQuickDemo = async (demoEmail, demoPass) => {
-    setError("");
-    setEmail(demoEmail);
-    setPassword(demoPass);
-    setLoading(true);
-    try {
-      const loggedUser = await login(demoEmail, demoPass);
-      if (onLoginSuccess) onLoginSuccess(loggedUser);
-    } catch (err) {
-      setError(err.message || "Erro no login de teste.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
       {/* Backdrop */}
@@ -89,11 +74,10 @@ export function AuthModal({ onLoginSuccess }) {
               setMode("login");
               setError("");
             }}
-            className={`flex-1 py-2 text-xs font-['Anton'] uppercase tracking-wider transition ${
-              mode === "login"
+            className={`flex-1 py-2 text-xs font-['Anton'] uppercase tracking-wider transition ${mode === "login"
                 ? "bg-white text-black shadow"
                 : "text-white/70 hover:text-white"
-            }`}
+              }`}
           >
             Entrar
           </button>
@@ -103,11 +87,10 @@ export function AuthModal({ onLoginSuccess }) {
               setMode("register");
               setError("");
             }}
-            className={`flex-1 py-2 text-xs font-['Anton'] uppercase tracking-wider transition ${
-              mode === "register"
+            className={`flex-1 py-2 text-xs font-['Anton'] uppercase tracking-wider transition ${mode === "register"
                 ? "bg-white text-black shadow"
                 : "text-white/70 hover:text-white"
-            }`}
+              }`}
           >
             Criar Conta
           </button>
@@ -179,30 +162,6 @@ export function AuthModal({ onLoginSuccess }) {
             )}
           </button>
         </form>
-
-        {/* Quick Access Credentials */}
-        <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono">
-          <span className="text-white/40 uppercase">Acesso Rápido:</span>
-          <div className="flex gap-2 items-center">
-            <button
-              type="button"
-              onClick={() => handleQuickDemo("edilson@falstep.com", "1234")}
-              className="text-[#f3efe8] hover:text-white bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded transition font-bold"
-              title="Preencher com a conta Edilson"
-            >
-              Edilson (1234)
-            </button>
-            <span className="text-white/20">&bull;</span>
-            <button
-              type="button"
-              onClick={() => handleQuickDemo("admin@falstep.com", "admin")}
-              className="text-[#f3efe8] hover:text-white bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded transition font-bold"
-              title="Preencher com a conta Administrador"
-            >
-              Admin (admin)
-            </button>
-          </div>
-        </div>
 
         {/* Security & Multi-Device Access Footer */}
         <div className="mt-8 pt-6 border-t border-white/10 text-center">
