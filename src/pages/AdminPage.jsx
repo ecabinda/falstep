@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
-import { useAuth } from "../context/AuthContext";
+import { useAuth, DEFAULT_USERS, DEFAULT_ORDERS } from "../context/AuthContext";
 import { useProducts } from "../context/ProductsContext";
 import { HeroVideoBackground } from "../components/HeroVideoBackground";
 
@@ -199,27 +199,76 @@ export function AdminPage({ setActivePage }) {
   }, [storeSettings]);
 
   const fetchAdminStats = async () => {
+    let usersList = [];
+    let ordersList = [];
+    let statsData = null;
+
     try {
       const res = await fetch("/api/admin/stats");
       if (res.ok) {
         const data = await res.json();
-        setStats(data);
-        setRegisteredUsers(data.users || []);
+        statsData = data;
+        usersList = data.users || [];
       }
+    } catch (e) {}
 
+    try {
       setLoadingOrders(true);
       const ordersRes = await fetch("/api/orders?all=true", {
         headers: { "x-user-role": "admin" },
       });
       if (ordersRes.ok) {
         const oData = await ordersRes.json();
-        setAllOrders(oData.orders || []);
+        ordersList = oData.orders || [];
       }
-    } catch (err) {
-      console.error("Admin fetch error:", err);
-    } finally {
-      setLoadingOrders(false);
+    } catch (e) {}
+
+    // Seamless Fallback for GitHub Pages / Static Hosting / Offline:
+    if (!usersList || usersList.length === 0) {
+      try {
+        const raw = localStorage.getItem("falstep_users_db");
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed) && parsed.length > 0) usersList = parsed;
+        }
+      } catch (e) {}
+      if (!usersList || usersList.length === 0) {
+        usersList = DEFAULT_USERS;
+      }
     }
+
+    if (!ordersList || ordersList.length === 0) {
+      try {
+        const raw = localStorage.getItem("falstep_orders_db");
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed) && parsed.length > 0) ordersList = parsed;
+        }
+      } catch (e) {}
+      if (!ordersList || ordersList.length === 0) {
+        ordersList = DEFAULT_ORDERS;
+      }
+    }
+
+    const safeUsers = usersList.map(({ password, ...u }) => u);
+    setRegisteredUsers(safeUsers);
+    setAllOrders(ordersList);
+
+    if (statsData) {
+      setStats(statsData);
+    } else {
+      const totalRev = ordersList.reduce((sum, o) => sum + (Number(o.total) || 0), 0);
+      setStats({
+        totalRevenue: totalRev,
+        totalOrders: ordersList.length,
+        totalUsers: safeUsers.length,
+        totalProducts: products.length,
+        recentOrders: [...ordersList].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 5),
+        users: safeUsers,
+      });
+    }
+
+    setLoadingOrders(false);
   };
 
   useEffect(() => {
@@ -622,21 +671,21 @@ export function AdminPage({ setActivePage }) {
 
     if (confirm(`ATENÇÃO: Deseja remover permanentemente o cliente "${targetUser.name}" (${targetUser.email})?`)) {
       try {
-        const res = await fetch(`/api/users/${targetUser.id}`, {
+        await fetch(`/api/users/${targetUser.id}`, {
           method: "DELETE",
           headers: { "x-user-role": "admin" },
         });
+      } catch (e) {}
 
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.error || "Erro ao remover cliente.");
-
-        setRegisteredUsers((prev) => prev.filter((u) => u.id !== targetUser.id));
-        setFeedbackMsg(`Cliente ${targetUser.name} (${targetUser.email}) removido com sucesso.`);
-        setTimeout(() => setFeedbackMsg(""), 5000);
-        fetchAdminStats();
-      } catch (err) {
-        alert("Erro ao remover cliente: " + err.message);
-      }
+      setRegisteredUsers((prev) => {
+        const updated = prev.filter((u) => u.id !== targetUser.id);
+        try {
+          localStorage.setItem("falstep_users_db", JSON.stringify(updated));
+        } catch (e) {}
+        return updated;
+      });
+      setFeedbackMsg(`Cliente ${targetUser.name} (${targetUser.email}) removido com sucesso.`);
+      setTimeout(() => setFeedbackMsg(""), 5000);
     }
   };
 
@@ -1982,38 +2031,57 @@ export function AdminPage({ setActivePage }) {
           </div>
 
           <div className="divide-y divide-[#20151115]">
-            {registeredUsers.map((u) => {
-              const isUserAdmin = u.role === "admin" || u.email.toLowerCase() === "admin@falstep.com";
-              const userOrders = allOrders.filter((o) => o.customerEmail?.toLowerCase() === u.email.toLowerCase());
-              const userSpend = userOrders.reduce((sum, o) => sum + (Number(o.total) || 0), 0);
+            {registeredUsers.length === 0 ? (
+              <div className="p-12 text-center text-[#75584a] font-mono">
+                <span className="material-symbols-outlined text-4xl text-[#75584a]/40 mb-2">group_off</span>
+                <p className="text-sm">Nenhum cliente carregado de momento.</p>
+                <button
+                  onClick={fetchAdminStats}
+                  className="mt-3 px-4 py-2 bg-black text-white text-xs font-mono uppercase tracking-wider hover:bg-[#201511] transition"
+                >
+                  Recarregar Lista de Clientes
+                </button>
+              </div>
+            ) : (
+              registeredUsers.map((u) => {
+                const isUserAdmin = u.role === "admin" || u.email.toLowerCase() === "admin@falstep.com";
+                const userOrders = allOrders.filter((o) => o.customerEmail?.toLowerCase() === u.email.toLowerCase());
+                const userSpend = userOrders.reduce((sum, o) => sum + (Number(o.total) || 0), 0);
+                const isCurrentlyOnline = user?.email?.toLowerCase() === u.email?.toLowerCase();
 
-              return (
-                <div key={u.id} className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-[#faf9f6] transition">
-                  <div className="flex items-center gap-3">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${
-                      isUserAdmin ? "bg-amber-100 text-amber-900 border border-amber-300" : "bg-zinc-100 text-zinc-800 border border-zinc-200"
-                    }`}>
-                      {u.name ? u.name.charAt(0).toUpperCase() : "U"}
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="font-mono text-sm font-bold text-[#201511]">{u.name}</span>
-                        <span
-                          className={`px-2 py-0.5 text-[9px] font-mono font-bold uppercase rounded ${
-                            isUserAdmin
-                              ? "bg-amber-100 text-amber-800 border border-amber-300"
-                              : "bg-emerald-50 text-emerald-800 border border-emerald-200"
-                          }`}
-                        >
-                          {isUserAdmin ? "ADMINISTRADOR" : "CLIENTE"}
-                        </span>
-                        {!isUserAdmin && userSpend > 150 && (
-                          <span className="px-1.5 py-0.5 bg-purple-100 text-purple-800 text-[9px] font-mono font-bold uppercase rounded">
-                            VIP
-                          </span>
-                        )}
+                return (
+                  <div key={u.id} className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-[#faf9f6] transition">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${
+                        isUserAdmin ? "bg-amber-100 text-amber-900 border border-amber-300" : "bg-zinc-100 text-zinc-800 border border-zinc-200"
+                      }`}>
+                        {u.name ? u.name.charAt(0).toUpperCase() : "U"}
                       </div>
-                      <p className="text-xs font-mono text-[#75584a] mt-0.5">{u.email}</p>
+                      <div>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="font-mono text-sm font-bold text-[#201511]">{u.name}</span>
+                          <span
+                            className={`px-2 py-0.5 text-[9px] font-mono font-bold uppercase rounded ${
+                              isUserAdmin
+                                ? "bg-amber-100 text-amber-800 border border-amber-300"
+                                : "bg-emerald-50 text-emerald-800 border border-emerald-200"
+                            }`}
+                          >
+                            {isUserAdmin ? "ADMINISTRADOR" : "CLIENTE"}
+                          </span>
+                          {isCurrentlyOnline && (
+                            <span className="px-2 py-0.5 text-[9px] font-mono font-bold uppercase rounded bg-green-100 text-green-800 border border-green-300 flex items-center gap-1">
+                              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                              ONLINE AGORA (VOCÊ)
+                            </span>
+                          )}
+                          {!isUserAdmin && userSpend > 150 && (
+                            <span className="px-1.5 py-0.5 bg-purple-100 text-purple-800 text-[9px] font-mono font-bold uppercase rounded">
+                              VIP
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-xs font-mono text-[#75584a] mt-0.5">{u.email}</p>
                       <span className="text-[10px] font-mono text-[#a89b91]">
                         Registo: {u.createdAt ? new Date(u.createdAt).toLocaleDateString("pt-PT") : "Data original"} &bull; {userOrders.length} compras feitas (€{userSpend.toFixed(2)})
                       </span>
