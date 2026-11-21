@@ -3,10 +3,12 @@ import React, { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
 import { PRODUCTS } from "../data/products";
+import { useProducts } from "../context/ProductsContext";
 
 export function SalesPage({ setActivePage, directCheckoutItem }) {
   const { user, saveOrder, openAuthModal } = useAuth();
   const { items, subtotal, shippingRemaining, addItem, updateQty, removeItem, clearCart } = useCart();
+  const { coupons } = useProducts();
   
   // Selected product for quick single-product sales mode if cart is empty
   const [selectedProduct, setSelectedProduct] = useState(PRODUCTS[0]);
@@ -43,32 +45,52 @@ export function SalesPage({ setActivePage, directCheckoutItem }) {
     const clean = couponCode.trim().toUpperCase();
     if (!clean) return;
 
+    // 1. Try server
     try {
       const res = await fetch("/api/coupons/validate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ code: clean, cartSubtotal: subtotal }),
       });
-      const data = await res.json();
-      if (!res.ok) {
-        setCouponError(data.error || "Cupom inválido.");
+      if (res.ok) {
+        const data = await res.json();
+        if (data.coupon) {
+          if (data.coupon.type === "percentage") {
+            setDiscountPercent(Number(data.coupon.value));
+          } else {
+            const pct = Math.min(100, Math.round((Number(data.coupon.value) / (subtotal || 1)) * 100));
+            setDiscountPercent(pct);
+          }
+          setCouponApplied(true);
+          return;
+        }
+      }
+    } catch (e) {}
+
+    // 2. Client-side fallback for GitHub Pages
+    const found = (coupons || []).find((c) => c.code.toUpperCase() === clean);
+    if (found && found.active !== false) {
+      if (found.minSpend && subtotal < Number(found.minSpend)) {
+        setCouponError(`Gasto mínimo de €${found.minSpend} necessário para este cupom.`);
         return;
       }
-      if (data.coupon.type === "percentage") {
-        setDiscountPercent(data.coupon.value);
+      if (found.type === "percentage") {
+        setDiscountPercent(Number(found.value));
       } else {
-        const pct = Math.min(100, Math.round((Number(data.coupon.value) / (subtotal || 1)) * 100));
+        const pct = Math.min(100, Math.round((Number(found.value) / (subtotal || 1)) * 100));
         setDiscountPercent(pct);
       }
       setCouponApplied(true);
-    } catch {
-      if (clean === "FALSTEP10" || clean === "DROP07") {
-        setDiscountPercent(10);
-        setCouponApplied(true);
-      } else {
-        setCouponError("Cupom inválido ou expirado.");
-      }
+      return;
     }
+
+    if (clean === "FALSTEP10" || clean === "DROP07") {
+      setDiscountPercent(10);
+      setCouponApplied(true);
+      return;
+    }
+
+    setCouponError("Cupom inválido ou expirado.");
   };
 
   // Determine items to checkout: if directCheckoutItem is set, checkout that specific item directly!

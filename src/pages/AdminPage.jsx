@@ -700,21 +700,22 @@ export function AdminPage({ setActivePage }) {
 
   const handleSaveOrderTracking = async (orderId, trackingCode, carrier) => {
     try {
-      const res = await fetch(`/api/orders/${orderId}`, {
+      await fetch(`/api/orders/${orderId}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ trackingCode, carrier }),
       });
-      if (res.ok) {
-        setAllOrders((prev) =>
-          prev.map((o) => (o.id === orderId ? { ...o, trackingCode, carrier } : o))
-        );
-        setFeedbackMsg(`Código de rastreio ${trackingCode} guardado na encomenda #${orderId.slice(-6)}.`);
-        setTimeout(() => setFeedbackMsg(""), 4000);
-      }
-    } catch (err) {
-      alert("Erro ao salvar rastreio: " + err.message);
-    }
+    } catch (err) {}
+
+    setAllOrders((prev) => {
+      const updated = prev.map((o) => (o.id === orderId ? { ...o, trackingCode, carrier } : o));
+      try {
+        localStorage.setItem("falstep_orders_db", JSON.stringify(updated));
+      } catch (e) {}
+      return updated;
+    });
+    setFeedbackMsg(`Código de rastreio ${trackingCode} guardado na encomenda #${orderId.slice(-6)}.`);
+    setTimeout(() => setFeedbackMsg(""), 4000);
   };
 
   const handleExportCSV = () => {
