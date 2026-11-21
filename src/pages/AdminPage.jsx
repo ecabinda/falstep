@@ -1768,7 +1768,7 @@ export function AdminPage({ setActivePage }) {
                   </div>
                 </div>
               );
-            }))}
+            })}
           </div>
         </div>
       )}
@@ -2106,7 +2106,7 @@ export function AdminPage({ setActivePage }) {
                   </div>
                 </div>
               );
-            })}
+            }))}
           </div>
         </div>
       )}
