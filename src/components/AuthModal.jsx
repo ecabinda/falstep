@@ -124,14 +124,14 @@ export function AuthModal({ onLoginSuccess }) {
 
           <div>
             <label className="block text-[11px] font-mono uppercase tracking-wider text-[#a89b91] mb-1">
-              Endereço de E-mail
+              {mode === "login" ? "E-mail ou Usuário" : "Endereço de E-mail"}
             </label>
             <input
-              type="email"
+              type={mode === "login" ? "text" : "email"}
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="seu@email.com"
+              placeholder={mode === "login" ? "seu@email.com ou admin" : "seu@email.com"}
               className="w-full bg-black/60 border border-white/20 px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-white transition font-mono placeholder:text-white/30"
             />
           </div>

@@ -71,17 +71,26 @@ export const DEFAULT_ORDERS = [
 ];
 
 function getStoredUsers() {
+  let existing = [];
   try {
     const raw = localStorage.getItem("falstep_users_db");
     if (raw) {
       const parsed = JSON.parse(raw);
-      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      if (Array.isArray(parsed)) existing = parsed;
     }
   } catch {}
+
+  // Always guarantee default users (admin, customer demo) are available
+  const merged = [...DEFAULT_USERS];
+  for (const u of existing) {
+    if (!merged.some((m) => m.email?.toLowerCase() === u.email?.toLowerCase())) {
+      merged.push(u);
+    }
+  }
   try {
-    localStorage.setItem("falstep_users_db", JSON.stringify(DEFAULT_USERS));
+    localStorage.setItem("falstep_users_db", JSON.stringify(merged));
   } catch {}
-  return DEFAULT_USERS;
+  return merged;
 }
 
 function saveStoredUsers(users) {
@@ -191,7 +200,8 @@ export function AuthProvider({ children }) {
 
   const login = async (email, password) => {
     const cleanEmail = email?.trim().toLowerCase();
-    if (!cleanEmail || !password) {
+    const cleanPassword = String(password || "").trim();
+    if (!cleanEmail || !cleanPassword) {
       throw new Error("E-mail e senha são obrigatórios.");
     }
 
@@ -200,7 +210,7 @@ export function AuthProvider({ children }) {
       const res = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: cleanEmail, password }),
+        body: JSON.stringify({ email: cleanEmail, password: cleanPassword }),
       });
 
       if (res.ok) {
@@ -211,28 +221,21 @@ export function AuthProvider({ children }) {
         setIsAuthModalOpen(false);
         return data.user;
       }
+    } catch {}
 
-      // If server explicitly responded 401 or 400 with a validation error
-      if (res.status === 401 || res.status === 400) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "Credenciais inválidas.");
-      }
-    } catch (err) {
-      // If error was explicit wrong credentials from server, re-throw
-      if (err.message === "Credenciais inválidas." || err.message === "Email e senha são obrigatórios.") {
-        throw err;
-      }
-      // If network failure / 404 / 405 (GitHub Pages static host), fall back to client database seamlessly!
-    }
-
-    // 2. Client-side authentication fallback (GitHub Pages / Static Host)
+    // 2. Client-side authentication fallback (GitHub Pages / Static Host / Offline)
     const localUsers = getStoredUsers();
-    const foundUser = localUsers.find(
-      (u) => u.email.toLowerCase() === cleanEmail && String(u.password) === String(password)
-    );
+    const foundUser = localUsers.find((u) => {
+      const uEmail = u.email?.toLowerCase().trim();
+      const uPass = String(u.password || "").trim();
+      const isMatch =
+        uEmail === cleanEmail ||
+        (u.role === "admin" && (cleanEmail === "admin" || cleanEmail === "admin@falstep.com" || cleanEmail === "admin@admin.com"));
+      return isMatch && uPass === cleanPassword;
+    });
 
     if (!foundUser) {
-      throw new Error("Credenciais inválidas. Verifique o seu e-mail e a senha.");
+      throw new Error("Credenciais inválidas. Verifique o e-mail/usuário e a senha.");
     }
 
     const safeUser = {
