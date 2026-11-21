@@ -1,3 +1,4 @@
+import { getAssetPath } from "../utils/assets";
 import React, { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { TiltCard } from "../components/TiltCard";
@@ -44,7 +45,7 @@ export function ProductPage({ product, onBack, onCheckout, onBuyNow }) {
             className="aspect-[4/5] bg-[#fbf9f5] border border-[#20151115] overflow-hidden flex items-center justify-center relative shadow-lg hover:shadow-2xl transition-shadow"
           >
             <img
-              src={currentImage || product.image}
+              src={getAssetPath(currentImage || product.image)}
               alt={product.title}
               className={`w-full h-full transition-all duration-500 ${
                 isMockup ? "object-contain p-8" : "object-cover object-center"
@@ -69,7 +70,7 @@ export function ProductPage({ product, onBack, onCheckout, onBuyNow }) {
                   }`}
                 >
                   <img
-                    src={img}
+                    src={getAssetPath(img)}
                     alt=""
                     className="w-full h-full object-contain p-1"
                   />

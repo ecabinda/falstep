@@ -1,3 +1,4 @@
+import { getAssetPath } from "../utils/assets";
 import React, { useState } from "react";
 import { useCart } from "../context/CartContext";
 
@@ -40,7 +41,7 @@ export function ProductCard({ product, onSelect, onCheckout, onBuyNow }) {
         onClick={handleOpenProduct}
       >
         <img
-          src={product.image}
+          src={getAssetPath(product.image)}
           alt={product.title}
           className={`w-full h-full transition-transform duration-700 ease-out group-hover:scale-105 ${
             isMockup ? "object-contain p-4" : "object-cover object-center"

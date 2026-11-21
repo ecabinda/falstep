@@ -42,7 +42,10 @@ function apiMiddlewarePlugin() {
   };
 }
 
+const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
+
 export default defineConfig({
-  base: "./",
+  base: isGitHubActions ? '/falstep/' : '/',
+  
   plugins: [react(), apiMiddlewarePlugin()],
 });

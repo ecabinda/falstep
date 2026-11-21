@@ -1,3 +1,4 @@
+import { getAssetPath } from "../utils/assets";
 import React from "react";
 import { ProductCard } from "../components/ProductCard";
 import { useProducts } from "../context/ProductsContext";
@@ -17,7 +18,7 @@ export function HomePage({ setActivePage, onSelectProduct, onCheckout, onBuyNow 
   const heroCta1 = storeSettings?.heroCta1 || "EXPLORAR COLEÇÃO";
   const heroCta2 = storeSettings?.heroCta2 || "VER DETALHES (320 GSM)";
   const heroBgType = storeSettings?.heroBgType || "video";
-  const heroBgImage = storeSettings?.heroBgImage || "/images/products/hero_david_feroz_black.jpg";
+  const heroBgImage = getAssetPath(storeSettings?.heroBgImage || "/images/products/hero_david_feroz_black.jpg");
 
   return (
     <div>
@@ -93,7 +94,7 @@ export function HomePage({ setActivePage, onSelectProduct, onCheckout, onBuyNow 
               >
                 <div onClick={() => onSelectProduct(pinkProduct)} className="w-full h-full relative">
                   <img
-                    src="/images/products/hero_david_pink_diet.jpg"
+                    src={getAssetPath("/images/products/hero_david_pink_diet.jpg")}
                     alt="DIAMOND DIET Editorial"
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   />
@@ -138,7 +139,7 @@ export function HomePage({ setActivePage, onSelectProduct, onCheckout, onBuyNow 
                 <div className="flex items-center gap-6 flex-1 min-w-0">
                   <div className="w-24 h-24 bg-[#fbf9f5] flex-shrink-0 overflow-hidden border border-[#20151115] flex items-center justify-center rounded-sm">
                     <img
-                      src="/images/products/tee_dunk_white.png"
+                      src={getAssetPath("/images/products/tee_dunk_white.png")}
                       alt="Retro Dunk Tee"
                       className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500 ease-out"
                     />

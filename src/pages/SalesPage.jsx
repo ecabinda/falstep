@@ -1,3 +1,4 @@
+import { getAssetPath } from "../utils/assets";
 import React, { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
@@ -275,7 +276,7 @@ export function SalesPage({ setActivePage, directCheckoutItem }) {
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-20 bg-[#fbf9f5] border border-[#20151115] flex-shrink-0 overflow-hidden flex items-center justify-center">
                       <img
-                        src={directCheckoutItem.product.image}
+                        src={getAssetPath(directCheckoutItem.product.image)}
                         alt={directCheckoutItem.product.title}
                         className="w-full h-full object-cover"
                       />
@@ -321,7 +322,7 @@ export function SalesPage({ setActivePage, directCheckoutItem }) {
                         }`}
                       >
                         <div className="aspect-[4/5] bg-neutral-100 overflow-hidden mb-2">
-                          <img src={prod.image} alt={prod.title} className="w-full h-full object-cover" />
+                          <img src={getAssetPath(prod.image)} alt={prod.title} className="w-full h-full object-cover" />
                         </div>
                         <h4 className="font-['Anton'] text-xs uppercase leading-tight line-clamp-1">{prod.title}</h4>
                         <p className="font-mono text-xs font-bold text-[#201511] mt-0.5">€{prod.price.toFixed(2)}</p>
@@ -593,7 +594,7 @@ export function SalesPage({ setActivePage, directCheckoutItem }) {
                   {checkoutItems.map((item, idx) => (
                     <div key={`${item.id}-${item.size}-${idx}`} className="py-3 flex gap-3 items-center">
                       <div className="w-16 h-20 bg-[#f7f5f0] border border-[#d2c3bf] flex-shrink-0 overflow-hidden">
-                        <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                        <img src={getAssetPath(item.image)} alt={item.title} className="w-full h-full object-cover" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="font-['Anton'] text-xs uppercase text-[#201511] truncate">{item.title}</h4>

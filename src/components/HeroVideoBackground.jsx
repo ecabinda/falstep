@@ -1,10 +1,11 @@
+import { getAssetPath } from "../utils/assets";
 import React, { useEffect, useRef, useState } from "react";
 
 export function HeroVideoBackground({
   totalFrames = 190,
   fps = 24,
   framePath = (i) =>
-    `/images/products/ezgif-49e191612309c949-jpg/ezgif-frame-${String(i).padStart(3, "0")}.jpg`,
+    getAssetPath(`/images/products/ezgif-49e191612309c949-jpg/ezgif-frame-${String(i).padStart(3, "0")}.jpg`),
 }) {
   const canvasRef = useRef(null);
   const containerRef = useRef(null);

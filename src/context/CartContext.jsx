@@ -1,3 +1,4 @@
+import { getAssetPath } from "../utils/assets";
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
@@ -15,7 +16,7 @@ const sanitizeCartItem = (i) => {
     price: price,
     qty: qty,
     quantity: qty,
-    image: i.image || "/images/products/hero_david_feroz_black.jpg"
+    image: getAssetPath(i.image || "/images/products/hero_david_feroz_black.jpg")
   };
 };
 

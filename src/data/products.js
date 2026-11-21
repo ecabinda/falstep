@@ -1,3 +1,4 @@
+import { getAssetPath } from "../utils/assets";
 export const PRODUCTS = [
   {
     id: "tee-feroz-black",
@@ -8,10 +9,10 @@ export const PRODUCTS = [
     category: "T-SHIRTS",
     sizes: ["S", "M", "L", "XL"],
     edition: "LIMITED EDITION // 150 PIECES",
-    image: "/images/products/hero_david_feroz_black.jpg",
+    image: getAssetPath("/images/products/hero_david_feroz_black.jpg"),
     gallery: [
-      "/images/products/hero_david_feroz_black.jpg",
-      "/images/products/tee_savage_black.png"
+      getAssetPath("/images/products/hero_david_feroz_black.jpg"),
+      getAssetPath("/images/products/tee_savage_black.png")
     ],
     description: "Architectural boxy silhouette cut from bespoke 320 GSM organic Portuguese cotton. Features high-density screenprint of the neon pink panther leaping through cyan arches with brutalist 'FEROZ SAVAGE' typography.",
     specs: {
@@ -30,9 +31,9 @@ export const PRODUCTS = [
     category: "T-SHIRTS",
     sizes: ["S", "M", "L", "XL"],
     edition: "LIMITED EDITION // 150 PIECES",
-    image: "/images/products/hero_david_pink_diet.jpg",
+    image: getAssetPath("/images/products/hero_david_pink_diet.jpg"),
     gallery: [
-      "/images/products/hero_david_pink_diet.jpg"
+      getAssetPath("/images/products/hero_david_pink_diet.jpg")
     ],
     description: "'Keep The Calories, I'll Take Carats' back print statement graphic with crystal diamond lips. Sculpted with dropped shoulders and reinforced twin-needle stitching for lasting architectural drape.",
     specs: {
@@ -51,9 +52,9 @@ export const PRODUCTS = [
     category: "GRAPHICS",
     sizes: ["S", "M", "L", "XL"],
     edition: "FALSE STEP® CORE ARCHIVE",
-    image: "/images/products/tee_dunk_white.png",
+    image: getAssetPath("/images/products/tee_dunk_white.png"),
     gallery: [
-      "/images/products/tee_dunk_white.png"
+      getAssetPath("/images/products/tee_dunk_white.png")
     ],
     description: "Multilayered montage graphic combining classical marble statues, sky slam dunk, and vintage 911 coupe silhouette in vibrant cyan and peach neon tones over optic white jersey.",
     specs: {
@@ -72,9 +73,9 @@ export const PRODUCTS = [
     category: "T-SHIRTS",
     sizes: ["S", "M", "L", "XL"],
     edition: "DROP EXCLUSIVE",
-    image: "/images/products/tee_savage_green.png",
+    image: getAssetPath("/images/products/tee_savage_green.png"),
     gallery: [
-      "/images/products/tee_savage_green.png"
+      getAssetPath("/images/products/tee_savage_green.png")
     ],
     description: "Vibrant botanical bedroom illustration featuring the slumbering Bengal tiger and stylized 'SEVAGE' graffiti typography over a rich racing green cotton base.",
     specs: {
@@ -93,9 +94,9 @@ export const PRODUCTS = [
     category: "T-SHIRTS",
     sizes: ["S", "M", "L", "XL"],
     edition: "DROP EXCLUSIVE",
-    image: "/images/products/tee_savage_black.png",
+    image: getAssetPath("/images/products/tee_savage_black.png"),
     gallery: [
-      "/images/products/tee_savage_black.png"
+      getAssetPath("/images/products/tee_savage_black.png")
     ],
     description: "The classic 'SEVAGE' tiger slumber artwork contrasted against deep obsidian black. Premium 1x1 rib collar that holds shape perpetually.",
     specs: {
@@ -114,10 +115,10 @@ export const PRODUCTS = [
     category: "ARCHIVE",
     sizes: ["S", "M", "L", "XL"],
     edition: "STUDIO CAPSULE 24.0",
-    image: "/images/products/tee_black_fs24.jpg",
+    image: getAssetPath("/images/products/tee_black_fs24.jpg"),
     gallery: [
-      "/images/products/tee_black_fs24.jpg",
-      "/images/products/graphic_fs21_main.jpg"
+      getAssetPath("/images/products/tee_black_fs24.jpg"),
+      getAssetPath("/images/products/graphic_fs21_main.jpg")
     ],
     description: "Limited studio release developed in collaboration with False Step archive workshops. Custom dye bath with distressed tonal accents.",
     specs: {
@@ -136,7 +137,7 @@ export const UPSELLS = [
     price: 24.00,
     color: "Bone / Black / Forest",
     size: "O/S",
-    image: "/images/products/tee_savage_green.png"
+    image: getAssetPath("/images/products/tee_savage_green.png")
   },
   {
     id: "beanie-ribbed",
@@ -144,6 +145,6 @@ export const UPSELLS = [
     price: 35.00,
     color: "Obsidian Black",
     size: "O/S",
-    image: "/images/products/tee_savage_black.png"
+    image: getAssetPath("/images/products/tee_savage_black.png")
   }
 ];

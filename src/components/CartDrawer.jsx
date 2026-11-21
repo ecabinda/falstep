@@ -1,3 +1,4 @@
+import { getAssetPath } from "../utils/assets";
 import React from "react";
 import { useCart } from "../context/CartContext";
 import { UPSELLS } from "../data/products";
@@ -94,7 +95,7 @@ export function CartDrawer({ onCheckout }) {
                 >
                   <div className="w-20 h-24 bg-[#fbf9f5] flex-shrink-0 overflow-hidden border border-[#20151115] flex items-center justify-center">
                     <img
-                      src={item.image}
+                      src={getAssetPath(item.image)}
                       alt={item.title}
                       className="w-full h-full object-contain p-1"
                     />
@@ -164,7 +165,7 @@ export function CartDrawer({ onCheckout }) {
                 >
                   <div className="flex items-center gap-3">
                     <img
-                      src={up.image}
+                      src={getAssetPath(up.image)}
                       alt={up.title}
                       className="w-12 h-12 object-contain bg-white border border-[#20151115] p-1"
                     />
