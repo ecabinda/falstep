@@ -1768,7 +1768,7 @@ export function AdminPage({ setActivePage }) {
                   </div>
                 </div>
               );
-            })}
+            }))}
           </div>
         </div>
       )}
