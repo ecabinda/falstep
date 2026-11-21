@@ -5,6 +5,12 @@ export function getAssetPath(path) {
   }
   const base = import.meta.env.BASE_URL || "/";
   const cleanBase = base.endsWith("/") ? base.slice(0, -1) : base;
+
+  // Prevent duplicate base path prepending
+  if (cleanBase && (path === cleanBase || path.startsWith(`${cleanBase}/`))) {
+    return path;
+  }
+
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
   return `${cleanBase}${cleanPath}`;
 }
