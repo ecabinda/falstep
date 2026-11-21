@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
-import { PRODUCTS as initialProducts } from "../data/products";
+import { PRODUCTS as initialProducts, INITIAL_COLLECTIONS, INITIAL_COUPONS } from "../data/products";
 
 const ProductsContext = createContext();
 
@@ -17,8 +17,8 @@ export function ProductsProvider({ children }) {
   const [products, setProducts] = useState(initialProducts);
   const [isLoading, setIsLoading] = useState(true);
   const [storeSettings, setStoreSettings] = useState(DEFAULT_SETTINGS);
-  const [coupons, setCoupons] = useState([]);
-  const [collections, setCollections] = useState([]);
+  const [coupons, setCoupons] = useState(INITIAL_COUPONS);
+  const [collections, setCollections] = useState(INITIAL_COLLECTIONS);
 
   const fetchProducts = useCallback(async () => {
     try {

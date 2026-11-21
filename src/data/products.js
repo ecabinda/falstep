@@ -148,3 +148,61 @@ export const UPSELLS = [
     image: getAssetPath("/images/products/tee_savage_black.png")
   }
 ];
+
+export const INITIAL_COLLECTIONS = [
+  {
+    id: "col_drop07",
+    name: "DROP 07 // FEROZ SAVAGE CAPSULE",
+    slug: "drop-07-feroz-savage",
+    tagline: "Escultura clássica de mármore romano fundida com brutalismo contemporâneo.",
+    cover: getAssetPath("/images/products/hero_david_feroz_black.jpg"),
+    badge: "EDIÇÃO LIMITADA // 150 UNIDADES",
+    status: "active",
+    productIds: [
+      "tee-feroz-black",
+      "tee-diamond-pink",
+      "tee-dunk-white"
+    ]
+  },
+  {
+    id: "col_core",
+    name: "CORE ARCHIVE // HEAVYWEIGHT 320 GSM",
+    slug: "core-archive",
+    tagline: "Essenciais permanentes tecidos em malha pesada portuguesa no Porto.",
+    cover: getAssetPath("/images/products/tee_black_fs24.jpg"),
+    badge: "PRODUÇÃO CONTÍNUA",
+    status: "active",
+    productIds: [
+      "tee-savage-green",
+      "tee-savage-noir",
+      "tee-black-fs24"
+    ]
+  }
+];
+
+export const INITIAL_COUPONS = [
+  {
+    id: "coup_01",
+    code: "FALSTEP10",
+    type: "percentage",
+    value: 10,
+    minSpend: 50,
+    active: true
+  },
+  {
+    id: "coup_02",
+    code: "VIPDROP20",
+    type: "percentage",
+    value: 20,
+    minSpend: 120,
+    active: true
+  },
+  {
+    id: "coup_03",
+    code: "PORTOGRATIS",
+    type: "fixed",
+    value: 15,
+    minSpend: 80,
+    active: true
+  }
+];

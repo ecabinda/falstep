@@ -180,6 +180,30 @@ export function AuthModal({ onLoginSuccess }) {
           </button>
         </form>
 
+        {/* Quick Access Credentials */}
+        <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono">
+          <span className="text-white/40 uppercase">Acesso Rápido:</span>
+          <div className="flex gap-2 items-center">
+            <button
+              type="button"
+              onClick={() => handleQuickDemo("edilson@falstep.com", "1234")}
+              className="text-[#f3efe8] hover:text-white bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded transition font-bold"
+              title="Preencher com a conta Edilson"
+            >
+              Edilson (1234)
+            </button>
+            <span className="text-white/20">&bull;</span>
+            <button
+              type="button"
+              onClick={() => handleQuickDemo("admin@falstep.com", "admin")}
+              className="text-[#f3efe8] hover:text-white bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded transition font-bold"
+              title="Preencher com a conta Administrador"
+            >
+              Admin (admin)
+            </button>
+          </div>
+        </div>
+
         {/* Security & Multi-Device Access Footer */}
         <div className="mt-8 pt-6 border-t border-white/10 text-center">
           <div className="flex items-center justify-center gap-2 text-white/50 text-[11px] font-mono">
