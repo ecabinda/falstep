@@ -111,27 +111,6 @@ export function Header({ activePage, setActivePage }) {
             EUR €
           </span>
 
-          {/* Admin Direct Button (Prominent when admin is logged in) */}
-          {isAdmin && (
-            <button
-              onClick={() => {
-                setActivePage("admin");
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-['Anton'] uppercase tracking-wider transition-all duration-200 active:scale-95 shadow-md ${
-                activePage === "admin"
-                  ? "bg-amber-400 text-black border border-amber-300 ring-2 ring-amber-400/50"
-                  : isTransparent
-                  ? "bg-amber-400 text-black hover:bg-amber-300 border border-amber-300"
-                  : "bg-amber-500 text-black hover:bg-amber-400 border border-amber-400"
-              }`}
-              title="Abrir Painel Administrativo"
-            >
-              <span className="material-symbols-outlined text-[16px]">shield_person</span>
-              <span>PAINEL ADMIN</span>
-            </button>
-          )}
-
           {/* User Account / Login Button */}
           <button
             onClick={handleAccountClick}
